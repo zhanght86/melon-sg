@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>melon.asset相关的国际化文件</comment>
+	<entry key="las.condition.create.hint"><![CDATA[您已经成功添加了名称为<STRONG>{0}</STRONG>的条件]]></entry>
+	<entry key="las.condition.update.hint"><![CDATA[您已经成功更新了名称为<STRONG>{0}</STRONG>的条件]]></entry>
+	<entry key="las.filter.name">过滤器名称</entry>
+	<entry key="las.filter.type">类型</entry>
+	<entry key="las.filter.createTime">创建时间</entry>
+	<entry key="las.filter.updateTime">修改时间</entry>
+	<entry key="las.filter.action">动作类型</entry>
+	<entry key="las.filter.subject">邮件主题</entry>
+	<entry key="las.filter.address">发送地址</entry>
+	<entry key="las.filter.content">邮件内容</entry>
+	<entry key="las.filter.receive">收信人</entry>
+	<entry key="las.filter.note">短信内容</entry>
+	<entry key="las.rule.name">规则名称</entry>
+	<entry key="las.rule.actionField">可配字段</entry>
+	<entry key="las.rule.action">类型</entry>
+	<entry key="las.rule.action">动作类型</entry>
+	<entry key="las.rule.createTime">创建时间</entry>
+	<entry key="las.rule.updateTime">修改时间</entry>
+	<entry key="las.rule.receiveHint">各收信人之间用分号隔开</entry>
+	<entry key="las.rule.addressHint">各收件人之间用分号隔开</entry>
+	<entry key="las.rule.create">新建条件</entry>
+	<entry key="las.rule.attr">属性</entry>
+	<entry key="las.rule.act">动作</entry>
+	<entry key="las.rule.acc">计数</entry>
+	
+	
+	<entry key="las.rule.condition.title">规则条件</entry>
+	<entry key="las.rule.condition.disc">
+		<![CDATA[
+			<strong class='description-left'>说明：</strong>
+			<div class='description-right'>
+			提供规则的配置功能，能够建立事件、逻辑关系与条件关系，从而实现用户自定义配置查询规则的动能。
+			</div>	
+		]]>	
+	</entry>
+	
+	<entry key="las.rule.condition.detail">
+		<![CDATA[
+		<h5><strong>事件</strong></h5>
+		<p>与告警规则关联，实现自定义查询条件。事件下只可配置单个条件关系或者单个逻辑关系。</p>
+		
+		<h5><strong>逻辑关系</strong></h5>
+		<p>连接多个条件关系，支持与、或、非，也可嵌套连接逻辑关系。</p>
+		
+		<h5><strong>条件关系</strong></h5>
+		<p>提供字段选择，自定义查询条件。</p>
+		
+		]]>
+	</entry>
+	<entry key="las.rule.condition.name">名称</entry>
+	<entry key="las.rule.condition.logicalOper">逻辑运算</entry>
+	<entry key="las.rule.condition.field">条件</entry>
+	<entry key="las.rule.condition.oper">操作符</entry>
+	<entry key="las.rule.condition.value">值</entry>
+	<entry key="las.rule.condition.content">描述</entry>
+	<entry key="las.rule.condition.remark">备注</entry>
+	<entry key="las.rule.isEnable">是否启用</entry>
+	<entry key="las.rule.state">状态</entry>
+	<entry key="las.rule.createUser">创建者</entry>
+	<entry key="las.rule.description">规则描述</entry>
+	<entry key="las.rule.error">数据有误，请重新确认后保存！</entry>
+	<entry key="las.rule.counts">重复次数</entry>
+	<entry key="las.rule.times">时间范围</entry>
+	<entry key="las.rule.unit">时间单位</entry>
+	<entry key="las.rule.conditions">选择事件</entry>
+	<entry key="las.rule.columns">选择字段</entry>
+	<entry key="las.rule.andAttrs">重复特征</entry>
+</properties>

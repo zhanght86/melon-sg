@@ -1,0 +1,164 @@
+/*  邮件主页  */
+.top-left-title .report-title {
+   height: 56px;
+   line-height: 56px;
+   margin-top:0px;
+   padding-left:20px;
+   font-size:16px;
+   font-weight:bold;
+   border-top-left-radius:4px;
+}
+.getMail-icon , .writeMail-icon , .contacts-icon, .list-menu-state{
+	height:16px;
+	width:16px;
+	background-image: url("images/melon-commons-icon.png");
+	display:inline-block;
+	margin-right:10px;
+	position: relative;
+		top:2px;
+}
+.tree-left .getMail-icon{
+	background-position: -10px -150px;
+}
+.tree-left .writeMail-icon{
+	background-position: -36px -150px;
+}
+.tree-left .contacts-icon{
+	background-position: -62px -150px;
+}
+
+.list-menu-state{
+	background-position: -88px -150px;
+	margin-right:0px;
+} 
+
+.tree-left .list-group .bor {
+ 	border:0px;
+ 	font-weight:bold;
+ }
+.tree-left .list-group .bor a {
+ 	color:#404040;
+ 	display: block;
+ 	width:100%;
+ 	height:100%;
+ 	outline: none;
+ }
+ .tree-left .list-group .bor:hover{
+ 	background-color: #e3e4e5;
+ }
+ .tree-left .list-menu{
+ 	background-color: #f2f4f5;
+ }
+.tree-left .list-menu .list-group-item{
+ 	padding-top:8px;
+ 	padding-bottom:8px;
+ 	border-left:0px;
+ 	border-right:0px;
+ }
+ .list-menu .list-group-item a{
+ 	color:#404040;
+ }
+.list-menu .list-group-item a:hover{
+	color:#2e9bd1;
+}
+.list-menu .list-group-item a:active{
+	color:#1970b2;
+}
+.list-menu .list-group-item span, .list-menu .clearAll {
+	font:italic bold 12px Arial;
+	float:right;
+	margin-right:5px;
+	color:#808080;
+}
+.list-menu .clearAll {
+	font-weight:normal;
+	font-style: normal;
+}
+
+/*  搜索区域  */
+.top-right-title .search{
+	float:right;
+	margin-right:20px;
+	margin-top:18px;
+}
+.search-name{
+	float:left;
+	line-height:28px;
+	margin-right:10px;
+	color:#185499;
+}
+.search-input{
+	color:#808080;
+	border-radius:2px;
+	float:left;
+	width:200px;
+	height:28px;
+}
+
+
+
+
+.top-right-title, .top-left-title {
+   height: 60px;
+   background-color: #2e9bd1;
+   border-color: white;
+   color:white;
+}
+	 
+
+
+
+
+
+/*  通讯录样式  */
+.section-body{
+	padding:0px 20px;
+}
+.contacts .userName{
+	font-weight:bold;
+}
+.contacts .write-icon{
+	width:16px;
+	height:16px;
+	display:inline-block;
+	background-image: url("images/melon-commons-icon.png");
+	background-position: -218px -176px;
+	position: relative;
+		top:2px;
+}
+.contacts .write-icon:hover{
+	background-position: -244px -176px;
+}
+.contacts .write-icon:active{
+	background-position: -270px -176px;
+}
+.contacts .toWrite{
+	float:right;
+	font-size:12px;
+}
+
+/*  编辑页面    */
+.mail-edit .form-horizontal{
+	margin:20px 0px 20px 20px;
+}
+.mail-edit .control-label{
+	padding-right: 0px;
+	font-size:14px;
+	padding-left:0px;
+	width:42px;
+}
+.mail-edit .form-field{
+	padding-left:10px;
+	padding-right:0px;
+}
+/*附件样式*/
+.mail-edit .process-bar-container .progress{
+	width:150px;
+ }
+ .mail-edit .ajax-file-upload .file-item-group{
+ 	background-color: #f2efed;
+ }
+ .mail-edit .ajax-file-upload .file-item-group .attach-icon{
+ 	margin-left:8px;
+ 	margin-right:6px;
+ }

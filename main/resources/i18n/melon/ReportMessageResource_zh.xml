@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>melon.report相关的国际化文件</comment>
+	<entry key="report.title">智能报表</entry>
+	<entry key="report.systemReport">系统报表</entry>
+	<entry key="report.logReport">日志报表</entry>
+	<entry key="report.synReport">综合报表</entry>
+	<entry key="report.description">
+	通过系统内置报表，使用表格、图表等格式来动态显示数据。
+	</entry>
+	<entry key="report.count">
+	<![CDATA[系统共有报表<br/>{0} <span>份</span><br/>报表类型<br/> {1} <span>种</span>]]>
+	</entry>
+	<entry key="report.countBytype">{0} 份</entry>
+	<entry key="report.name">报表名称</entry>
+	<entry key="report.type">报表来源</entry>
+	<entry key="report.category">报表类型</entry>
+	<entry key="report.remark">备注</entry>
+	<entry key="report.reportFile">报表文件</entry>
+	<entry key="report.more">查看更多</entry>
+	<entry key="report.createDate">注册时间</entry>
+	<entry key="report.startDate">开始时间</entry>
+	<entry key="report.endDate">结束时间</entry>
+	<entry key="report.view">报表预览</entry>
+</properties>

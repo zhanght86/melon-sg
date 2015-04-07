@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<!-- 告警配置 -->
+	<definition name="alarm.home" extends="desktop.default">
+		<put-attribute name="body" value="/WEB-INF/views/melon/alarm/home.jsp" cascade="true"/>
+    </definition>
+	
+    <definition name="alarm.*.list" extends="desktop.list">
+       <put-attribute name="body" value="/WEB-INF/views/melon/alarm/{1}/list.jsp" cascade="true"/>
+    </definition>
+
+    <definition name="alarm.*.show" extends="desktop.show">
+		<put-attribute name="body" value="/WEB-INF/views/melon/alarm/{1}/show.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="alarm.*.compare" extends="desktop.show">
+		<put-attribute name="body" value="/WEB-INF/views/melon/alarm/{1}/compare.jsp" cascade="true"/>
+    </definition>
+    
+     <!-- 告警树 -->
+	<definition name="alarm.*.tree" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/alarm/{1}/tree.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="alarm.*.create" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/alarm/{1}/create.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="alarm.*.edit" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/alarm/{1}/edit.jsp" cascade="true"/>
+    </definition>
+    
+    <!-- 告警帮助页面 -->
+    <definition name="alarm.base.helpPage" extends="desktop.show">
+		<put-attribute name="body" value="/WEB-INF/views/melon/alarm/base/helpPage.jsp" cascade="true"/>
+    </definition>
+    
+</tiles-definitions>

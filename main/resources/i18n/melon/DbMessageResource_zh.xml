@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>business.db相关的国际化文件</comment>
+	
+	<!-- 单位基本信息国际化 -->
+	<entry key="db.basicinfo.basicinfo">基本信息</entry>
+	<entry key="db.basicinfo.organname">01单位名称</entry>
+	<entry key="db.basicinfo.organAddr">02单位地址</entry>
+	<entry key="db.basicinfo.postCode">03邮政编码</entry>
+	<entry key="db.basicinfo.organCode">04行政区划代码</entry>
+	<entry key="db.basicinfo.chNames">05单位负责人</entry>
+	<entry key="db.basicinfo.chName">姓名</entry>
+	<entry key="db.basicinfo.chDuty">职务/职称</entry>
+	<entry key="db.basicinfo.chTel">办公电话</entry>
+	<entry key="db.basicinfo.chMail">电子邮件</entry>
+	<entry key="db.basicinfo.departName">06责任部门</entry> 
+	<entry key="db.basicinfo.department">07责任部门负责人</entry> 
+	<entry key="db.basicinfo.deName">姓名</entry>
+	<entry key="db.basicinfo.deDuty">职务/职称</entry>
+	<entry key="db.basicinfo.deTel">办公电话</entry>
+	<entry key="db.basicinfo.deMail">电子邮件</entry>
+	<entry key="db.basicinfo.dePhone">移动电话</entry>
+	<entry key="db.basicinfo.belong">08隶属关系</entry>
+	<entry key="db.basicinfo.organType">09单位类型</entry>
+	<entry key="db.basicinfo.tradeType">10行业类别</entry>
+	<entry key="db.basicInfo.create.hint">保存成功</entry>
+	<entry key="db.basicInfo.update.hint">保存成功</entry>
+	
+	<!-- 信息系统基本情况国际化 -->
+	<entry key="db.sysInfo.title">信息系统基本情况</entry>
+	<entry key="db.sysInfo.sysName">01 系统名称</entry>
+	<entry key="db.sysInfo.sysCode">02 系统编码</entry>
+	<entry key="db.sysInfo.sysSituation">03 系统承载业务情况</entry>
+	<entry key="db.sysInfo.busType">业务类型</entry>
+	<entry key="db.sysInfo.busDesc">业务描述</entry>
+	<entry key="db.sysInfo.serSituation">04 系统服务情况</entry>
+	<entry key="db.sysInfo.serScope">服务范围</entry>
+	<entry key="db.sysInfo.serObject">服务对象</entry>
+	<entry key="db.sysInfo.sysPlat">05 系统网络平台</entry>
+	<entry key="db.sysInfo.netScope">覆盖范围</entry>
+	<entry key="db.sysInfo.netType">网络性质</entry>
+	<entry key="db.sysInfo.connType">06 系统互联情况</entry>
+	<entry key="db.sysInfo.keyProduct">07 关键产品使用情况</entry>
+	<entry key="db.sysInfo.sNumber">序号</entry>
+	<entry key="db.sysInfo.proType">产品类型</entry>
+	<entry key="db.sysInfo.number">数量</entry>
+	<entry key="db.sysInfo.usedRate">使用国产品率</entry>
+	<entry key="db.sysInfo.allUsed">全部使用</entry>
+	<entry key="db.sysInfo.notUsed">全部未使用</entry>
+	<entry key="db.sysInfo.partUsed">部分使用及使用率</entry>
+	<entry key="db.sysInfo.dev_1">安全专用产品</entry>
+	<entry key="db.sysInfo.dev_2">网络产品</entry>
+	<entry key="db.sysInfo.dev_3">操作系统</entry>
+	<entry key="db.sysInfo.dev_4">数据库</entry>
+	<entry key="db.sysInfo.dev_5">服务器</entry>
+	<entry key="db.sysInfo.dev_6">其他</entry>
+	<entry key="db.sysInfo.sysUseredSer">08 系统采用服务情况</entry>
+	<entry key="db.sysInfo.serUsed">服务类型</entry>
+	<entry key="db.sysInfo.serDutyType">服务责任方类型</entry>
+	<entry key="db.sysInfo.Industry">本行业(单位)</entry>
+	<entry key="db.sysInfo.otherProvider">国内其他服务商</entry>
+	<entry key="db.sysInfo.foreignProvide">国外服务商</entry>
+	<entry key="db.sysInfo.ser_1">等级测评</entry>
+	<entry key="db.sysInfo.ser_2">风险评估</entry>
+	<entry key="db.sysInfo.ser_3">灾难恢复</entry>
+	<entry key="db.sysInfo.ser_4">应急响应</entry>
+	<entry key="db.sysInfo.ser_5">系统集成</entry>
+	<entry key="db.sysInfo.ser_6">安全咨询</entry>
+	<entry key="db.sysInfo.ser_7">安全培训</entry>
+	<entry key="db.sysInfo.exOrganName">09 等级测评单位名称</entry>
+	<entry key="db.sysInfo.exTime">10 何时投入运行使用</entry>
+	<entry key="db.sysInfo.sonSystem">11系统是否是分系统</entry>
+	<entry key="db.sysInfo.ifOrNot">(如果选是请填下两项)</entry>
+	<entry key="db.sysInfo.parentSys">12 上级系统名称</entry>
+	<entry key="db.sysInfo.parentSysOrgan">13上级系统所属单位名称</entry>
+	<entry key="db.sysInfo.ge">个</entry>
+	
+	<!-- 定级备案国际化 -->
+	<entry key="db.levelInfo.title">定级备案</entry>
+	<entry key="db.levelInfo.proLevel">03 确定业务信息安全保护等级</entry>
+	<entry key="db.levelInfo.demageLevel">损害客体及损害程度</entry>
+	<entry key="db.levelInfo.level">级别</entry>
+	<entry key="db.levelInfo.demageLevel1">仅对公民、法人和其他组织的合法权益造成损害</entry>
+	<entry key="db.levelInfo.level1">第一级</entry>
+	<entry key="db.levelInfo.demageLevel2">
+	<![CDATA[
+			对公民、法人和其他组织的合法权益造成<strong>严重</strong>损害<br/>
+			对社会秩序和公共利益造成损害
+		]]>	
+	</entry>
+	<entry key="db.levelInfo.level2">第二级</entry>
+	<entry key="db.levelInfo.demageLevel3">
+	<![CDATA[
+			对社会秩序和公共利益造成<strong>严重</strong>损害<br/>
+			对国家安全造成损害
+		]]>
+	</entry>
+	<entry key="db.levelInfo.level3">第三级</entry>
+	<entry key="db.levelInfo.demageLevel4">
+	<![CDATA[
+			对社会秩序和公共利益造成<strong>特别严重</strong>损害<br/>
+			对国家安全造成<strong>严重</strong>损害
+		]]>
+	</entry>
+	<entry key="db.levelInfo.level4">第四级</entry>
+	<entry key="db.levelInfo.demageLevel5">
+	<![CDATA[
+			对国家安全造成<strong>特别严重</strong>损害
+		]]>
+	</entry>
+	<entry key="db.levelInfo.level5">第五级</entry>
+	<entry key="db.levelInfo.safeLevel">04 确定系统服务安全保护等级</entry>
+	<entry key="db.levelInfo.sysLevel">05 信息系统安全保护等级 </entry>
+	<entry key="db.levelInfo.gradeTime">06 定级时间 </entry>
+	<entry key="db.levelInfo.isReview">07 专家评审情况 </entry>
+	<entry key="db.levelInfo.isLeaderDept">08 是否有主管部门 </entry>
+	<entry key="db.levelInfo.leaderDeptName">09 主管部门名称 </entry>
+	<entry key="db.levelInfo.isLeaderRev">10 主管部门审批定级情况 </entry>
+	<entry key="db.levelInfo.levelReport">11 系统定级报告 </entry>
+	<entry key="db.levelInfo.fileName">附件名称 </entry>
+	<entry key="db.levelInfo.operator">填报人 </entry>
+	<entry key="db.levelInfo.createTime">填表日期 </entry>
+	<entry key="db.levelInfo.ifHave">(如果选择有请填下两项) </entry>
+	
+	<!-- 主页国际化 -->
+	<entry key="db.home.title">等级保护概览 </entry>
+	<entry key="db.home.desc">
+		信息安全等级保护是指对国家秘密信息、法人和其他组织及公民的专有信息以及公开信息和存储、传输、处理这些信息的信息系统分等级实行安全保护，对信息系统中使用的信息安全产品实行按等级管理，对信息系统中发生的信息安全事件分等级响应、处置。
+	</entry>
+	<entry key="db.home.countAssert"><![CDATA[今年已评估数量<br/>{0} <span>个</span><br/>总评估数量<br/> {1} <span>个</span>]]> </entry>
+	<entry key="db.home.selectAll">查看所有等保系统 </entry>
+	<entry key="db.home.readyAssert">今年已评估信息系统 </entry>
+	<entry key="db.home.allAssert">总已评估信息系统 </entry>
+</properties>

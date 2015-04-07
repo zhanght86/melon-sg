@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>melon.commons相关的国际化文件</comment>
+	<entry key="commons.globalConfig.organName">组织机构名称</entry>
+	<entry key="commons.globalConfig.servicer">支持人员</entry>
+	<entry key="commons.globalConfig.serviceTel">支持电话</entry>
+	<entry key="commons.globalConfig.serviceMail">支持邮箱</entry>
+	<entry key="commons.globalConfig.serviceTel">支持电话</entry>
+	<entry key="commons.globalConfig.serviceMail">支持邮箱</entry>
+	<entry key="commons.globalConfig.organ">国税总局</entry>
+	<entry key="commons.globalConfig.attributes">附加属性</entry>
+	<entry key="commons.globalConfig.attributes.hint">属性名称必须填写，否则属性添加失败！</entry>
+	<entry key="commons.globalConfig.attributes.key">属性名称</entry>
+	<entry key="commons.globalConfig.attributes.value">属性值</entry>
+	
+	
+	<entry key="commons.create.hint"><![CDATA[添加成功]]></entry>
+	<entry key="commons.logger.operator">操作人</entry>
+	<entry key="commons.logger.time">操作时间</entry>
+	<entry key="commons.logger.result">操作结果</entry>
+	<entry key="commons.logger.module">所属模块</entry>
+	<entry key="commons.logger.clazz">所属功能</entry>
+	<entry key="commons.logger.function">具体操作</entry>
+	<entry key="commons.logger.ip">操作IP</entry>
+	
+</properties>

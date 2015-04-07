@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>melon.asset相关的国际化文件</comment>
+	<!-- 按钮 -->
+	<entry key="button.addDevice">添加设备</entry>
+	<entry key="button.addInfo">添加信息系统</entry>
+	<entry key="button.contrast">对比</entry>
+	<entry key="button.startContrast">继续对比</entry>
+	<entry key="button.repeatContrast">继续对比</entry>
+	<entry key="button.repeat">排重</entry>
+	<entry key="button.updateStart">变更状态</entry>
+	
+	<!-- 通用 -->
+	<entry key="asset.selected">请选择</entry>
+	<entry key="asset.yes">使用中</entry>
+	<entry key="asset.no">已停用</entry>
+	<entry key="asset.fontSty">宋体</entry>
+	
+	
+	<!-- HOME -->
+	<entry key="asset.home.title">安全对象</entry>
+	<entry key="asset.home.desc">
+	安全对象是综合安全管理平台的核心,几乎所有的功能都围绕其展开,在这里,安全对象是指具有相同或相似安全属性的集合,包括设备对象、信息系统、安全域等。
+	</entry>
+	<entry key="asset.home.decription">实现了设备对象、信息系统、资产漏洞、资产面临的威胁以及相应风险的管理。</entry>	
+	<entry key="asset.home.desc">
+	安全对象是综合安全管理平台的核心,几乎所有的功能都围绕其展开,在这里,安全对象是指具有相同或相似安全属性的集合,包括设备对象、信息系统、安全域等。
+	</entry>
+
+	<!-- 视图 -->
+	<entry key="device.listOrgans.description">
+	设备（equipment）的含义十分广泛，这里的设备指交换机、服务器、路由器、防火墙、数据库阵列、存储等IT设备。
+	</entry>
+	<entry key="info.listOrgans.description">
+	信息系统（information system）是由计算机硬件、网络和通讯设备、计算机软件、信息资源、信息用户和规章制度组成的以处理信息流为目的的人机一体化系统。
+	信息系统安全管理是指信息系统安全属性的管理的过程；
+	</entry>
+	<entry key="group.listOrgans.description">
+	安全域（safety margin）是指同一环境内有相同或相似的安全保护需求、相互关联、相互信任、并具有相同的安全访问控制和边界控制策略的网络、系统、设备组成的逻辑区域。
+	随着业务的不断发展的计算机网络变得越来越复杂，将网络划分为不同的区域，对每个区域进行层次化地有重点的保护，是建立纵深防御安全系统的自然而有效的手段。
+	</entry>
+	<entry key="device.repeat.rowTitle">可能重复的设备:</entry>
+	<entry key="device.repeat.title">经过排查,发现可能重复的设备有{0}组,请手动排查</entry>
+	<entry key="device.contrast.start">请选择与{0}设备对比的设备</entry>
+	<entry key="asset.contrast.start">请选择与{0}系统对比的信息系统</entry>
+	<entry key="asset.contrast.view">{0}与{1}对比视图</entry>
+	<entry key="asset.device.organInfo">{0}共有：{1}台设备</entry>
+	<entry key="asset.infoSystem.organInfo">{0}共有：{1}套信息系统</entry>
+	<entry key="asset.device.listOrgan.chart">设备单位分布图</entry>
+	<entry key="asset.device.listOrgan.title">设备对象</entry>
+	<entry key="asset.device.listOrgan.assetCount"><![CDATA[系统共有设备<br/>{0} <span>台</span><br/>分布单位<br/> {1} <span>家</span>]]></entry>
+	<entry key="asset.device.count">[{0} 台]</entry> 
+	<entry key="asset.device.lookDada">查看宿主</entry> 
+	<entry key="asset.device.basicInfo">基本信息</entry> 
+	<entry key="asset.device.operation">运维情况</entry> 
+	<entry key="asset.device.alarm">告警信息</entry> 
+	<entry key="asset.device.fragility">脆弱性分析</entry> 
+	<entry key="asset.device.notvirtual">设备数量</entry>
+	<entry key="asset.deviceshow.virtuals">虚拟设备：</entry>
+	<entry key="asset.deviceshow.useRate">利用率：</entry>
+	<entry key="info.system.listOrgan.chart">信息系统单位分布图</entry>
+	<entry key="info.system.listOrgan.title">信息系统概览</entry>
+	<entry key="info.system.listOrgan.infoCount"><![CDATA[系统共有信息系统<br/>{0} <span>套</span><br/>分布单位<br/>{1} <span>家</span>]]></entry>
+	<entry key="info.system.count">[{0} 套]</entry>
+	<entry key="info.system.infoCount">信息系统数量</entry>
+	<entry key="info.system.useRate">利用率：</entry>
+	<entry key="asset.group.all">管理安全域</entry>
+	<entry key="asset.info.name">信息系统</entry>
+	<entry key="asset.device.name">设备对象</entry>
+	<entry key="asset.group.listOrgan.groupCount"><![CDATA[系统共有安全域<br/>{0} <span>个</span>]]></entry>
+	
+	
+	<!-- hint -->
+	<entry key="hint.type.code">请输入2位字符,内容为大写字母或数字或两者皆可</entry>
+	<entry key="asset.imp.errorDb">数据格式错误请检查</entry>
+	<entry key="asset.byContrast.not.hint">请选择要比较的项!</entry>
+	<entry key="asset.byContrast.duo.hint">后期将开放多个设备之间比较,现只能比较选择一项!</entry>
+	<entry key="asset.byPerson.Notlist.hint">暂无负责的设备</entry>
+	<entry key="asset.domain.hint">最多选择三个，如有多余三个系统默认取前三个！</entry>
+	<entry key="asset.abstract.code.hint">{0}已存在</entry>
+	<entry key="asset.abstract.remove.hint">删除成功！</entry>
+	<entry key="asset.abstract.notRemove.hint">删除失败,请检查数据！</entry>
+	
+	<entry key="asset.phyEnvironment.create.hint"><![CDATA[您已经成功添加了名称为<STRONG>{0}</STRONG>的物理环境]]></entry>
+	<entry key="asset.phyEnvironment.update.hint"><![CDATA[您已经成功更新了名称为<STRONG>{0}</STRONG>的物理环境]]></entry>
+	<entry key="asset.device.create.hint"><![CDATA[您已经成功添加了名称为<STRONG>{0}</STRONG>的设备]]></entry>
+	<entry key="asset.device.update.hint"><![CDATA[您已经成功更新了名称为<STRONG>{0}</STRONG>的设备]]></entry>
+	<entry key="asset.infoSystem.create.hint"><![CDATA[您已经成功添加了名称为<STRONG>{0}</STRONG>的信息系统]]></entry>
+	<entry key="asset.infoSystem.update.hint"><![CDATA[您已经成功更新了名称为<STRONG>{0}</STRONG>的信息系统]]></entry>
+	<entry key="asset.assetType.create.hint"><![CDATA[您已经成功添加了名称为<STRONG>{0}</STRONG>的设备类型]]></entry>
+	<entry key="asset.assetType.update.hint"><![CDATA[您已经成功更新了名称为<STRONG>{0}</STRONG>的设备类型]]></entry>
+	<entry key="asset.assetGroup.create.hint"><![CDATA[您已经成功添加了名称为<STRONG>{0}</STRONG>的安全域]]></entry>
+	<entry key="asset.assetGroup.update.hint"><![CDATA[您已经成功更新了名称为<STRONG>{0}</STRONG>的安全域]]></entry>
+	<entry key="asset.type.Imgerror.hint">该路径错误</entry>
+	
+	
+	<!-- AbstractDevice -->
+	<entry key="asset.abstract.dynamic">扩展属性</entry>
+	<entry key="asset.abstract.name">名称</entry>
+	<entry key="asset.abstract.code">标签</entry>
+	<entry key="asset.abstract.type">安全域类型</entry>
+	<entry key="asset.abstract.using">使用状态</entry>
+	<entry key="asset.abstract.organName">所属单位</entry>
+	<entry key="asset.abstract.domainName">所属安全域</entry>
+	<entry key="asset.abstract.createTime">创建时间</entry>
+	<entry key="asset.abstract.chargeName">负责人</entry>
+	<entry key="asset.abstract.remarks">备注</entry>
+	<entry key="asset.abstract.notDb">无数据,请检查后在重新操作！</entry>
+	
+	<!-- Device -->
+	<entry key="asset.device.enviView">物理环境视图</entry>
+	<entry key="asset.device.domainView">安全域视图</entry>
+	<entry key="asset.device.infoView">信息系统视图</entry>
+	<entry key="asset.device.organView">行政区域视图</entry>
+	<entry key="asset.device.typeView">类型视图</entry>
+	<entry key="asset.device.mac">MAC地址</entry>
+	<entry key="asset.device.hardWare">设备硬件配置</entry>
+	<entry key="asset.device.softWare">主要软件</entry>
+	<entry key="asset.device.catTime">保修开始日期</entry>
+	<entry key="asset.device.deviceId">备份设备</entry>
+	<entry key="asset.device.keepPersonName">设备维护人</entry>
+	<entry key="asset.device.relevanceDevice">所关联的设备</entry>
+	<entry key="asset.device.cia">CIA</entry>
+	<entry key="asset.device.usePersonName">设备使用人</entry>
+	<entry key="device.listOrgans.chart.yAxisName">台数</entry>
+	<entry key="asset.device.envi">所属物理环境</entry>
+	<entry key="asset.device.deadline">保修到期时间</entry>
+	<entry key="asset.device.all">所有设备</entry>
+	<entry key="asset.device.virtual">虚拟设备</entry>
+	<entry key="asset.device.netType">网络设备</entry>
+	<entry key="asset.device.list.person">{0}负责{1}台设备</entry>
+	<entry key="asset.device.list.netType">网络设备{0}台</entry>
+	<entry key="asset.device.list.virtual">虚拟设备{0}台</entry>
+	<entry key="asset.device.person.export">{0}负责的设备列表</entry>
+	<entry key="asset.device.netType.export">网络设备列表</entry>
+	<entry key="asset.device.virtual.export">虚拟设备列表</entry>
+	<entry key="asset.device.organ.export">{0}的设备列表</entry>
+	<entry key="asset.device.export">设备导出</entry>
+	<entry key="asset.device.import">设备导入</entry>
+	<entry key="asset.device.net">网络属性</entry>
+	<entry key="asset.device.produ">厂商信息</entry>
+	<entry key="asset.device.model">设备型号</entry>
+	<entry key="asset.device.whetherSys">操作系统</entry>
+	<entry key="asset.device.handleSystem">操作系统名称</entry>
+	<entry key="asset.device.handleVersion">操作系统版本</entry>
+	<entry key="asset.device.producer">厂商名称</entry>
+	<entry key="asset.device.producerTel">厂商联系方式</entry>
+	<entry key="asset.device.produceTime">出厂日期</entry>
+	<entry key="asset.device.hasIp">网络设备</entry>
+	<entry key="asset.device.IpAddress">IP地址</entry>
+	<entry key="asset.device.masterId">虚拟机宿主</entry>
+	<entry key="asset.device.attention"> 人已关注</entry>
+	<!-- infoSystem -->
+	<entry key="asset.infoSystem.groupView">安全域视图</entry>
+	<entry key="asset.infoSystem.organView">行政区域视图</entry>
+	<entry key="asset.infoSystem.typeView">类型视图</entry>
+	<entry key="asset.infoSystem.levelView">级别视图</entry>
+	<entry key="asset.device.attention"> 人已关注</entry>
+	<entry key="infoSystem.listOrgans.chart.yAxisName">数量</entry>
+	<entry key="asset.infoSystem.organ.export">{0}信息系统列表</entry>
+	<entry key="asset.infoSystem.export">信息系统导出</entry>
+	<entry key="asset.infoSystem.import">信息系统导入</entry>
+	<entry key="asset.infoSystem.safeLeven">安全等级</entry>
+	<entry key="asset.infoSystem.duty">服务情况</entry>
+	<entry key="asset.infoSystem.onlineTime">上线时间</entry>
+	<entry key="asset.infoSystem.url">访问地址</entry>
+	<entry key="asset.infoSystem.type">信息系统类型</entry>
+	<entry key="asset.infoSystem.all">所有信息系统</entry>
+	<entry key="asset.infoSystem.connType">系统互联情况</entry>
+	<entry key="asset.infoSystem.conn.device">关联的设备</entry>
+	<entry key="asset.infoSystem.ishinge">是否关键</entry>
+	<entry key="asset.infoSystem.infoId">备份系统</entry>
+	
+	
+	<!-- AssetField -->
+	<entry key="asset.assetField.create">动态属性</entry>
+	<entry key="asset.assetField.name">字段名称</entry>
+	<entry key="asset.assetField.label">字段说明</entry>
+	<entry key="asset.assetField.fieldType">输入类型</entry>
+	<entry key="asset.assetField.hint">提示信息</entry>
+	<entry key="asset.assetField.required">必填项</entry>
+	<entry key="asset.assetField.validType">校验类型</entry>
+	<entry key="asset.assetField.defaultValue">默认值</entry>
+	<entry key="asset.assetField.dictValue">数据字典</entry>
+	<entry key="asset.assetField.order">顺序</entry>
+	<entry key="asset.assetField.preview">属性预览</entry>
+	<entry key="asset.assetField.create.hint"><![CDATA[您已经成功添加了名称为<STRONG>{0}</STRONG>的属性]]></entry>
+	<entry key="asset.assetField.create.alert">该设备类型下还没定义扩展属性。</entry>
+	<entry key="asset.field.root">动态属性</entry>
+	<entry key="asset.field.root.title">
+		<![CDATA[
+			<h3>说明</h3>
+			<div class='description-right'>根据实际需求的改变，可以对安全对象的属性进行扩展,如对安全设备添加系统管理员、安全管理员、安全审计员属性。</div>	
+		]]>	
+	</entry>
+	<entry key="asset.field.root.description">
+		<![CDATA[
+		<h5><strong>属性继承</strong></h5>
+		<p>按照设备类型的分类结构(见左边的树形结构)，子安全对象类型会自动继承父安全对象类型的所有字段，并能进行统一排序。</p>
+		
+		<h5><strong>快速预览</strong></h5>
+		<p>只要编辑完资产的属性字段，就能立刻生成快速预览页面，所见即所得。</p>
+		
+		<h5><strong>快速输入</strong></h5>
+		<p>输入的类型能够支持文本框、多行文本框、单选框、复选框、下拉框等，减轻用户输入负担，并能统一数据字典。</p>
+		
+		<h5><strong>校验</strong></h5>
+		<p>校验的类型支持整数、字符串、浮点数、IP、IPV6、EMAIL等，保障了输入的正确性。</p>
+		]]>
+	</entry>
+	
+	<!-- PhyEnvironment -->
+	<entry key="asset.envi.root">物理区域</entry>
+	<entry key="asset.envi.type">类型</entry>
+	
+	<!-- DeviceAction -->
+	<entry key="asset.aciton.type">操作原因</entry>
+	<entry key="asset.aciton.actTime">操作时间</entry>
+	<entry key="asset.aciton.userId">操作人编号</entry>
+	<entry key="asset.aciton.userName">操作人姓名</entry>
+	<entry key="asset.aciton.organName">操作人单位</entry>
+	<entry key="asset.aciton.remarks">操作说明</entry>
+	
+	<!-- AssetType -->
+	<entry key="asset.assetType.imgName">图片路径</entry>
+	<entry key="asset.assetType.imgNamevi">图片预览</entry>
+	<entry key="asset.assetType.create">新建设备类型</entry>
+	<entry key="asset.assetType.root">设备类型</entry>
+	<entry key="asset.assetType.rootTree">设备类型树</entry>
+	<entry key="asset.assetType.order">顺序</entry>
+	<entry key="asset.assetType.genjiedian">设备类型</entry>
+	<entry key="asset.assetType.root.title">
+		<![CDATA[
+			<strong class='description-left'>说明：</strong>
+			<div class='description-right'>设备类型编码在本系统内有效，若需要提供到其他平台中时，需要与平台编码合起来提供唯一标识。</div>	
+		]]>	
+	</entry>
+	<entry key="asset.assetType.root.description">
+		<![CDATA[
+		<h5><strong>属性继承</strong></h5>
+		<p>按照设备类型的分类结构(见左边的树形结构)，子安全对象类型会自动继承父安全对象类型的所有字段，并能进行统一排序。</p>
+		
+		<h5><strong>快速预览</strong></h5>
+		<p>只要编辑完资产的属性字段，就能立刻生成快速预览页面，所见即所得。</p>
+		
+		<h5><strong>快速输入</strong></h5>
+		<p>输入的类型能够支持文本框、多行文本框、单选框、复选框、下拉框等，减轻用户输入负担，并能统一数据字典。</p>
+		
+		<h5><strong>校验</strong></h5>
+		<p>校验的类型支持整数、字符串、浮点数、IP、IPV6、EMAIL等，保障了输入的正确性。</p>
+		]]>
+	</entry>
+	<!-- yb 类型名称 -->
+	<entry key="asset.assetType.service">业务系统</entry>
+	<entry key="asset.assetType.group">安全域</entry>
+	<entry key="asset.assetType.envi">机房</entry>
+	<entry key="asset.assetType.netDevice">网络设备</entry>
+	<entry key="asset.assetType.safe">安全系统</entry>
+	<entry key="asset.assetType.main">主机</entry>
+	<entry key="asset.assetType.os">操作系统</entry>
+	<entry key="asset.assetType.middle">中间件</entry>
+	<entry key="asset.assetType.app">应用软件</entry>
+	<entry key="asset.assetType.db">数据库服务器</entry>
+	<entry key="asset.assetType.save">存储设备</entry>
+	<entry key="asset.assetType.terminal">终端</entry>
+	<entry key="asset.assetType.tooltip.infoSystem">
+		<![CDATA[<span>{0}</span><br/><span>信息系统数量 : {1}套</span>]]>
+	</entry>
+	<entry key="asset.assetType.tooltip.group">
+		<![CDATA[
+			<span>{0}</span><br/><span>安全域数量 : {1}个</span>
+		]]>
+	</entry>
+	<entry key="asset.assetType.tooltip.device">
+		<![CDATA[
+			<span>{0}</span><br/><span>设备数量 : {1}台</span>
+		]]>
+	</entry>
+	
+	<!-- AssetGroup -->
+	<entry key="asset.group.organView">行政区域视图</entry>
+	<entry key="asset.group.typeView">类型视图</entry>
+	<entry key="asset.group.type">安全域类型</entry>
+	<entry key="asset.group.useState">使用状态</entry>
+	<entry key="asset.assetGroup.rootTree">安全域树</entry>
+	<entry key="asset.assetGroup.create">新建安全域</entry>
+	<entry key="asset.assetGroup.root">安全域</entry>
+	<entry key="asset.assetGroup.netType">网络类型</entry>
+	<entry key="asset.assetGroup.guardRank">防护等级</entry>
+	<entry key="asset.assetGroup.list.device">{0}的{1}台设备</entry>
+	<entry key="asset.assetGroup.list.info">{0}的{1}套信息系统</entry>
+	<entry key="asset.assetGroup.root.title">
+		<![CDATA[
+			<strong class='description-left'>说明：</strong>
+			<div class='description-right'>安全域的划分必须保证与业务类型相匹配，重点强调安全域划分的合理性。</div>	
+		]]>	
+	</entry>
+	<entry key="asset.assetGroup.root.description">
+		<![CDATA[
+		<h5><strong>访问边界</strong></h5>
+		<p>安全域是指同一环境内有相同或相似的安全保护需求、相互关联、相互信任、并具有相同的安全访问控制和边界控制策略的网络、系统、设备组成的逻辑区域。</p>
+		
+		<h5><strong>重点保护</strong></h5>
+		<p>随着业务的不断发展的计算机网络变得越来越复杂，将网络划分为不同的区域，对每个区域进行层次化地有重点的保护，是建立纵深防御安全系统的自然而有效的手段。</p>
+		]]>
+	</entry>
+
+	
+	<!-- DeviceFilter -->
+	<entry key="asset.deviceFilter.orderName">标题</entry>
+	<entry key="asset.deviceFilter.companyName">所属单位</entry>
+	<entry key="asset.deviceFilter.startTime">保修开始时间</entry>
+	<entry key="asset.deviceFilter.endTime">保修结束时间</entry>
+	<entry key="asset.deviceFilter.chargeName">责任人</entry>
+	<entry key="asset.deviceFilter.typeName">设备类型</entry>	
+	<entry key="asset.deviceFilter.relation">设备责任人与类型关系</entry>
+	<entry key="asset.deviceFilter.remindTime">提醒时间</entry>
+	<entry key="asset.devicefilter.noData">无数据显示</entry>
+	<entry key="asset.devicefilter.title">设备保修到期提醒</entry>
+	<entry key="asset.deviceFilter.content">
+		<![CDATA[
+			<h5><strong>尊敬的用户，您好！</strong></h5>
+			<p>当前您有{0}个设备保修期即将到期。</p>
+		]]>
+	</entry>
+	<entry key="asset.deviceFilter.countDevice1">在最新的保修到期提醒中，有</entry>
+	<entry key="asset.deviceFilter.countDevice2">个设备即将到期</entry>
+	<entry key="asset.deviceFilter.task">新增设备到期提醒任务</entry>
+	<entry key="asset.deviceFilter.taskList">到期提醒任务列表</entry>
+	<entry key="asset.devicefilter.deadTime">设备保修到期时间</entry>
+	
+	<!-- SecPass -->
+	<entry key="asset.secPass.notice.title">口令到期提醒</entry>
+	<entry key="asset.secPass.notice.content">
+		<![CDATA[
+		<h5><strong>尊敬的用户您好，</strong></h5>
+		<p>当前您有{0}条口令信息已到期，为保证您的账号安全，请及时进行修改操作！</p>
+		]]>
+	</entry>
+	<entry key="asset.secPass.assetName">设备名称</entry>
+	<entry key="asset.secPass.ip">IP地址</entry>
+	<entry key="asset.secPass.account">账户信息</entry>
+	<entry key="asset.secPass.passWord">密码</entry>
+	<entry key="asset.secPass.dueDate">到期日期</entry>
+	<entry key="asset.secPass.updateDate">口令更新时间</entry>
+	<entry key="asset.secPass.alert">到期提醒（天）</entry>
+	<entry key="asset.secPass.remark">备注</entry>
+	<entry key="asset.secPass.due"> 已到期</entry>
+	<entry key="asset.secPass.past"> 已过期</entry>
+	<entry key="asset.secPass.history">历史记录</entry>
+	<entry key="asset.secPass.create.hint"><![CDATA[您已经成功添加了账号为<STRONG>{0}</STRONG>的口令信息]]></entry>
+	<entry key="asset.secPass.update.hint"><![CDATA[您已经成功更新了账号为<STRONG>{0}</STRONG>的口令信息]]></entry>
+
+	<!-- json -->
+	<entry key="infoLevelJson">
+		[
+			{"text":"一级","id":101,"value":1,"parent":1},
+			{"text":"二级","id":102,"value":2,"parent":1},
+			{"text":"三级","id":103,"value":3,"parent":1},
+			{"text":"四级","id":104,"value":4,"parent":1},
+			{"text":"五级","id":105,"value":5,"parent":1},
+			{"text":"安全等级","id":1,"state":{"opened":true},"parent":"#"}
+		]
+	</entry>
+	
+	<!-- 安全人员 -->
+	<entry key="melon.interStaff.create.hint"><![CDATA[您已经成功添加了姓名为<STRONG>{0}</STRONG>的人员信息]]></entry>
+	<entry key="melon.interStaff.update.hint"><![CDATA[您已经成功更新了姓名为<STRONG>{0}</STRONG>的人员信息]]></entry>
+	<entry key="melon.staff.outer.hint"><![CDATA[系统共有外部安全人员<br/>{0} <span>人</span>]]></entry>
+	<entry key="melon.staff.inter.hint"><![CDATA[系统共有内部安全人员<br/>{0} <span>人</span>]]></entry>
+	<entry key="melon.staff.organ.hint">只能选择单位</entry>
+	<entry key="melon.staff.department.hint">请先选择单位</entry>
+	<entry key="melon.staff.person.hint">请选择人员</entry>
+	<entry key="melon.staff.inter.ylabel">专职岗位人数</entry>
+	<entry key="melon.staff.inter.chart">单位专职岗位人数统计图</entry>
+	<entry key="melon.staff.outer.chart">外部人员分布图</entry>
+	<entry key="melon.staff.title">安全人员概览</entry>
+	<entry key="melon.staff.inter">内部人员</entry>
+	<entry key="melon.staff.interTable">内部人员列表</entry>
+	<entry key="melon.staff.outer">外部人员</entry>
+	<entry key="melon.staff.outerTable">外部人员列表</entry>
+	<entry key="melon.interStaff.fullJob.hint">安全管理员和安全审计员不能同时选择</entry>
+	<entry key="melon.interStaff.name">姓名</entry>
+	<entry key="melon.interStaff.code">人员编号</entry>
+	<entry key="melon.interStaff.number">工号</entry>
+	<entry key="melon.interStaff.sex">性别</entry>
+	<entry key="melon.interStaff.birthday">出生日期</entry>
+	<entry key="melon.interStaff.fullJob">专职岗位（A）</entry>
+	<entry key="melon.interStaff.partJob">兼职岗位（B）</entry>
+	<entry key="melon.interStaff.organ">单位</entry>
+	<entry key="melon.interStaff.department">所辖部门</entry>
+	<entry key="melon.interStaff.chargePerson">主管上级</entry>
+	<entry key="melon.interStaff.officeDate">任职时间</entry>
+	<entry key="melon.interStaff.title">职级</entry>
+	<entry key="melon.interStaff.techTitle">技术职称</entry>
+	<entry key="melon.interStaff.tel">固话</entry>
+	<entry key="melon.interStaff.phone">手机</entry>
+	<entry key="melon.interStaff.mail">邮箱</entry>
+	<entry key="melon.interStaff.lecturer">培训讲师</entry>
+	<entry key="melon.interStaff.expert">安全专家</entry>
+	<entry key="melon.interStaff.projectTeam">总局项目组</entry>
+	<entry key="melon.interStaff.techSkill">技术技能</entry>
+	<entry key="melon.interStaff.otherSkill">其他技术技能</entry>
+	<entry key="melon.interStaff.security">保密协议</entry>
+	<entry key="melon.interStaff.historyJob">历史岗位</entry>
+	<entry key="melon.interStaff.examine">任职考试</entry>
+	<entry key="melon.interStaff.certificate">培训证书</entry>
+	<entry key="melon.interStaff.otherCertificate">其他证书</entry>
+	<entry key="melon.interStaff.paperNum">论文数量</entry>
+	<entry key="melon.interStaff.profession">专业</entry>
+	<entry key="melon.interStaff.education">第一学历</entry>
+	<entry key="melon.interStaff.remark">备注</entry>
+	<entry key="melon.interStaff.exportAll">内部人员列表</entry>
+	<entry key="melon.interStaff.notData">无数据,请检查后重新操作！</entry>
+	
+	<entry key="melon.staff.basic">基本信息</entry>
+	<entry key="melon.staff.station">岗位信息</entry>
+	<entry key="melon.outerStaff.name">姓名</entry>
+	<entry key="melon.outerStaff.code">人员编号</entry>
+	<entry key="melon.outerStaff.number">工号</entry>
+	<entry key="melon.outerStaff.sex">性别</entry>
+	<entry key="melon.outerStaff.birthday">出生日期</entry>
+	<entry key="melon.outerStaff.fullJob">岗位</entry>
+	<entry key="melon.outerStaff.companyName">所辖公司</entry>
+	<entry key="melon.outerStaff.department">管理部门</entry>
+	<entry key="melon.outerStaff.chargePerson">内部管理人员</entry>
+	<entry key="melon.outerStaff.officeDate">上岗时间</entry>
+	<entry key="melon.outerStaff.tel">固话</entry>
+	<entry key="melon.outerStaff.phone">手机</entry>
+	<entry key="melon.outerStaff.mail">邮箱</entry>
+	<entry key="melon.outerStaff.security">保密协议</entry>
+	<entry key="melon.outerStaff.examine">任职考试</entry>
+	<entry key="melon.outerStaff.certificate">资质证书</entry>
+	<entry key="melon.outerStaff.otherCertificate">其他证书</entry>
+	<entry key="melon.outerStaff.maintainAutor">维护权限</entry>
+	<entry key="melon.outerStaff.project">参与项目</entry>
+	<entry key="melon.outerStaff.work">主要工作</entry>
+	<entry key="melon.outerStaff.otherWork">其他工作</entry>
+	<entry key="melon.outerStaff.remark">备注</entry>
+	<entry key="melon.outerStaff.exportAll">外部人员列表</entry>
+	<entry key="melon.outerStaff.notData">无数据,请检查后重新操作！</entry>
+	<entry key="melon.staff.secAttach">报名协议附件</entry>
+	<entry key="melon.staff.cerAttach">证书附件</entry>
+	<entry key="melon.staff.paperAttach">论文附件</entry>
+</properties>

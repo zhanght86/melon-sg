@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="elasticsearch.*" extends="desktop.default">
+    	<put-attribute name="body" value="/WEB-INF/views/melon/elasticsearch/{1}.jsp" cascade="true"/>
+    </definition>
+	
+	<!-- melon包路径下的所有模板配置 -->
+	<!-- melon.commons下的配置 -->
+    <definition name="commons.ajaxfile.*" extends="desktop.default">
+    	<put-attribute name="body" value="/WEB-INF/views/melon/commons/ajaxfile/{1}.jsp" />
+    </definition>
+    
+    <definition name="commons.*.list" extends="desktop.list">
+       <put-attribute name="body" value="/WEB-INF/views/melon/commons/{1}/list.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="commons.*.edit" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/commons/{1}/edit.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="commons.*.show" extends="desktop.show">
+       <put-attribute name="body" value="/WEB-INF/views/melon/commons/{1}/show.jsp" cascade="true"/>
+    </definition>
+    
+	<!-- melon.security下配置 -->
+	<definition name="security.*.edit" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/security/{1}/edit.jsp" cascade="true"/>
+    </definition>
+    
+	<definition name="security.resource.tree" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/security/resource/tree.jsp" cascade="true"/>
+    </definition>
+    
+    <!-- 新建页面 -->
+    <definition name="security.*.create" extends="desktop.create">
+       <put-attribute name="body" value="/WEB-INF/views/melon/security/{1}/create.jsp" cascade="true"/>
+    </definition>
+    
+    <!-- 更新页面 -->
+    <definition name="security.*.update" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/security/{1}/update.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="security.*.show" extends="desktop.show">
+       <put-attribute name="body" value="/WEB-INF/views/melon/security/{1}/show.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="security.*.list" extends="desktop.list">
+       <put-attribute name="body" value="/WEB-INF/views/melon/security/{1}/list.jsp" cascade="true"/>
+    </definition>
+    
+    <!-- 提供满足条件所有单位信息 -->
+    <definition name="security.account.listOrgans" extends="desktop.show">
+       <put-attribute name="body" value="/WEB-INF/views/melon/security/account/listOrgans.jsp" cascade="true"/>
+    </definition>
+    
+    <!-- 按单位显示用户 -->
+    <definition name="security.account.listAccountByOrgan" extends="desktop.show">
+       <put-attribute name="body" value="/WEB-INF/views/melon/security/account/listAccountByOrgan.jsp" cascade="true"/>
+    </definition>
+    
+    <!-- 显示在线用户 -->
+    <definition name="security.account.online" extends="desktop.show">
+       <put-attribute name="body" value="/WEB-INF/views/melon/security/account/online.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="security.account.resetPass" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/security/account/resetPass.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="security.account.resetSecPass" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/security/account/resetSecPass.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="security.login.*" extends="desktop.common">
+       <put-attribute name="body" value="/WEB-INF/views/melon/security/login/{1}.jsp" cascade="true"/>
+    </definition>
+          
+    <!-- melon.organ下配置 -->
+    <!-- 组织机构管理 -->
+    <definition name="organ.organization.home" extends="desktop.show">
+       <put-attribute name="body" value="/WEB-INF/views/melon/organ/organization/home.jsp" cascade="true"/>
+    </definition>
+    
+	<definition name="organ.organization.tree" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/organ/organization/tree.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="organ.organization.count" extends="desktop.list">
+       <put-attribute name="body" value="/WEB-INF/views/melon/organ/organization/count.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="organ.organization.show" extends="desktop.show">
+       <put-attribute name="body" value="/WEB-INF/views/melon/organ/organization/show.jsp" cascade="true"/>
+    </definition>
+    
+    <!-- melon.system下的配置 -->
+	<definition name="system.home" extends="desktop.default">
+       <put-attribute name="body" value="/WEB-INF/views/melon/system/home.jsp" cascade="true"/>
+    </definition>
+ 
+    <definition name="system.*.list" extends="desktop.list">
+       <put-attribute name="body" value="/WEB-INF/views/melon/system/{1}/list.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="system.*.show" extends="desktop.show">
+       <put-attribute name="body" value="/WEB-INF/views/melon/system/{1}/show.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="system.*.edit" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/system/{1}/edit.jsp" cascade="true"/>
+    </definition>
+    
+    <!-- system下的特殊配置 -->
+    <definition name="system.logger.listUser" extends="desktop.list">
+       <put-attribute name="body" value="/WEB-INF/views/melon/system/logger/listUser.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="system.logger.showUser" extends="desktop.list">
+       <put-attribute name="body" value="/WEB-INF/views/melon/system/logger/showUser.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="system.logger.activeUser" extends="desktop.list">
+       <put-attribute name="body" value="/WEB-INF/views/melon/system/logger/activeUser.jsp" cascade="true"/>
+    </definition>
+    
+
+    <!-- melon.workflow下的配置 -->
+    <definition name="workflow.*.create" extends="desktop.create">
+       <put-attribute name="body" value="/WEB-INF/views/melon/workflow/{1}/create.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="workflow.*.list" extends="desktop.list">
+       <put-attribute name="body" value="/WEB-INF/views/melon/workflow/{1}/list.jsp" cascade="true"/>
+    </definition>
+    
+     <definition name="workflow.*.show" extends="desktop.show">
+       <put-attribute name="body" value="/WEB-INF/views/melon/workflow/{1}/show.jsp" cascade="true"/>
+    </definition>
+    
+    <!-- 平台基本包 数据字典 -->
+    <!-- 文件上穿下载 -->
+	<definition name="base.dictionary.tree" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/base/dictionary/tree.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="base.*.edit" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/base/{1}/edit.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="base.*.show" extends="desktop.show">
+       <put-attribute name="body" value="/WEB-INF/views/melon/base/{1}/show.jsp" cascade="true"/>
+    </definition>
+    
+     <definition name="base.*.list" extends="desktop.list">
+       <put-attribute name="body" value="/WEB-INF/views/melon/base/{1}/list.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="base.*.download" extends="desktop.list">
+       <put-attribute name="body" value="/WEB-INF/views/melon/base/{1}/download.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="base.*.upload" extends="desktop.default">
+       <put-attribute name="body" value="/WEB-INF/views/melon/base/{1}/upload.jsp" cascade="true"/>
+    </definition>
+    
+    
+</tiles-definitions>

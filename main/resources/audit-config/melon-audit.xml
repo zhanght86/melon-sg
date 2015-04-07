@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<auditConfig>
+	
+	<!-- module 代表模块, name写包名 --> 
+	<!-- 系统模块操作日志的配置 --> 
+	<module name="system" title="系统">
+		<!-- 服务类注册 -->
+		<!-- class的name属性为服务器类 ，method的name为操作方法-->
+		<!-- 用户管理 -->
+		<class name="secfox.soc.melon.security.service.impl.AccountServiceImpl" title="用户管理">
+			<method name="findPage" title="查询用户列表" />
+			<method name="resetPassword" title="重置密码" />
+		</class>
+		
+		<!-- 菜单资源管理 -->
+		<class name="secfox.soc.melon.security.service.impl.MenuResourceServiceImpl" title="菜单资源管理">
+			<method name="findTree" title="查询菜单树" />
+			<method name="persist" title="新建菜单资源" />
+			<method name="remove" title="删除菜单资源" />
+			<method name="merge" title="更新菜单资源" />
+		</class>
+		
+	</module>
+
+</auditConfig>

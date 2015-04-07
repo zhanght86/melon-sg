@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<!-- melon包路径下的所有模板配置 -->
+	<!-- 个人展示主页 -->
+    <definition name="indicator.main" extends="desktop.default">
+       <put-attribute name="body" value="/WEB-INF/views/melon/indicator/home.jsp" cascade="true"/>
+    </definition>
+	
+    <!-- 指标配置 -->
+	<definition name="indicator.*.tree" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/indicator/{1}/tree.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="indicator.*.create" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/indicator/{1}/create.jsp" cascade="true"/>
+    </definition>
+    
+     <definition name="indicator.*.list" extends="desktop.list">
+       <put-attribute name="body" value="/WEB-INF/views/melon/indicator/{1}/list.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="indicator.*.edit" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/indicator/{1}/edit.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="indicator.*.show" extends="desktop.show">
+       <put-attribute name="body" value="/WEB-INF/views/melon/indicator/{1}/show.jsp" cascade="true"/>
+    </definition> 
+</tiles-definitions>

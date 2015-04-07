@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd">
+	
+	<!-- melon架包的NamedQuery -->
+	<named-query name="account.groupByOrgan">
+		<description>按单位对人员进行分组</description>
+		<query>
+			select organ.id, organ.name, organ.principal, organ.prinTel, count(acc)
+			from Organization organ, Account acc 
+			where organ.id = acc.companyId 
+			and organ.type = 1
+			group by organ.id, organ.name, organ.principal, organ.prinTel 
+			order by organ.id asc
+		</query>
+	</named-query>
+	
+	<named-query name="logger.findByUserId">
+		<description>查询某人的当天操作日志</description>
+		<query>
+			select logger 
+			from Logger logger 
+			where logger.operator.userId = :id 
+			and logger.occurTime between :startTime and :endTime
+			order by logger.occurTime desc
+		</query>
+	</named-query>
+	
+	<named-query name="logger.findLoggerByUserId">
+		<description>查询所有用户</description>
+		<query>
+			select logger 
+			from Logger logger 
+			where logger.operator.userId = :id 
+			order by logger.occurTime desc
+		</query>
+	</named-query>
+	
+	<named-query name="portalView.findViews">
+		<description>查询所有的视图</description>
+		<query>
+			select view, mr.shortName, mr.url 
+			from PortalView view, MenuResource mr 
+			where view.layout.id = :layoutId
+			and view.menuId = mr.id 
+			order by view.xpos asc
+		</query>
+	</named-query>
+	
+</entity-mappings>

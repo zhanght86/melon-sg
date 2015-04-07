@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<templates>
+	<template id="ajaxGrid">
+		<description>GridHTML模板</description>
+		<content>
+			<![CDATA[
+				<table id="@{el}"></table>
+				@if{hasPages}<div id="@{pager}"></div>
+				@end{}
+				@if{!scriptSelf}
+				<script type="text/javascript">
+					var @{id}Grid;
+					$(document).ready(function() {
+						var @{id}GridConfig = @{configs};
+						@{id}Grid = new AjaxGrid(@{id}GridConfig);
+						@{id}Grid.render();
+					});
+				</script>
+				@end{}
+			]]>
+		</content>
+	</template>
+	
+	<template id="ajaxTree">
+		<description>ajaxTree格式化内容</description>
+		<content>
+			<![CDATA[
+			<div id="@{el}"></div>
+			@if{!scriptSelf}
+			<script type="text/javascript">
+				var @{id}Tree;
+				$(document).ready(function() {
+					var @{id}TreeConfig = @{configs};
+					@{id}Tree = new AjaxTree(@{id}TreeConfig);
+					@{id}Tree.render();
+				});
+			</script>
+			@end{}
+			]]>
+		</content>
+	</template>
+	
+	<template id="dateHelperScripts">
+		<description>日期控件的模板</description>
+		<content>
+			<![CDATA[
+			@if{!scriptSelf}
+			<script type="text/javascript">
+				$(document).ready(function() {
+					(new DateHelper(@{configs})).render();
+				});
+			</script>
+			@end{}
+			]]>
+		</content>
+	</template>
+	
+	<template id="ajaxSelectScripts">
+		<description>AJAX选择模板</description>
+		<content>
+			<![CDATA[
+			@if{!scriptSelf}
+			<script type="text/javascript">
+				$(document).ready(function() {
+					(new AjaxSelect(@{configs})).render();
+				});
+			</script>
+			@end{}
+			]]>
+		</content>
+	</template>
+	
+	<template id="ajaxFileUploadTag">
+		<description>AJAX文件上传模板</description>
+		<content>
+			<![CDATA[
+			<div class="ajax-file-upload" id="FU_@{domainId}">
+				<a class="btn fileinput-button">
+				    <div class="file-plus"></div>
+				    <span>@{buttonText}</span>
+				    <input type="file" name="files[]" multiple/>
+				</a>
+				
+				<div class="process-bar-container" style="display : none;">
+					<div class="progress" >
+					    <div class="progress-bar progress-bar-success"></div>
+					</div>
+					<span class="process-percent"></span>
+				</div>
+				
+				<div class="file-item-group">
+					@foreach{item : ajaxFiles} 
+					<div class="file-item">
+						<a class="file-link" href="@{item.downloadUrl}">@{item.name}</a>
+						<span class="file-size">@{item.totalHint}</span>
+						<a class="file-remove-icon" href="@{item.removeUrl}"></a>
+						<div class="attach-icon"></div>
+					</div>
+					@end{}
+				</div>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function() {
+					(new FileUpload({
+						contextPath : "@{contextPath}",
+						domainId : "@{domainId}"
+					})).render();
+				});
+			</script>
+			]]>
+		</content>
+	</template>
+	
+	<template id="reportFileUploadTag">
+		<description>报表文件上传模板</description>
+		<content>
+			<![CDATA[
+			<div class="ajax-file-upload" id="FU_@{domainId}">
+				<a class="btn fileinput-button">
+				    <div class="file-plus"></div>
+				    <span>@{buttonText}</span>
+				    <input type="file" name="files[]" multiple/>
+				</a>
+				
+				<div class="process-bar-container" style="display : none;">
+					<div class="progress" >
+					    <div class="progress-bar progress-bar-success"></div>
+					</div>
+					<span class="process-percent"></span>
+				</div>
+				
+				<label class="form-hint" >报表文件单次上传</label>
+				
+				<div class="file-item-group">
+					@foreach{item : reportFiles} 
+					<div class="file-item">
+						<a class="file-link" href="@{item.downloadUrl}">@{item.name}</a>
+						<span class="file-size">@{item.totalHint}</span>
+						<a class="file-remove-icon" href="@{item.removeUrl}"></a>
+						<div class="attach-icon"></div>
+					</div>
+					@end{}
+				</div>
+			</div>
+			<script type="text/javascript">
+				var fileUpload;
+				$(document).ready(function() {
+				fileUpload = new FileUpload({
+						contextPath : "@{contextPath}",
+						url : "report/file/upload?domainId=",
+						multi : @{multi},
+						domainId : "@{domainId}"
+					});
+				fileUpload.render();
+				});
+			</script>
+			]]>
+		</content>
+	</template>
+	
+	<template id="sectionTag">
+		<description>HTML分段显示模板</description>
+		<content>
+			<![CDATA[
+			<h4  class="section-heading" id="@{id}">@{title}</h4>
+			@if{remarks!=null}
+			<div class="section-description">@{remarks}</div>
+			@end{}
+			<section class="section-body">
+			@{body}
+			</section>
+			]]>
+		</content>
+	</template>
+	
+	<template id="dropdownTag">
+		<description>下拉框显示模板</description>
+		<content>
+			<![CDATA[
+				<div class="@{cssClass}" style="position: relative;" id="@{id}">
+					<button class="btn btn-default dropdown-toggle btn-block" type="button" id="@{menuId}" data-toggle="dropdown">
+						<div class="pull-left dropdown-text">
+							@{value}
+						</div>
+						<div class="pull-right">
+							<span class="glyphicon glyphicon-chevron-down"></span>
+						</div>
+					</button>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="@{menuId}" style="width:100%;">
+						@{menus}
+					</ul>
+				</div>
+			]]>
+		</content>
+	</template>
+</templates>

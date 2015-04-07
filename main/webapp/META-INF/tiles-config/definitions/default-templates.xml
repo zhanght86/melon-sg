@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	
+	<!-- 模板分为通用模板,后台模板以及前台模板 -->
+	<!-- 空模块 -->
+	<definition name="desktop.nocolor" template="/META-INF/tiles-config/templates/desktop-nocolor.jsp"/>
+	<!-- 空模块 -->
+	<definition name="desktop.empty" template="/META-INF/tiles-config/templates/desktop-empty.jsp"/>
+	
+	<!-- 通用模板, 所有的HTML视图都必须继承此模板-->
+	<definition name="desktop.common" template="/META-INF/tiles-config/templates/desktop-common.jsp"/>
+	
+	<!-- 后台默认的模板文件 -->
+	<definition name="desktop.default" template="/META-INF/tiles-config/templates/desktop-default.jsp" preparer="desktopViewPreparer"/>
+	
+	<!-- 登录前的模版 -->
+	<definition name="desktop.gate" template="/META-INF/tiles-config/templates/desktop-gate-default.jsp" preparer="desktopViewPreparer"/>
+	
+	<!-- 默认的编辑页面 -->	
+	<definition name="desktop.edit" extends="desktop.default">
+       <put-attribute name="body" value="/META-INF/tiles-config/templates/desktop-edit.jsp"/>
+    </definition>
+    
+    <!-- 默认的创建页面 -->
+    <definition name="desktop.create" extends="desktop.default">
+       <put-attribute name="body" value="/META-INF/tiles-config/templates/desktop-edit.jsp"/>
+    </definition>
+    
+    <!-- 默认的更新页面 -->
+    <definition name="desktop.update" extends="desktop.default">
+       <put-attribute name="body" value="/META-INF/tiles-config/templates/desktop-edit.jsp"/>
+    </definition>
+    
+    <!-- 默认的明细页面 -->	
+    <definition name="desktop.show" extends="desktop.default">
+       <put-attribute name="body" value="/META-INF/tiles-config/templates/desktop-show.jsp"/>
+    </definition>
+    
+    <!-- 默认的列表页面 -->	
+    <definition name="desktop.list" extends="desktop.default">
+       <put-attribute name="body" value="/META-INF/tiles-config/templates/desktop-list.jsp"/>
+    </definition>
+	
+	<!-- 错误页面视图 -->
+	<definition name="errors.*" extends="tiles.default">
+		<put-attribute name="body" value="/WEB-INF/views/errors/{1}.jsp"/>
+	</definition>
+	
+</tiles-definitions>

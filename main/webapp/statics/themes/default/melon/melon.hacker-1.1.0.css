@@ -1,0 +1,5 @@
+.primary-menu-group a.primary-menu-item  span.menu-item-focus{
+	background: url('images/menu-primary-focus.png') repeat-x;
+	color : #fff;
+	height : 47px;
+}

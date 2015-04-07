@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd">
+	
+	<!-- melon架包的NamedQuery -->
+	
+	<!-- device -->		
+	<named-query name="device.groupByOrgan">
+		<description>设备分组查询</description>
+		<query>
+			select a.organName,
+				   count(a.id),
+				   sum(case when a.virtual is true then 1 
+				   	        else 0 
+				   	   end),
+				   round(( sum(case when a.using='1' then 1 
+				   	        else 0 
+				   	   end)/count(a.id))*100,2) || '%',
+				   a.organId 
+			from Device a, Organization organ
+			where a.organId = organ.id 
+			group by a.organName,a.organId
+			order by a.organId ASC
+		</query>
+	</named-query>
+	
+	<!-- infoSystem -->
+	<named-query name="infoSystem.groupByOrgan">
+		<description>信息系统分组查询</description>
+		<query>
+			select a.organName,
+				   count(a.id),
+				   round(( sum(case when a.using='1' then 1 
+				   	        else 0 
+				   	   end)/count(a.id))*100,2) || '%',
+				   a.organId  
+			from InfoSystem a, Organization organ
+			where a.organId = organ.id 
+			group by a.organName,a.organId
+			order by a.organId ASC
+		</query>
+	</named-query>
+	
+	<named-query name="info.findByRelation">
+		<description>根据安全域获取信息系统</description>
+		<query>
+			select info from InfoSystem info 
+			where info.id in (select relation.assetId
+						from GroupRelation relation
+						where relation.type = '1' and relation.groupId = :groupId
+						group by relation.assetId)
+		</query>
+	</named-query>
+	
+	<named-query name="device.findByRelation">
+		<description>根据安全域获取设备</description>
+		<query>
+			select device from Device device 
+			where device.id in (select relation.assetId
+						from GroupRelation relation
+						where relation.type = '0' and relation.groupId = :groupId
+						group by relation.assetId)
+		</query>
+	</named-query>
+	
+	<!-- groupRelation -->
+	<named-query name="group.sumByDevice">
+		<description>安全域里分别有设备多少个</description>
+		<query>
+			select assetGroup.id,assetGroup.name,count(device.id) 
+			from GroupRelation relation,AssetGroup assetGroup,Device device 
+			where relation.groupId = assetGroup.id
+			and relation.assetId = device.id
+			group by assetGroup.id,assetGroup.name
+		</query>
+	</named-query>
+	
+	<!-- groupRelation -->
+	<named-query name="group.sumBySys">
+		<description>安全域里分别有信息系统多少个</description>
+		<query>
+			select assetGroup.id,assetGroup.name,count(infoSystem.id) 
+			from GroupRelation relation,AssetGroup assetGroup,InfoSystem infoSystem 
+			where relation.groupId = assetGroup.id
+			and relation.assetId = infoSystem.id
+			group by assetGroup.id,assetGroup.name
+		</query>
+	</named-query>
+	
+	
+	<!-- assetGroup -->
+	<named-query name="group.byAssetID">
+		<description>根据设备id或信息系统id获取安全域</description>
+		<query>
+			select assetGroup
+			from GroupRelation relation,AssetGroup assetGroup 
+			where relation.groupId = assetGroup.id 
+			and relation.assetId = :assetId 
+			and relation.type = :type
+		</query>
+	</named-query>
+	
+	<!-- assetFilter -->
+	<named-query name="asset.findList">
+		<description>获取设备提醒信息</description>
+		<query>
+			select deviceFilter
+			from DeviceFilter deviceFilter 
+			order by deviceFilter.remindTime desc
+		</query>
+	</named-query>
+	
+	<!-- deviceGroupAnDevicCount -->
+	<named-query name="asset.groupdeviCount">
+		<description>根据安全域获取设备总条数</description>
+		<query>
+			select count(*)
+			from GroupRelation gdi,Device  de
+			where gdi.type = 0 and gdi.assetId = de.id
+		</query>
+	</named-query>
+	
+	<named-query name="asset.findTask">
+		<description>根据提醒时间查找当天任务</description>
+		<query>
+			select d.id, d.creator.userId
+			from DeviceFilter d
+			where d.remindTime = :remindTime
+			group by d.creator.userId,d.id
+		</query>
+	</named-query>
+	
+</entity-mappings>

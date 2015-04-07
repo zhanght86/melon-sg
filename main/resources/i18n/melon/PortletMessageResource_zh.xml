@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>commons.portlet相关的国际化文件</comment>
+	<entry key="commons.portlet.update.hint">更新成功</entry>
+	<entry key="commons.portlet.create.hint">添加成功</entry>
+	<entry key="commons.portlet.remove.hint">删除成功！</entry>
+	<entry key="commons.portlet.type">分类</entry>
+	<entry key="commons.portlet.order">顺序</entry>
+	<entry key="commons.portlet.name">名称</entry>
+	<entry key="commons.portlet.url">请求地址</entry>
+	<entry key="commons.portlet.remarks">描述信息</entry>
+	<entry key="commons.portlet.minHeight">最小高度</entry>
+	<entry key="commons.portlet.minWidth">最小宽度</entry>
+	<entry key="commons.portlet.layout.hint">提示：通过拖拽可以改变它们的先后顺序</entry>
+</properties>

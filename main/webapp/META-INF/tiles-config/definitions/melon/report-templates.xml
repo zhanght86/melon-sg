@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	
+    <!-- 报表的配置 -->
+    
+    <!-- 个人展示主页 -->
+    <definition name="report.home" extends="desktop.default">
+       <put-attribute name="body" value="/WEB-INF/views/melon/report/home.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="report.edit" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/report/edit.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="report.list" extends="desktop.list">
+       <put-attribute name="body" value="/WEB-INF/views/melon/report/list.jsp" cascade="true"/>
+    </definition>
+    
+</tiles-definitions>

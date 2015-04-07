@@ -1,0 +1,20 @@
+
+<p>
+  <div class="row">
+    <div class="container-fluid main">
+      <div class="kibana-container container">
+        <div class="span12">
+          <h1>链接失败</h1>
+
+            <h5>可能存在的问题 #1: Elasticsearch服务器已关闭或者无法链接</h5>
+                                    造成这种情况的原因可能是网络中断或者Elasticsearch程序错误。如果您已经执行了查询操作，有可能是程序内存溢出造成链接失败。请通过Elasticsearch的日志查找内存溢出问题。
+            <h5>可能存在的问题 #2: 运行Elasticsearch 1.4或者更高版本</h5>
+            Elasticsearch 1.4版本安全设置阻止了Kibana的的链接。 您需要在您的<i>elasticsearch.yml</i>设置<i>http.cors.allow-origin</i>项，配置kibana正确的协议、主机名以及端口号（如果不是默认80）。 例如, <i>http://mycompany.com:8080</i>, 错误写法<i>http://mycompany.com:8080/kibana</i>。
+
+            <h5>如果您已经解决链接问题，请点击返回或者主页按钮。</h5>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</p>

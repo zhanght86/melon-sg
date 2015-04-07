@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>melon.system相关的国际化文件</comment>
+	
+	<entry key="system.logger.operator">操作人</entry>
+	<entry key="system.logger.showUser">{0}今日操作记录</entry>
+	<entry key="system.logger.time">操作时间</entry>
+	<entry key="system.logger.result">操作结果</entry>
+	<entry key="system.logger.module">所属模块</entry>
+	<entry key="system.logger.clazz">所属功能</entry>
+	<entry key="system.logger.function">具体操作</entry>
+	<entry key="system.logger.ip">操作IP</entry>
+	<entry key="system.logger.counts">操作次数</entry>
+	<entry key="system.logger.endTime">最后操作时间</entry>
+	<entry key="system.logger.startTime">开始操作时间</entry>
+	<entry key="system.logger.num">序号</entry>
+	<entry key="system.logger.more">所有日志</entry>
+	<entry key="system.logger.lastFunction">最后操作</entry>
+	<entry key="system.logger.count">今日统计</entry>
+	<entry key="system.logger.ative">活跃用户</entry>
+	<entry key="system.logger.back">返回</entry>
+	<entry key="system.logger.notData">无数据,请检查后重新操作！</entry> 
+	<entry key="system.logger.export">今日操作日志</entry> 
+	<entry key="system.logger.Notlist.hint">暂无执行轨迹</entry>
+	
+	<entry key="system.globalConfig.info">信息配置</entry>
+	<entry key="system.globalConfig.indus">行业配置</entry>
+	<entry key="system.globalConfig.other">其他配置</entry>
+	
+	
+	<entry key="system.globalConfig.organName">组织机构名称</entry>
+	<entry key="system.globalConfig.servicer">支持人员</entry>
+	<entry key="system.globalConfig.serviceTel">支持电话</entry>
+	<entry key="system.globalConfig.serviceMail">支持邮箱</entry>
+	<entry key="system.globalConfig.systemMail">系统邮箱</entry>
+	<entry key="system.globalConfig.systemHost">邮箱域名</entry>
+	<entry key="system.globalConfig.systemMailPassWord">邮箱密码</entry>
+	<entry key="system.globalConfig.serviceTel">支持电话</entry>
+	<entry key="system.globalConfig.serviceMail">支持邮箱</entry>
+	<entry key="system.globalConfig.organ">国税总局</entry>
+	<entry key="system.globalConfig.attributes">附加属性</entry>
+	<entry key="system.globalConfig.attributes.hint">属性名称必须填写，否则属性添加失败！</entry>
+	<entry key="system.globalConfig.attributes.key">属性名称</entry>
+	<entry key="system.globalConfig.attributes.value">属性值</entry>
+	<entry key="system.globalConfig.business">行业类别</entry>
+	<entry key="system.globalConfig.passStrength">密码强度</entry>
+	<entry key="system.globalConfig.security">系统安全</entry>
+	<entry key="system.globalConfig.open">系统开放时间</entry>
+	<entry key="system.globalConfig.ip">系统开放IP</entry>
+	<entry key="system.globalConfig.locked">帐号锁定（分）</entry>
+	<entry key="system.globalConfig.validity">帐号有效期（天）</entry>
+	<entry key="system.globalConfig.try">登录尝试次数</entry>
+	<entry key="chart.logger.title">今日用户操作分布图</entry>
+	
+	<entry key="system.calendar.workday">工作日</entry>
+	<entry key="system.calendar.holiday">休息日</entry>
+	<entry key="system.calendar.setWorkDay">将休息日改为工作日</entry>
+	<entry key="system.calendar.setHoliDay">将工作日改为休息日</entry>
+	<entry key="system.calendar.title">工作日安排</entry>
+	<entry key="system.calendar.work.hint">提示信息:将{0}设置为工作日</entry>
+	<entry key="system.calendar.rest.hint">提示信息:将{0}设置为休息日</entry>
+	
+	<entry key="system.cpu">CPU利用率</entry>
+	<entry key="system.memory">内存利用率</entry>
+	<entry key="system.home.roleName">{0}数量偏少</entry>
+	
+	<entry key="system.home.title">系统管理</entry>
+	<entry key="system.home.desc">提供了面向自身的维护、实施、配置、监控、审计等管理功能，能支持三权分立、日志审计、工作日历等功能，主要面向安全管理员、系统审计员与系统管理员。</entry>
+	<entry key="system.home.systemState">系统整体运转良好</entry>
+	<entry key="system.home.searchSystem">查看系统状态</entry>
+	<entry key="system.home.unitManager">单位管理</entry>
+	<entry key="system.home.userManager">用户管理</entry>
+	<entry key="system.home.jobManager">岗位管理</entry>
+	<entry key="system.home.provinceUnit">直属单位、省级单位： {0} 家</entry>
+	<entry key="system.home.cityUnit">地级市单位： {0} 家</entry>
+	<entry key="system.home.activeUnitMana">激活单位管理</entry>
+	<entry key="system.home.noActiveUser">未激活用户 {0} 人</entry>
+	<entry key="system.home.count">人</entry>
+	<entry key="system.home.number">家</entry>
+	<entry key="system.home.gaugeTitle">系统运行状态图</entry>
+	<entry key="system.home.pieTitle">在线用户分布图</entry>
+	<entry key="system.home.pieLegend">在线用户</entry>
+	<entry key="system.home.note">批注</entry>
+	
+	<entry key="system.quick.level">重要性</entry>
+	<entry key="system.quick.remarks">批注内容</entry>
+	<entry key="system.quick.userName">批注人</entry>
+	<entry key="system.quick.createNote">添加批注</entry>
+	<entry key="system.quick.listNotes">批注信息</entry>
+	
+	<entry key="system.file.fileName">名称</entry>
+	<entry key="system.file.fileName.hint">如果没有填写文件名,则默认采用上传的文件名</entry>
+	<entry key="system.file.secured">是否公开</entry>
+	<entry key="system.file.secured.hint">如果公开,则无需登录即可下载</entry>
+	<entry key="system.file.type">文件类型</entry>
+	<entry key="system.file.uploadTime">上传时间</entry>
+	<entry key="system.file.username">上传人</entry>
+	<entry key="system.file.organName">上传单位</entry>
+	<entry key="system.file.startTime">开始时间</entry>
+	<entry key="system.file.endTime">结束时间</entry>
+	<entry key="system.file.file">文件路径</entry>
+	
+	<entry key="system.home.layout.typeName">菜单名称</entry>
+	<entry key="system.home.layout.remarks">备注</entry>
+	<entry key="system.home.view.width">宽度</entry>
+	<entry key="system.home.view.height">高度</entry>
+	
+	<!-- 全局配置国际化文件 -->
+	<entry key="commons.globalConfig.organName">组织机构名称</entry>
+	<entry key="commons.globalConfig.servicer">支持人员</entry>
+	<entry key="commons.globalConfig.serviceTel">支持电话</entry>
+	<entry key="commons.globalConfig.serviceMail">支持邮箱</entry>
+	<entry key="commons.globalConfig.serviceTel">支持电话</entry>
+	<entry key="commons.globalConfig.serviceMail">支持邮箱</entry>
+	<entry key="commons.globalConfig.organ">国税总局</entry>
+	<entry key="commons.globalConfig.attributes">附加属性</entry>
+	<entry key="commons.globalConfig.attributes.hint">属性名称必须填写，否则属性添加失败！</entry>
+	<entry key="commons.globalConfig.attributes.key">属性名称</entry>
+	<entry key="commons.globalConfig.attributes.value">属性值</entry>
+	
+	
+	<entry key="commons.create.hint"><![CDATA[添加成功]]></entry>
+	<entry key="commons.logger.operator">操作人</entry>
+	<entry key="commons.logger.time">操作时间</entry>
+	<entry key="commons.logger.result">操作结果</entry>
+	<entry key="commons.logger.module">所属模块</entry>
+	<entry key="commons.logger.clazz">所属功能</entry>
+	<entry key="commons.logger.function">具体操作</entry>
+	<entry key="commons.logger.ip">操作IP</entry>
+	
+</properties>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rule name="账号遍历行为检测" depends="syslog" enable="true">
+	<filter id="1" name="账号登录失败过滤器">
+		<condition type="and">
+			<condition type="base" opr="eq">
+				<var type="event" attrname="type"/>
+				<var type="constant">
+					<value><![CDATA[1008]]></value>
+				</var>
+			</condition>
+			<condition type="base" opr="eq">
+				<var type="event" attrname="result"/>
+				<var type="constant">
+					<value><![CDATA[2]]></value>
+				</var>
+			</condition>
+			<condition type="base" opr="isnull">
+				<var type="event" attrname="saddr" />
+				<var type="constant">
+					<value><![CDATA[no]]></value>
+				</var>
+			 </condition>
+			<condition type="base" opr="isnull">
+				<var type="event" attrname="susername" />
+				<var type="constant">
+					<value><![CDATA[no]]></value>
+				</var>
+			 </condition>
+		</condition>
+	</filter>
+	<!-- name为epl中的表名，要和epl语句中的表名对应，但注意各规则的此name一定要不相同-->
+	<eventType name="accountTraversalEvent">
+		<!-- 控制内存，设置向esper发送的数据类型不是simeventobject,而是其中的几个字段,name的值要和simeventobject中的变量名一致 -->
+		<!-- ID字段必须保存，因为要保存关联事件的ID -->
+		<field name="ID"/>
+		<field name="sAddr"/>
+		<field name="sUserName"/>
+	</eventType>
+	<!-- 作为输出告警的内容，属性和OutputAlert中的变量名对应，并且OutputAlert中这些字段要定义为String类型-->
+	<output>
+		<!-- 告警内容，可带参数，参数值为ESPER中最终查询的字段-->
+		<content>源地址【{0}】存在疑似账号遍历行为，遍历的账号为:{1}。#sAddr#sUserName</content>
+		<level>严重</level>
+		<status>未确认</status>
+	</output>
+	<epls>
+		<!-- key从1到N顺序加载，最后一个作为statement。表名和上面的eventType中的name一致，为一个map变量，里面包含上面eventType属性中的字段 -->
+		<!-- ID字段必须保存，因为要保存关联事件的ID -->
+		<epl key="1"
+			value="create window AccountTraversalWin.win:time(#time#) as select ID,sUserName,sAddr from accountTraversalEvent"/>
+		<epl key="2"
+			value="insert into AccountTraversalWin select ID,sUserName,sAddr from accountTraversalEvent"/>
+		<epl key="3"
+			value="on AccountTraversalWin as onStream delete from AccountTraversalWin as delStream where onStream.sAddr=delStream.sAddr and onStream.sUserName=delStream.sUserName and onStream.ID&lt;&gt;delStream.ID"/>
+		<!-- 字段必须重命名，否则map中拿到的key如同outStream.ID -->
+		<epl key="4"
+			value="on AccountTraversalWin as onStream select and delete outStream.ID as ID,outStream.sAddr as sAddr,outStream.sUserName as sUserName from AccountTraversalWin as outStream where onStream.sAddr=outStream.sAddr and (select count(0) from AccountTraversalWin as selStream where selStream.sAddr=onStream.sAddr)>=#number#"/>
+	</epls>
+	<eplvars desc="同一源地址在{time}秒内有{number}个不同的账号发生了登录失败事件">
+		<eplvar name="time" value="60"/>
+		<eplvar name="number" value="5"/>
+	</eplvars>
+</rule>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<querys>
+	
+	<sql id="account.groupByRole">
+		<description>按角色统计用户人数</description>
+		<query>
+		    select role.pk,role.role_name, count(tar.account_id) as rnum
+			from t_security_conn_ar tar,t_security_role role
+			where tar.role_id = role.pk
+			group by role.pk,role.role_name
+			order by count(tar.account_id) desc
+		</query>
+	</sql>
+	
+	<sql id="organization.groupBylevel">
+		<description>按组织单位统计单位数量</description>
+		<query>
+		 select organ.o_level,count(*) 
+		 from t_organ_organ organ
+		 where organ.o_type =1 
+		 group by organ.o_level
+		</query>
+	</sql>
+	
+	<sql id="dailySec.groupByDailySec">
+		<description>指定任务的每日安全统计</description>
+		<query>
+			select 
+			case when a.secure = 0 then '安全' 
+			     when a.secure = 1 then '不安全' end secure,count(a.pk) as rnum
+			from t_sg_daily_sec a
+			where a.taskId in 
+			(select rpt.pk from t_check_rpt rpt where rpt.report_state = 3 and  rpt.task_Id = :taskId)
+			group by a.secure
+		</query>
+	</sql>
+		
+	<sql id="SecTrend.groupBySecTrend">
+		<description>指定任务的每日安全统计</description>
+		<query>
+			select 
+			case when a.secure = 0 then '一般' 
+			     when a.secure = 1 then '严重' 
+			     when a.secure = 2 then '正常' end secure,count(a.pk) as rnum
+			from t_sg_sectrend a
+			where a.taskId in 
+			(select rpt.pk from t_check_rpt rpt where rpt.report_state = 3 and  rpt.task_Id = :taskId)
+			group by a.secure
+		</query>
+	</sql>
+	
+	<sql id="eventLevel.listEventLevel">
+		<description>统计各单位安全事件级别</description>
+		<query>
+			select 
+			case when a.se_level = 1 then '高' 
+			     when a.se_level = 2 then '中' 
+			     when a.se_level = 3 then '低' end level,a.se_percent
+			from t_sg_event_level a
+			where a.form_id = :formId
+			order by a.se_level
+		</query>
+	</sql>
+</querys>

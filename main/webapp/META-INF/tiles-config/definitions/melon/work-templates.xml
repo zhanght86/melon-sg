@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<!-- 工作管理主页 -->
+	<definition name="work.home.main" extends="desktop.default">
+		<put-attribute name="body" value="/WEB-INF/views/melon/work/home.jsp" cascade="true"/>
+    </definition>
+
+	<!-- 工作任务 -->
+	<definition name="work.task.tree" extends="desktop.edit">
+		<put-attribute name="body" value="/WEB-INF/views/melon/work/task/tree.jsp" cascade="true"/>
+    </definition>
+   
+    <definition name="work.task.create" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/work/task/create.jsp" cascade="true"/>
+    </definition>
+    
+    <!-- 计划 -->
+    <definition name="work.plan.show" extends="desktop.default">
+       <put-attribute name="body" value="/WEB-INF/views/melon/work/plan/show.jsp" cascade="true"/>
+    </definition>
+	
+	<!-- 岗位规定的工作 -->
+    <definition name="work.*.list" extends="desktop.list">
+       <put-attribute name="body" value="/WEB-INF/views/melon/work/{1}/list.jsp" cascade="true"/>
+    </definition>
+    <definition name="work.*.edit" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/work/{1}/edit.jsp" cascade="true"/>
+    </definition>
+    <definition name="work.*.show" extends="desktop.show">
+       <put-attribute name="body" value="/WEB-INF/views/melon/work/{1}/show.jsp" cascade="true"/>
+    </definition>
+    <definition name="work.myWork.notice" extends="desktop.show">
+       <put-attribute name="body" value="/WEB-INF/views/melon/work/myWork/notice.jsp" cascade="true"/>
+    </definition>
+    
+</tiles-definitions>

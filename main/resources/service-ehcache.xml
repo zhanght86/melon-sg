@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="ehcache.xsd" updateCheck="false"
+	monitoring="autodetect" dynamicConfig="true" name="beansCache">
+
+	<!--  -->
+	<diskStore path="java.io.tmpdir/service" />
+
+	<defaultCache timeToLiveSeconds="3600" 
+				  timeToIdleSeconds="3600"
+		          maxElementsInMemory="1000" 
+		          eternal="false" 
+		          overflowToDisk="true">
+	</defaultCache>
+	
+	<!-- 存储安全资源\菜单管理 -->
+	<cache name="secfox.soc.melon.security.domain.MenuResource"
+		   maxElementsInMemory="2000"
+		   eternal="true" 
+		   overflowToDisk="false"
+		   memoryStoreEvictionPolicy="LFU">
+	</cache>
+
+</ehcache>

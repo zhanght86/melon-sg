@@ -1,0 +1,52 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt"  uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="mh" uri="http://www.legendsec.com/melon/html"%>
+<%--@Author 甘焕--%>
+<div class="home-portal-body" id="diskBar">
+</div>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var datas = <mh:toJson value="${result}" />;
+		console.log(datas);
+		require(["chart/mcharts"], function(mcharts) {
+			var configs = {
+				el : "#diskBar",
+				//theme : "blue",
+				title : "硬盘使用情况",
+				data : datas,
+				dataZoom : false,
+				//数据区域缩放，直角坐标系图表有效
+				ready : function() {
+					
+					this.defaults.xAxis[0].axisLabel.rotate = 15;
+					this.defaults.toolbox.show = false;
+					$.extend(this.defaults.yAxis[0], {
+						name : '单位(M)',
+						boundaryGap : [0.2, 0.2],
+						splitArea : false,
+					});
+					console.log(this.defaults);
+				},
+				seriesConfig : [
+				{
+					name : '已使用',
+					type : 'bar',    //以什么类型展示    
+					category : "name",//横坐标
+					stack : "disk",
+					value : "used"  //纵坐标
+				},
+				{
+					name : '空闲',
+					type : 'bar',    //以什么类型展示    
+					category : "name",//横坐标
+					stack : "disk",
+					value : "free"  //纵坐标
+				}]
+			};
+			var column = new mcharts.Column(configs);
+
+		});
+	});
+</script>

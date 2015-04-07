@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<!-- 日志审计模板配置 -->
+    <definition name="las.*.show" extends="desktop.show">
+		<put-attribute name="body" value="/WEB-INF/views/las/{1}/show.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="las.*.edit" extends="desktop.edit">
+		<put-attribute name="body" value="/WEB-INF/views/las/{1}/edit.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="las.*.create" extends="desktop.edit">
+		<put-attribute name="body" value="/WEB-INF/views/las/{1}/create.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="las.*.list" extends="desktop.list">
+		<put-attribute name="body" value="/WEB-INF/views/las/{1}/list.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="las.*.countsEdit" extends="desktop.list">
+		<put-attribute name="body" value="/WEB-INF/views/las/{1}/countsEdit.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="las.*.tree" extends="desktop.edit">
+		<put-attribute name="body" value="/WEB-INF/views/las/{1}/tree.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="las.rule.config" extends="desktop.edit">
+		<put-attribute name="body" value="/WEB-INF/views/las/rule/config.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="las.rule.edit" extends="desktop.edit">
+		<put-attribute name="body" value="/WEB-INF/views/las/rule/edit.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="las.rule.list" extends="desktop.list">
+		<put-attribute name="body" value="/WEB-INF/views/las/rule/list.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="las.sim.embed" extends="desktop.list">
+		<put-attribute name="body" value="/WEB-INF/views/las/embed.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="las.test" extends="desktop.list">
+		<put-attribute name="body" value="/WEB-INF/views/las/test.jsp" cascade="true"/>
+    </definition>
+</tiles-definitions>

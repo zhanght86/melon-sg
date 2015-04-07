@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	
+	<!-- 类型转换服务管理器 -->
+	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<property name="converters">
+			<list>
+			</list>
+		</property>
+		<property name="formatters">
+			<set>
+				<!-- 默认时间管理转换器 -->
+				<bean class="org.springframework.format.datetime.DateFormatter">
+					<constructor-arg name="pattern" value="#{T(secfox.soc.melon.base.BaseConstants).SHORT_DATE_FORMAT}"/>
+				</bean>
+				<ref bean="openStyleFormatter"/>
+				<!-- 安全管理 -->
+				<ref bean="menuFormatter"/>
+				<ref bean="roleFormatter"/>
+			</set>
+		</property>
+		<property name="formatterRegistrars">
+			<set>
+				<ref bean="registerFactory"/>
+			</set>
+		</property>
+	</bean>
+	
+	<!-- 属性格式化转换管理器 -->
+	<bean id="registerFactory" class="secfox.soc.melon.base.FormatterRegisterFactory">
+		<property name="formatterFactorys">
+			<set>
+				<bean class="secfox.soc.melon.base.formatter.DateFormatterAnnotationFormatterFactory"/>
+			</set>
+		</property>
+	</bean>
+	
+</beans>

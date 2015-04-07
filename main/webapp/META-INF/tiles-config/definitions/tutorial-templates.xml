@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="tutorial.book.*" extends="tiles.desktop">
+		<put-attribute name="body" value="/WEB-INF/views/melon/tutorial/{1}.jsp"/>
+	</definition>
+	
+	<definition name="tutorial.ajax.*" extends="tiles.desktop">
+		<put-attribute name="body" value="/WEB-INF/views/melon/ajax/{1}.jsp"/>
+	</definition>
+	
+	    <!--melon.tutorial  -->
+    <definition name="tutorial.person.create" extends="desktop.edit">
+		<put-attribute name="body" value="/WEB-INF/views/melon/tutorial/person/create.jsp"/>
+	</definition>
+    <definition name="tutorial.person.edit" extends="desktop.edit">
+		<put-attribute name="body" value="/WEB-INF/views/melon/tutorial/person/edit.jsp"/>
+	</definition>
+	<definition name="tutorial.person.list" extends="desktop.list">
+       <put-attribute name="body" value="/WEB-INF/views/melon/tutorial/person/list.jsp" cascade="true"/>
+    </definition>
+    <definition name="tutorial.person.show" extends="desktop.show">
+       <put-attribute name="body" value="/WEB-INF/views/melon/tutorial/person/show.jsp" cascade="true"/>
+    </definition>
+	
+
+</tiles-definitions>

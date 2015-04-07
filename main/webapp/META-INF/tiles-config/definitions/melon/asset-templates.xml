@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<!-- melon包路径下的所有模板配置 -->
+	<definition name="asset.home" extends="desktop.default">
+       <put-attribute name="body" value="/WEB-INF/views/melon/asset/home.jsp" cascade="true"/>
+    </definition>
+    
+    <!-- 安全对象下配置 -->
+	<definition name="asset.*.tree" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/asset/{1}/tree.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="asset.*.create" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/asset/{1}/create.jsp" cascade="true"/>
+    </definition>
+    
+     <definition name="asset.*.list" extends="desktop.list">
+       <put-attribute name="body" value="/WEB-INF/views/melon/asset/{1}/list.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="asset.*.edit" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/asset/{1}/edit.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="asset.*.show" extends="desktop.show">
+       <put-attribute name="body" value="/WEB-INF/views/melon/asset/{1}/show.jsp" cascade="true"/>
+    </definition> 
+    
+    <!-- 安全对象各种列表 -->
+    <definition name="asset.*.list.*" extends="desktop.list">
+       <put-attribute name="body" value="/WEB-INF/views/melon/asset/{1}/list/{2}.jsp" cascade="true"/>
+    </definition>
+    
+    <!-- 安全对象各种视图 -->
+    <definition name="asset.*.view.*" extends="desktop.list">
+       <put-attribute name="body" value="/WEB-INF/views/melon/asset/{1}/view/{2}.jsp" cascade="true"/>
+    </definition>
+    
+    <!-- 安全口令 -->
+    <definition name="asset.secpass.load" extends="desktop.list">
+       <put-attribute name="body" value="/WEB-INF/views/melon/asset/secpass/load.jsp" cascade="true"/>
+    </definition>
+    
+    <!-- 导出功能 -->
+    <definition name="asset.*.importList" extends="desktop.list">
+		<put-attribute name="body" value="/WEB-INF/views/melon/asset/{1}/importList.jsp" cascade="true"/>
+    </definition>
+	 <!-- 漏扫结果导入 -->
+    <definition name="asset.*.importModelPage" extends="desktop.list">
+		<put-attribute name="body" value="/WEB-INF/views/melon/asset/{1}/importModelPage.jsp" cascade="true"/>
+    </definition>
+    <definition name="asset.*.vulnList" extends="desktop.list">
+		<put-attribute name="body" value="/WEB-INF/views/melon/asset/{1}/vulnList.jsp" cascade="true"/>
+    </definition>
+    <!-- 设备到期提醒 -->
+    <definition name="asset.deviceFilter.home" extends="desktop.default">
+		<put-attribute name="body" value="/WEB-INF/views/melon/asset/deviceFilter/home.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="asset.deviceFilter.edit" extends="desktop.default">
+		<put-attribute name="body" value="/WEB-INF/views/melon/asset/deviceFilter/edit.jsp" cascade="true"/>
+    </definition>
+
+    
+    <definition name="asset.device.deviceGrid" extends="desktop.empty">
+		<put-attribute name="body" value="/WEB-INF/views/melon/asset/device/deviceGrid.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="asset.device.deviceFrame" extends="desktop.list">
+		<put-attribute name="body" value="/WEB-INF/views/melon/asset/device/deviceFrame.jsp" cascade="true"/>
+    </definition>
+    
+      <definition name="asset.device.deviceList" extends="desktop.empty">
+		<put-attribute name="body" value="/WEB-INF/views/melon/asset/device/deviceList.jsp" cascade="true"/>
+    </definition>
+   
+    <definition name="melon.asset.device.topo.domainTopo" extends="desktop.default">
+		<put-attribute name="body" value="/WEB-INF/views/melon/asset/device/topo/domainTopo.jsp" cascade="true"/>
+    </definition>
+    
+    <!-- 安全人员配置 -->
+    <definition name="staff.*.home" extends="desktop.default">
+       <put-attribute name="body" value="/WEB-INF/views/melon/asset/staff/{1}/home.jsp" cascade="true"/>
+    </definition>
+    
+	<definition name="staff.*.tree" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/asset/staff/{1}/tree.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="staff.*.create" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/asset/staff/{1}/create.jsp" cascade="true"/>
+    </definition>
+    
+     <definition name="staff.*.list" extends="desktop.list">
+       <put-attribute name="body" value="/WEB-INF/views/melon/asset/staff/{1}/list.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="staff.*.edit" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/asset/staff/{1}/edit.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="staff.*.show" extends="desktop.show">
+       <put-attribute name="body" value="/WEB-INF/views/melon/asset/staff/{1}/show.jsp" cascade="true"/>
+    </definition> 
+    
+    <definition name="staff.home" extends="desktop.default">
+       <put-attribute name="body" value="/WEB-INF/views/melon/asset/staff/home.jsp" cascade="true"/>
+    </definition> 
+    
+</tiles-definitions>

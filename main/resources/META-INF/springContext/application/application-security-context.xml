@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+	
+	<bean id="passwordEncoder"  class="org.springframework.security.crypto.password.StandardPasswordEncoder">
+		<constructor-arg name="secret" value="melon"/>
+	</bean>
+	
+	<!-- 安全认证管理 -->
+	<bean id="securityManager" class="org.springframework.security.web.FilterChainProxy">
+		<constructor-arg>
+			<list>
+				<security:filter-chain pattern="/app/logoPage*" filters="none"  />
+				<security:filter-chain pattern="/app/login*" filters="none"  />
+				<security:filter-chain pattern="/app/gate/**" filters="none"  />
+				<security:filter-chain pattern="/app/**"  filters="channelProcessingFilter
+																  ,contextPersistenceFilter
+																  ,concurrentSessionFilter
+																  ,ipAndTimeFilter
+																  ,logoutFilter
+																  ,authenticationFilter
+																  ,rememberMeAuthenticationFilter
+																  ,anonymousAuthenticationFilter
+																  ,sessionManagementFilter
+																  ,exceptionTranslationFilter
+																  ,filterSecurityInterceptor
+																  "/>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean id="ipAndTimeFilter" class="secfox.soc.melon.filter.IpAndTimeFilter">
+		<property name="service" ref="globalConfigService" />
+	</bean>
+	<!-- 通道管理,支持HTTP与HTTPS -->
+	<bean id="channelProcessingFilter"	class="org.springframework.security.web.access.channel.ChannelProcessingFilter">
+		<property name="channelDecisionManager" ref="channelDecisionManager" />
+		<property name="securityMetadataSource">
+			<security:filter-security-metadata-source	request-matcher="ant">
+				<!-- 可以使用ANY_CHANNEL(http)或REQUIRES_SECURE_CHANNEL(https) -->
+				<!-- 安全认证HTTPS可以使用REQUIRES_SECURE_CHANNEL -->
+				<security:intercept-url pattern="/app/**" access="ANY_CHANNEL" />
+			</security:filter-security-metadata-source>
+		</property>
+	</bean>
+	
+	<!-- 通道管理,支持HTTP与HTTPS -->
+	<bean id="channelDecisionManager"	class="org.springframework.security.web.access.channel.ChannelDecisionManagerImpl">
+		<property name="channelProcessors">
+			<list>
+				<bean class="org.springframework.security.web.access.channel.SecureChannelProcessor" />
+				<bean class="org.springframework.security.web.access.channel.InsecureChannelProcessor" />
+			</list>
+		</property>
+	</bean>
+		
+	<!-- 监听SessionDestroyedEvent事件,并发控制/Session失效都取决于此 -->
+	<bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl"/>
+		
+	<!-- 判断Session的有效性 -->
+	<bean id="concurrentSessionFilter" class="org.springframework.security.web.session.ConcurrentSessionFilter">
+		<constructor-arg name="sessionRegistry" ref="sessionRegistry"/>
+	</bean>
+	
+	<!-- 存储用户认证信息 -->
+	<bean id="contextPersistenceFilter" class="org.springframework.security.web.context.SecurityContextPersistenceFilter">
+		<constructor-arg name="repo" ref="httpSessionSecurityContextRepository"/>
+		<!--是否立刻创建Session,严重影响性能,慎用-->
+		<property name="forceEagerSessionCreation" value="false"/>
+	</bean>
+	<!-- Form认证 -->
+	<bean id="authenticationFilter" class="secfox.soc.melon.security.FormAuthenticationFilter">
+		<property name="passwordParameter" value="password"/>
+		<property name="usernameParameter" value="username"/>
+		<property name="filterProcessesUrl" value="/app/j_security_login"/>
+		<property name="postOnly" value="true"/>
+		<property name="authenticationManager" ref="authenticationManager"/>
+		<property name="authenticationSuccessHandler" ref="successHandler"/>
+		<property name="authenticationFailureHandler" ref="authenticationFailureHandler"/>
+		<!-- 能否控制Session的关键 -->
+		<property name="sessionAuthenticationStrategy" ref="concurrentSessionControlStrategy"/>
+		<property name="rememberMeServices" ref="tokenBasedRememberMeServices"/>
+	</bean>
+		
+	<!--当请求的资源需要认证时,认证成功后将回到原来的访问地址,默认为/home/main -->
+	<bean id="successHandler" class="secfox.soc.melon.security.AuthenticationSuccess">
+		<property name="defaultTargetUrl"  value="/home/main"/>
+		<property name="alwaysUseDefaultTargetUrl"  value="false"/>
+		<property name="recordService"  ref="loginRecordService"/>
+		<property name="configService"  ref="globalConfigService"/>
+	</bean>
+		
+	<!-- 根据认证失败的异常信息 决定流转的URL地址-->
+	<bean id="authenticationFailureHandler" class="org.springframework.security.web.authentication.ExceptionMappingAuthenticationFailureHandler">
+		<property name="defaultFailureUrl" value="/app/login"/>
+		<!-- 认证失败将不会发生页面重定向 -->
+		<property name="useForward" value="true"/>
+	</bean>
+		
+	<!-- 认证管理器 -->
+	<bean id="authenticationManager" class="org.springframework.security.authentication.ProviderManager">
+		<constructor-arg name="providers">
+			<list>
+				<ref bean="daoAuthenticationProvider"/>
+				<ref bean="rememberMeAuthenticationProvider"/>
+				<ref bean="anonymousAuthenticationProvider"/>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<!-- Session管理器 -->
+	<!-- 检测Session是否已认证,如果是,则进行Session自我修护与Session的并发性控制 -->
+	<bean id="sessionManagementFilter" class="org.springframework.security.web.session.SessionManagementFilter">
+		<constructor-arg name="securityContextRepository" ref="httpSessionSecurityContextRepository"/>
+		<constructor-arg name="sessionStrategy" ref="concurrentSessionControlStrategy"/>
+	</bean>
+		
+	<!-- 将安全上下文存储在Session中 -->
+	<bean id="httpSessionSecurityContextRepository" class="org.springframework.security.web.context.HttpSessionSecurityContextRepository">
+		<property name="allowSessionCreation" value="true"/>
+		<!-- 是否隐藏URL地址中的jsessionid -->
+		<property name="disableUrlRewriting" value="true"/>
+	</bean>
+		
+	<!--Session并发控制策略  -->
+	<bean id="concurrentSessionControlStrategy" class="org.springframework.security.web.authentication.session.ConcurrentSessionControlStrategy">
+		<constructor-arg name="sessionRegistry" ref="sessionRegistry"/>
+		<!-- 每个帐户的最大使用人数,-1代表不限制 -->
+		<property name="maximumSessions" value="-1"/>
+		<!-- 如果超过最大用户数,将阻止新用户登录,否则将销毁最近最少使用用户 -->
+		<property name="exceptionIfMaximumExceeded" value="false"/>
+		<!-- 是否为每个用户创建新Session -->
+		<property name="alwaysCreateSession" value="true"/>
+	</bean>
+	
+	<!-- Remember me -->
+	<bean id="rememberMeAuthenticationFilter" class="org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter">
+		<constructor-arg name="authenticationManager" ref="authenticationManager"/>
+		<constructor-arg name="rememberMeServices" ref="tokenBasedRememberMeServices"/>
+	</bean>
+		
+	<bean id="tokenBasedRememberMeServices" class="org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices">
+		<constructor-arg name="key" value="SECFOX_SOC_SEC_KEY"/>
+		<constructor-arg name="userDetailsService" ref="accountService"/>
+		<property name="parameter" value="rememberMe"/>
+		<property name="cookieName" value="SECFOX_SOC_SEC_REMEMBERME"/>
+		<!-- COOKIE的有效时间 以秒为单位,默认两周-->
+		<property name="tokenValiditySeconds" value="#{2*7*24*3600}"/>
+		<!-- 与HTTPS配合使用 -->
+		<property name="useSecureCookie" value="false"/>
+	</bean>
+	
+	<!-- 是否支持记住用户名,两周内不用重新登陆 -->	
+	<bean id="rememberMeAuthenticationProvider" class="org.springframework.security.authentication.RememberMeAuthenticationProvider">
+		<constructor-arg name="key" value="SECFOX_SOC_SEC_KEY"/>
+	</bean>
+	
+	<!-- 匿名角色  -->
+	<bean id="anonymousAuthenticationFilter" class="org.springframework.security.web.authentication.AnonymousAuthenticationFilter">
+		<constructor-arg name="key" value="SECFOX_SOC_SEC_KEY"/>
+		<constructor-arg name="principal" value="anonymousUser"/>
+		<constructor-arg name="authorities" >
+			<list>
+				<bean class="org.springframework.security.core.authority.SimpleGrantedAuthority">
+					<constructor-arg name="role" value="ROLE_ANONYMOUS"/>
+				</bean>
+			</list>
+		</constructor-arg>
+	</bean>
+		
+	<bean id="anonymousAuthenticationProvider" class="org.springframework.security.authentication.AnonymousAuthenticationProvider">
+		<constructor-arg name="key" value="SECFOX_SOC_SEC_KEY"/>
+	</bean>
+	
+	<!--处理 AccessDeniedException and AuthenticationException -->
+	<bean id="exceptionTranslationFilter" class="org.springframework.security.web.access.ExceptionTranslationFilter">
+		<!-- 接受到AuthenticationException后,由authenticationEntryPoint处理 -->
+		<constructor-arg name="authenticationEntryPoint" ref="authenticationEntryPoint"/>
+		<constructor-arg name="requestCache" ref="requestCache"/><!--  -->
+		<property name="accessDeniedHandler" ref="accessDeniedHandler"/>
+	</bean>
+		
+	<bean id="requestCache" class="org.springframework.security.web.savedrequest.HttpSessionRequestCache"/>
+	
+	<!-- 没有权限时 -->
+	<bean id="accessDeniedHandler" class="org.springframework.security.web.access.AccessDeniedHandlerImpl">
+		<property name="errorPage" value="/WEB-INF/errors/403.jsp"/>
+	</bean>
+		
+	<!-- 认证的入口 -->
+	<bean id="authenticationEntryPoint"	class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
+		<constructor-arg name="loginFormUrl" value="/app/login" />
+		<property name="useForward" value="false"/>
+	</bean>
+	
+	<!-- 授权管理类 -->
+	<bean id="filterSecurityInterceptor" class="org.springframework.security.web.access.intercept.FilterSecurityInterceptor">
+		<property name="authenticationManager" ref="authenticationManager"/>	
+		<property name="accessDecisionManager" ref="accessDecisionManager"/>
+		<property name="runAsManager" ref="runAsManager"/>
+		<!-- 是否每次访问资源都需要认证 -->
+		<property name="alwaysReauthenticate" value="false"/>
+		<property name="securityMetadataSource">
+			<ref bean="securityMetadataSource"/>
+		</property>
+	</bean>
+		
+	<!-- 授权判决管理器 -->
+	<!-- 只要有任意的投票者同意就通过 -->
+	<bean id="accessDecisionManager" class="org.springframework.security.access.vote.AffirmativeBased">
+		<constructor-arg>
+			<list>
+				<bean class="org.springframework.security.access.vote.RoleVoter">
+					<property name="rolePrefix" value="ROLE_"/>
+				</bean>
+			</list>
+		</constructor-arg>
+		<property name="allowIfAllAbstainDecisions" value="true"/>
+	</bean>	
+		
+	<!-- 运行时安全管理器,保护正在运行的授权信息(内核,角色) -->
+	<bean id="runAsManager" class="org.springframework.security.access.intercept.RunAsManagerImpl">
+		<property name="key" value="SECFOX_SOC_SEC_KEY"/>
+		<property name="rolePrefix"  value="ROLE_"/>
+	</bean>
+	
+	<!--注销管理器 -->
+	<bean id="logoutFilter" class="org.springframework.security.web.authentication.logout.LogoutFilter">
+		<constructor-arg name="logoutSuccessUrl" value="/login"/>
+		<constructor-arg>
+			<list>
+				<!-- 清除SecurityContextHolder -->
+				<bean class="org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler">
+					<property name="clearAuthentication" value="true"/>
+					<property name="invalidateHttpSession" value="true"/>
+				</bean>
+				<!-- 退出时清空Remember me信息 -->
+				<ref bean="tokenBasedRememberMeServices"/>
+				<!-- 清除COOKIE -->
+				<bean class="org.springframework.security.web.authentication.logout.CookieClearingLogoutHandler">
+					<constructor-arg name="cookiesToClear">
+						<array>
+							<value>JSESSIONID</value>
+						</array>
+					</constructor-arg>
+				</bean>
+			</list>
+		</constructor-arg>
+		<property name="filterProcessesUrl" value="/app/j_security_logout"/>
+	</bean>
+
+	<!-- 用户管理服务 -->
+	<bean id="daoAuthenticationProvider"	class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+		<property name="userDetailsService">
+			<ref bean="accountService" />
+		</property>
+		<property name="passwordEncoder"> 
+			<ref bean="passwordEncoder"/>
+		</property>
+	</bean>	
+	
+	<!--  -->
+	<bean class="secfox.soc.melon.security.WebInvocationPrivilegeEvaluatorWithPrefix">
+		<constructor-arg name="securityInterceptor">
+			<ref bean="filterSecurityInterceptor"/>
+		</constructor-arg>
+	</bean>
+	
+	<!-- JSP访问规则判断器 -->
+	<bean class="org.springframework.security.web.access.DefaultWebInvocationPrivilegeEvaluator">
+		<constructor-arg name="securityInterceptor">
+			<ref bean="filterSecurityInterceptor"/>
+		</constructor-arg>
+	</bean>
+	
+	<bean class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler"/> 
+</beans>

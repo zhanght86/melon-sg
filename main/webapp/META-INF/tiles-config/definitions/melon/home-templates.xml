@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	
+    <!-- melon.home下的配置 -->
+    <!-- 首次登录欢迎页面 -->
+    <definition name="home.welcome" extends="desktop.common">
+       <put-attribute name="body" value="/WEB-INF/views/melon/home/welcome.jsp" cascade="true"/>
+    </definition>
+    
+    <!-- 个人展示主页 -->
+    <definition name="home.main" extends="desktop.default">
+       <put-attribute name="body" value="/WEB-INF/views/melon/home/main.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="home.portal.layout" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/home/portal/layout.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="home.portal.show" extends="desktop.show">
+       <put-attribute name="body" value="/WEB-INF/views/melon/home/portal/preview.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="home.portal.preview" extends="desktop.default">
+       <put-attribute name="body" value="/WEB-INF/views/melon/home/main.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="home.portal.list" extends="desktop.list">
+       <put-attribute name="body" value="/WEB-INF/views/melon/home/portal/list.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="home.portal.copy" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/home/portal/copy.jsp" cascade="true"/>
+    </definition>
+    
+    <!-- 我的关注 -->    
+    <definition name="home.attention.my" extends="desktop.show">
+       <put-attribute name="body" value="/WEB-INF/views/melon/home/attention/my.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="home.attention.myAttention" extends="desktop.common">
+       <put-attribute name="body" value="/WEB-INF/views/melon/home/attention/myAttention.jsp" cascade="true"/>
+    </definition>
+    
+    <!-- 我的注解 -->
+    <definition name="home.quicknote.my" extends="desktop.show">
+       <put-attribute name="body" value="/WEB-INF/views/melon/home/quicknote/my.jsp" cascade="true"/>
+    </definition>
+    
+</tiles-definitions>

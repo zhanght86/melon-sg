@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>常量配置文件,如果常量为整数型的,所有的编号必须从0开始编制</comment>
+	<!-- 通用数据字典 -->
+	<entry key="enums.bool">true:是,false:否</entry>
+	<entry key="enums.whether">true:有,false:无</entry>
+	<entry key="enums.boolSearch">0:全部,1:是,2:否</entry>
+	<entry key="enums.boolInt">1:否,2:是</entry>
+	<entry key="enums.leftToRight">true:向左排,false:向右排</entry>
+	<entry key="enums.joinType">AND:与,OR:或,NO:非,XOR:异或</entry>
+	<entry key="enums.dateOfTask">0:每日,1:每周,2:每月</entry>
+	<entry key="enums.useState">true:启用,false:停用</entry>
+	<entry key="enums.deviceCIAValue">1:1,2:2,3:3,4:4,5:5</entry>
+	<entry key="enums.lasDeviceSta">1:未加入资产库,2:已加入资产库</entry>
+
+	<!-- -->
+	<entry key="enums.type">0:安全评价,1:日常工作,2:安全决策,3:安全监控 ,4:安全测评</entry>
+	<!-- 系统框架所使用数据字典 -->
+	<entry key="enums.organType">0:行政区域,1:单位,2:部门</entry>
+	<entry key="enums.organLevel">0:中央,1:省(自治区、直辖市),2:地(区、市、州、盟),3:县(区、市、旗)</entry>
+	<entry key="enums.organBelong">0:1中央,1:2省(自治区、直辖市),2:3地(区、市、州、盟),3:4县(区、市、旗),4:9其他</entry>
+	<entry key="enums.orgType">0:1党委机关,1:2政府机关,2:3事业单位,3:4企业,4:9其他</entry>
+	<entry key="enums.businessType">
+		1:1 电信,2:2 广电,3:3 经营性公众互联网,4:4 铁路,5:5 银行,
+		6:6 海关,7:7 税务,8:8 民航,9:9 电力,10:10 证券,
+		11:11 保险,12:12 国防科技工业,13:13 公安,14:14 人事劳动和社会保障,
+		15:15 财政,16:16 审计,17:17 商业贸易,18:18 国土资源,19:19 能源,
+		20:20 交通,21:21 统计,22:22 工商行政管理,23:23 邮政,24:24 教育,
+		25:25 文化,26:26 卫生,27:27 农业,28:28 水利,29:29 外交,
+		30:30 发展改革,31:31 科技,32:32 宣传,33:33 质量监督检验检疫,34:34其他
+	</entry>
+	<entry key="enums.tradeType">
+		0:11 电信,1:12 广电,2:13 经营性公众互联网,
+		3:21 铁路,4:22 银行,5:23
+		海关,6:24 税务,7:25 民航,8:26 电力,9:27 证券,10:28 保险,
+		11:31 国防科技工业,12:32
+		公安,13:33 人事劳动和社会保障,14:34 财政,15:35 审计,
+		16:36 商业贸易,17:37 国土资源,18:38
+		能源,19:39 交通,20:40 统计,
+		21:41 工商行政管理,22:42 邮政,23:43 教育,24:44 文化,
+		25:45
+		卫生,26:46 农业,27:47 水利,28:48 外交,29:49 发展改革,
+		30:50 科技,31:51 宣传,32:52
+		质量监督检验检疫,33:99 其他
+	</entry>
+	<entry key="enums.organCategory">0:总局,1:国税,2:地税</entry>
+	<entry key="enums.openStyle">0:在当前页打开,1:不执行操作,2:利用AJAX载入页面,3:在新窗口中载入页面,4:在对话框中载入页面</entry>
+	<entry key="enums.usingState">1:已安装,2:测试中,3:使用中,4:维护中,5:报废,6:备用</entry>
+	<entry key="enums.menuType">0:菜单,1:按钮,2:仪表盘</entry>
+	<entry key="enums.netType">0:业务专网 ,1:互联网,2:外联网</entry>
+	<entry key="enums.guardRank">1:低,2:较低,3:中,4:较高,5:高</entry>
+	<entry key="enums.sexType">0:男,1:女</entry>
+	<entry key="enums.alarmType">0:操作记录类,1:安全预警类,2:系统状态类,3:信息刺探类,4:恶意代码类</entry>
+	<entry key="enums.alarmForm">0:安管平台,1:安全监控,2:日志审计,3:漏洞扫描,4:关联分析,5:安全人员</entry>
+	<entry key="enums.alarmState">0:待确认,1:已忽略,2:待处理,3:处理中,4:已处理</entry>
+	<entry key="enums.alarmLevel">0:默认,1:1级,2:2级,3:3级,4:4级,5:5级</entry>
+	<entry key="enums.calendar.isWorkDay">0:工作日,1:休息日</entry>
+	<entry key="enums.calendar.levels">0:普通,1:重要,2:紧急</entry>
+	<entry key="enums.assetField.fieldType">0:文本框,1:多行文本框,2:单选框,3:复选框,4:下拉框</entry>
+	<entry key="enums.assetField.validType">0:整数,1:字符串,2:浮点数,3:IP,4:IPV6,5:EMAIL</entry>
+	<entry key="enums.device.os">1:WindowsXP,2:WindowsServer2003,3:WindowsServer2000,4:WindowsVisita,5:Windows8,6:UNIX,7:Linux</entry>
+	<entry key="enums.abstract.important">1:一级,2:二级,3:三级,4:四级</entry>
+	<entry key="enums.dbBusType">0:1生产作业,1:2指挥调度,2:3管理控制,3:4内部办公,4:5公众服务,5:其他</entry>
+	<entry key="enums.dbSerScope">0:10全国,1:11跨省（区、市）,2:20全省（区、市）,3:21跨地（市、区）
+		跨,4:30地（市、区）内,5:99其他</entry>
+	<entry key="enums.dbSerObject">0:1单位内部人员,1:2社会公众人员,2:3两者均包括,3:9其他</entry>
+	<entry key="enums.dbNetScope">0:1局域网,1:2城域网,2:3广域网,3:9其他</entry>
+	<entry key="enums.dbNetType">0:1业务专网,1:2互连网,2:3外联网,3:9其他</entry>
+	<entry key="enums.dbConnType">0:1与其它行业系统连接,1:2与本行业其他单位系统连接,2:3与本单位其他系统连接,3:9其他</entry>
+	<entry key="enums.dbSysLevel">0:第一级,1:第二级,2:第三级,3:第四级,4:第五级</entry>
+	<entry key="enums.dbIsReview">true:已评审,false:未评审</entry>
+	<entry key="enums.dbIsLeaderRev">true:已审批,false:未审批</entry>
+	<entry key="enums.sysType">1:生产作业,2:指挥调度,3:管理控制,4:内部办公,5:公众服务,6:其他</entry>
+	<entry key="enums.serScope">1:全国,2:跨省（区、市）,3:全省（区、市）,4:跨地（市、区）,5:地（市、区）内,6:其他</entry>
+	<entry key="enums.serObject">1:单位内部人员,2:社会公众人员,3:两者均包括,4:其他</entry>
+	<entry key="enums.netScope">1:局域网,2:城域网,3:广域网,4:其他</entry>
+	<entry key="enums.connType">1:与其它行业系统连接,2:与本行业其他单位系统连接,3:与本单位其他系统连接,4:其他</entry>
+	<entry key="enums.length">1:1,2:2,3:3,4:4</entry>
+	<entry key="enums.flowLayout.type">0:工作流程图,1:业务导航图,2:安全布局图,3:规则流向图,4:业务拓扑图</entry>
+	<entry key="enums.dbBool">true:是<![CDATA[(如果选是请填下两项)]]>,false:否</entry>
+	<entry key="enums.dbRectifyPlan">0:未启动,1:进行中,2:完成</entry>
+	<entry key="enums.mailState">1:一般,2:紧急,3:非常紧急</entry>
+	<entry key="enums.mailType">1:普通邮件,2:主题邮件</entry>
+	<entry key="enums.virus.type">1:路由器,2:交换机,3:病毒入侵</entry>
+	<entry key="enums.envi.level">1:一级,2:二级,3:三级</entry>
+	<entry key="enums.info.safeLeven">1:一级,2:二级,3:三级,4:四级,5:五级</entry>
+	<entry key="enums.qlevel">1:正常,2:一般,3:重要,4:紧急,5:非常紧急</entry>
+	<entry key="enums.publishState">0:待发布,1:发布,2:废止,3:已完成</entry>
+	<entry key="enums.period">1:每日,2:每2日,3:每3日</entry>
+	<entry key="enums.dailySec">0:安全,1:不安全</entry>
+	<entry key="enums.virusNormal">0:不正常,1:正常</entry>
+	<entry key="enums.virusUpdated">0:未升级,1:升级</entry>
+
+	<entry key="enums.reportState">0:全部,1:未填写,2:待审核,3:已上报</entry>
+	<entry key="enums.checkDevice">1:交换机1,2:交换机2,3:交换机3,4:交换机4,5:交换机5,6:交换机6</entry>
+	<entry key="enums.secureAnaly">1:一般,2:严重,3:正常</entry>
+	<entry key="enums.devicType">1:机房,2:区域,3:机柜,4:机架</entry>
+	<entry key="enums.indicatorWay">0:数据库,1:服务中,3:外部服务</entry>
+	<entry key="enums.indiTimeType">1:年,2:半年,3:季度,4:月,5:周,6:天,7:小时</entry>
+	<entry key="enums.indiType">1:设备对象,2:信息系统,3:单位,4:个人</entry>
+	<entry key="enums.deviceAction.type">1:购置,2:安装,3:运行,4:维护,5:维修,6:改造,7:报废</entry>
+	<entry key="enums.attention.type">1:设备,2:信息系统,3:告警</entry>
+
+	<entry key="enums.mailstate">1:一般,2:紧急,3:非常紧急</entry>
+	<entry key="enums.plan.level">1:单位,2:部门,3:个人</entry>
+	<entry key="enums.plan.sysType">1:安全检查,2:设备巡检,3:信息系统巡检,100:其他</entry>
+	<entry key="enums.taskItem.type">0:日,2:月,3:周,4:年</entry>
+	<entry key="enums.taskItem.operator">0:大于,2:等于,3:小于,4:大于等于,5:小于等于</entry>
+
+	<entry key="enums.bugProjectName">0:国税平台</entry>
+	<entry key="enums.bugType">0:New,1:Fixed,2:Close</entry>
+	<entry key="enums.bugCreator">0:黄晓梅,1:刘立峰,2:张棣,3:陈天军4:靳明雷,5:王文越,6:熊超,7:冯夏彦,8:刘文华,9:程展,10:郑俊杰,11:陈雪鹏</entry>
+	<entry key="enums.bugOutName">0:黄晓梅,1:刘立峰,2:张棣,3:陈天军4:靳明雷,5:王文越,6:熊超,7:冯夏彦,8:刘文华,9:程展,10:郑俊杰,11:陈雪鹏</entry>
+	<entry key="enums.bugModel">0:主页,1:安全对象,2:等级保护,3:安全检查,4:系统管理,5:告警,6:信息共享</entry>
+	<!--风险 -->
+	<entry key="enums.asset.domain.netType">0:业务专网,1:互联网,2:外联网</entry>
+	<entry key="enums.assetRelation">0:与,1:或</entry>
+	<entry key="enums.fleyTypeState">1:人为因素,2:环境因素</entry>
+
+	<!-- 安全人员 -->
+	<entry key="enums.interstaff.fulljob">1:安全领导小组组长,2:安全主管,3:安全管理员,4:安全审计员,5:安全运行监控员,6:机房管理员,7:基础设施管理员,8:主机管理员,9:网络管理员,10:应用管理员,11:数据库管理员,100:无</entry>
+	<entry key="enums.interstaff.partjob">1:安全主管,2:安全管理员,3:安全审计员,4:安全运行监控员,5:机房管理员,6:基础设施管理员,7:主机管理员,8:网络管理员,9:应用管理员,10:数据库管理员,100:无</entry>
+	<entry key="enums.interstaff.title">1:科员,2:副主任科员,3:副科长,4:主任科员,5:科长,6:副处长,7:助理（副）调研员,8:处长,9:调研员,10:助理（副）巡视员,11:副局（司）长,12:局（司）长,13:巡视员,100:无</entry>
+	<entry key="enums.interstaff.techtitle">1:初级,2:中级,3:副高级,4:高级,100:无</entry>
+	<entry key="enums.interstaff.techskill">1:安全管理,2:安全法律法规,3:安全标准,4:密码技术,5:防火墙技术,6:安全事件分析技术,7:PKI/CA技术,8:防病毒技术,9:应用安全技术,10:数据安全技术,11:终端安全技术,12:操作系统安全技术,13:数据库安全技术,14:网络安全技术,15:机房安全技术,16:安全审计技术,17:虚拟化安全技术,18:等级保护,19:风险评估,20:保密管理,21:容灾备份,22:其他</entry>
+	<entry key="enums.interstaff.certificate">1:CISP,2:CISSP,3:ISO27001LA,4:ISO27001FOUDATION,5:项目经理,6:信息系统项目管理师,7:CISA,8:ITIL,9:CCIE,10:CCNP,11:其他</entry>
+	<entry key="enums.outerstaff.certificate">1:CISP,2:CISSP,3:ISO27001LA,4:ISO27001FOUDATION,5:项目经理,6:信息系统项目管理师,7:CISA,8:其他</entry>
+	<entry key="enums.outerstaff.maintainAutor">1:超级管理员权限,2:系统管理员权限,3:安全管理员权限,4:安全审计员权限,5:业务操作员权限</entry>
+	<entry key="enums.outerstaff.fulljob">1:安全管理员,2:安全审计员,3:安全运行监控员,4:机房管理员,5:基础设施管理员,6:主机管理员,7:网络管理员,8:应用管理员,9:数据库管理员,100:无</entry>
+	<entry key="enums.outerstaff.work">1:业务支持,2:应用系统维护,3:网络设备维护,4:安全设备维护,5:安全监控,6:其他</entry>
+
+	<!-- 规则 -->
+	<entry key="enums.rule.category">Alarm:报警规则</entry>
+
+	<!-- 安全制度管理 -->
+	<entry key="enums.regulation.establish.state">0:全部,1:未下发,2:待完成,3:已完成</entry>
+	<entry key="enums.regulation.establish.state.self">0:全部,2:待完成,3:已完成</entry>
+	<entry key="enums.regulation.regulate.state">0:编制中,1:修订中,2:征求意见中,3:发布,4:模版,5:废止</entry>
+	<!-- 应急状态 -->
+	<entry key="enums.event.state">0:全部,1:上报,2:研判,3:启动,4:处理,5:反馈,6:报告,7:完成</entry>
+	<entry key="enums.event.dengji">0:全部,1:待定,2:一级,3:二级,4:三级,5:四级,6:五级</entry>
+	<!-- 全局配置 -->
+	<entry key="enums.pass.strength">1:小写字母,2:大写字母,3:特殊字符,4:数字</entry>
+	
+	<!-- LAS -->
+	<entry key="enums.las.filter.type">0:内置,1:自定义</entry>
+	<entry key="enums.las.filter.action">0:短信,1:邮件</entry>
+	<entry key="enums.enableds">0:启用,1:禁用</entry>
+	<entry key="enums.las.rule.logicalOpers">AND:AND,OR:OR,NOT:NOT</entry>
+	<entry key="enums.las.rule.unti">1:秒,2:分钟,3:小时,4:天,5:周</entry>
+	<entry key="enums.las.rule.opers"><![CDATA[<]]>:小于,<![CDATA[>]]>:大于,<![CDATA[=]]>:等于</entry>
+	
+	<!-- 报表 -->
+	<entry key="enums.report.type">1:系统报表,2:日志报表,3:综合报表</entry>
+	<entry key="enums.report.category">1:日报,2:周报,3:月报</entry>
+</properties>

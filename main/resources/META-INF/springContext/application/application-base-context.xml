@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	
+   <!-- Spring的动态变量,能在bean中直接调用 --> 
+   <bean id="propertyPlaceholderConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:/application-props/application.properties</value>
+				<value>classpath:/application-props/jdbc.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- JSR 303校验管理器 -->
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+		<property name="validationMessageSource">
+			<ref bean="messageSource"/>
+		</property>
+		<property name="traversableResolver">
+			<bean class="secfox.soc.melon.base.ExtTraversableResolver"/>
+		</property>
+	</bean>
+	
+	<!-- 文件上传下载管理器 -->
+	<bean id="ajaxFileUtils" class="secfox.soc.melon.system.util.AjaxFileUtils">
+		<constructor-arg name="fileRepositoy" value="${ajaxfile.upload.path}"/>
+	</bean>
+	
+	<!-- 报表文件上传管理器 -->
+	<bean id="reportFileUtils" class="secfox.soc.melon.report.util.ReportFileUtils">
+		<constructor-arg name="fileRepositoy" value="${reportfile.upload.path}"/>
+	</bean>
+	
+	<!-- lasUrl管理 -->
+	<bean id="lasBaseUrl"  class="java.lang.String">
+		<constructor-arg value="http://10.99.10.44/las/sim/" />
+	</bean>
+	
+</beans>

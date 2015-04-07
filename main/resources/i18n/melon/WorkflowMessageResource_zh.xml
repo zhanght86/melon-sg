@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>melon.commons相关的国际化文件</comment>
+	
+	<entry key="workflow.bpmProcess.create.hint"><![CDATA[添加成功]]></entry>
+	<entry key="workflow.bpmProcess.basic">基本信息</entry>
+	<entry key="workflow.bpmProcess.process">流程信息</entry>
+	<entry key="workflow.bpmProcess.other">其他信息</entry>
+	<entry key="workflow.bpmProcess.code">流程编码</entry>
+	<entry key="workflow.bpmProcess.name">流程名称</entry>
+	<entry key="workflow.bpmProcess.type">流程类型</entry>
+	<entry key="workflow.bpmProcess.props">流程变量</entry>
+	<entry key="workflow.bpmProcess.propKey">流程名</entry>
+	<entry key="workflow.bpmProcess.propValue">流程值</entry>
+	<entry key="workflow.bpmProcess.creater">创建人</entry>
+	<entry key="workflow.bpmProcess.createTime">创建时间</entry>
+	<entry key="workflow.bpmProcess.version">版本号</entry>
+	<entry key="workflow.bpmProcess.remarks">备注</entry>
+	
+</properties>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>知识库相关的国际化文件</comment>
+	
+	<!-- 知识库树信息-->
+	<entry key="knowledge.type.remove.hint">删除成功！</entry>
+	<entry key="knowledge.type.notRemove.hint">删除失败,请检查数据！</entry>
+	<entry key="knowledge.type.title">名称</entry>
+	<entry key="knowledge.type.code">编码</entry>
+	<entry key="knowledge.type.order">顺序</entry>
+	<entry key="knowledge.type.remarks">备注</entry>
+	<entry key="knowledge.type.rootTree">知识库树</entry>
+	<entry key="knowledge.type.create.hint"><![CDATA[您已经成功添加了名称为<STRONG>{0}</STRONG>的知识库]]></entry>
+	<entry key="knowledge.type.update.hint"><![CDATA[您已经成功更新了名称为<STRONG>{0}</STRONG>的知识库]]></entry>
+	<entry key="knowledge.type.create">新建知识库</entry>
+	<entry key="knowledge.type.root">知识库</entry>
+	<entry key="knowledge.type.root.title">
+		<![CDATA[
+			<strong class='description-left'>说明：</strong>
+			<div class='description-right'>
+			知识库用于衡量组织的安全工作情况、安全运行状态
+			</div>	
+		]]>	
+	</entry>
+	<entry key="knowledge.type.root.description">
+		<![CDATA[
+		<h5><strong>动态扩展</strong></h5>
+		<p>支持用户自定义知识库的动态添加、维护与扩展，是综合安全管理平台内容定制的核心部分。</p>
+		
+		<h5><strong>决策参数</strong></h5>
+		<p>告警完全贯彻了信息安全管理体系“安全管理，人人有责”原则，将指标制定者、业务专家、数据分析人员无缝地结合起来，为组织提供更科学、更符合业务范围的决策参数。</p>
+		
+		<h5><strong>周期执行</strong></h5>
+		<p>从安全方针到告警到脚本是一个从宏观到微观的过程，这些脚本必须以周期性自动化的方式在系统内部运行。</p>
+
+		]]>
+	</entry>
+	<entry key="security.knowledge.create.hint"><![CDATA[您已经成功创建了<STRING>{0}</STRING>这个知识库对象]]></entry>
+	<entry key="security.knowledge.update.hint"><![CDATA[您已经成功修改了<STRING>{0}</STRING>这个知识库对象]]></entry>
+	<entry key="knowledge.base.title">标题</entry>
+	<entry key="knowledge.base.issueOrgan">发布单位</entry>
+	<entry key="knowledge.base.issueDate">发布日期</entry>	
+	<entry key="knowledge.base.keywords">关键字</entry>
+	<entry key="knowledge.base.type">类型</entry>
+	<entry key="knowledge.base.content">描述</entry>
+	<entry key="knowledge.base.issueOrgan.hint">选择单位</entry>
+	<entry key="knowledge.base.title.hint">必填标题</entry>
+	<entry key="knowledge.type.threat"><![CDATA[威胁数量<br/>{0} 个]]></entry>
+	<entry key="knowledge.type.leak"><![CDATA[漏洞数量<br/>{0} 个]]></entry>
+	<entry key="knowledge.type.attck"><![CDATA[攻击数量<br/>{0} 个]]></entry>
+	<entry key="knowledge.type.threat.name">威胁查看</entry>
+	<entry key="knowledge.type.leak.name">漏洞查看</entry>
+	<entry key="knowledge.type.attck.name">攻击查看</entry>
+	<entry key="knowledge.base.count">点击率</entry>
+	<entry key="knowledge.base.count.desc">点击率最多的{0}个知识库</entry>
+	<entry key="knowledge.base.update.desc">最近更新的{0}个知识库</entry>
+</properties>

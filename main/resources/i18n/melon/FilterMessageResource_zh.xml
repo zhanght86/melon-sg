@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>规则相关的国际化文件</comment>
+	
+	<!-- 过滤器管理 -->
+	<entry key="era.filter.filterName">过滤器功能</entry>
+	<entry key="era.filter.filterClass">过滤器路径</entry>
+	<entry key="era.filter.enabled">已启用</entry>
+	<entry key="era.filter.desc">描述信息</entry>
+	<entry key="era.filter.rules">引用的规则</entry>
+	<entry key="era.filter.button.addrules">关联规则</entry>
+	<entry key="era.filter.rules.confirm">请选择一条规则</entry>
+    
+</properties>

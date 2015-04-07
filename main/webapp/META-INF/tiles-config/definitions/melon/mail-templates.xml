@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<!-- 邮件配置 -->
+	<definition name="message.*.create" extends="desktop.default">
+		<put-attribute name="body" value="/WEB-INF/views/business/{1}/edit.jsp" cascade="true"/>
+    </definition>
+   
+    <definition name="message.*.list" extends="desktop.list">
+       <put-attribute name="body" value="/WEB-INF/views/business/{1}/list.jsp" cascade="true"/>
+    </definition>
+
+    <definition name="message.*.show" extends="desktop.show">
+		<put-attribute name="body" value="/WEB-INF/views/business/{1}/show.jsp" cascade="true"/>
+    </definition>
+ 
+    <definition name="message.mail.listMails" extends="desktop.show">
+		<put-attribute name="body" value="/WEB-INF/views/business/mail/listMails.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="message.mail.mailList" extends="desktop.list">
+		<put-attribute name="body" value="/WEB-INF/views/business/mail/mailList.jsp" cascade="true"/>
+    </definition>
+    
+</tiles-definitions>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>全局国际化配置文件,包括版权以及Button信息</comment>
+		<entry key="melon.title">欢迎使用国家电网安全综合管理平台</entry>
+	<entry key="melon.copyright">
+        	<![CDATA[
+        		<div style="margin:6px auto;text-align:center">&copy;网神信息技术（北京）股份有限公司&nbsp;&nbsp;版权所有</div>
+        	]]>
+	</entry>
+	
+	<!-- 按钮信息 -->
+	<entry key="button.attention">我的关注</entry>
+	<entry key="button.myComment">我的批注</entry>
+	<entry key="button.myInfos">我的资料</entry>
+	<entry key="button.layoutView">配置视图</entry>
+	<entry key="button.task">待办任务</entry>
+	<entry key="button.message">我的邮箱</entry>
+	<entry key="button.createNote">批注</entry>
+	<entry key="button.add">添加</entry>
+	<entry key="button.adding">继续添加</entry>
+	<entry key="button.upload">添加附件</entry>
+	<entry key="button.destory">销毁</entry>
+	<entry key="button.choose">请选择</entry>
+	<entry key="button.login">登录</entry>
+	<entry key="button.register">注册</entry>
+	<entry key="button.logout">注销</entry>
+	<entry key="button.help">帮助信息</entry>
+	<entry key="button.finish">完成</entry>
+	<entry key="button.resetPass">重置密码</entry>
+	<entry key="button.resetSecPass">重置验证密码</entry>
+	<entry key="button.changeSkin">换肤</entry>
+	<entry key="button.contact">通讯录</entry>
+	<entry key="button.export">导出</entry>
+	<entry key="button.exportPDF">导出PDF</entry>
+	<entry key="button.exportExcel">导出EXCEL</entry>
+	<entry key="button.saveTemplate">另存为模板</entry>
+	<entry key="button.reset">恢复设置</entry>
+	<entry key="button.save">保存</entry>
+	<entry key="button.startProcess">启动工单</entry>
+	<entry key="button.sure">确定</entry>
+	<entry key="button.querySame">查找类似</entry>
+	<entry key="button.cancel">取消</entry>
+	<entry key="button.upload">上传</entry>
+	<entry key="button.close">关闭</entry>
+	<entry key="button.back">返回</entry>
+	<entry key="button.backList">返回列表页</entry>
+	<entry key="button.backToIndex">返回首页</entry>
+	<entry key="button.begin">开始</entry>
+	<entry key="button.next">下一步</entry>
+	<entry key="button.prev">上一步</entry>
+	<entry key="button.following">下一个</entry>
+	<entry key="button.previous">上一个</entry>
+	<entry key="button.finish">完成</entry>
+	<entry key="button.open">显示</entry>
+	<entry key="button.hide">隐藏</entry>
+	<entry key="button.resize">调整大小</entry>
+	<entry key="button.destory">废除</entry>
+	<entry key="button.modify">修改</entry>
+	<entry key="button.more">更多</entry>
+	<entry key="button.audit">提交审核</entry>
+	<entry key="button.auditPass">审核通过</entry>
+	<entry key="button.auditNoPass">审核不通过</entry>
+	<entry key="button.uploadPortrait">上传头像</entry>
+	<entry key="button.upload">上传文件</entry>
+	<entry key="button.download">下载文件</entry>
+	<entry key="button.createSon">创建子节点</entry>
+	<entry key="button.createSafetySon">创建子安全域</entry>
+	<entry key="button.searchSafetySon">查询子安全域</entry>
+	<entry key="button.edit">编辑</entry>
+	<entry key="button.create">新建</entry>
+	<entry key="button.safetyCheck">填报</entry>
+	<entry key="button.produce">生成</entry>
+	<entry key="button.show">明细</entry>
+	<entry key="button.update">编辑</entry>
+	<entry key="button.query">查询</entry>
+	<entry key="button.advancedQuery">高级查询</entry>
+	<entry key="button.remove">删除</entry>
+	<entry key="button.write">写信</entry>
+	<entry key="button.reply">回复</entry>
+	<entry key="button.replyAll">回复全部</entry>
+	<entry key="button.forwarding">转发</entry>
+	<entry key="button.load">载入</entry>
+	<entry key="button.add">添加</entry>
+	<entry key="button.send">发送</entry>
+	<entry key="button.btnSaveAndSend">提交并发送</entry>
+	<entry key="button.handle">处理</entry>
+	<entry key="button.publish">发布</entry>
+	<entry key="button.disable">停用</entry>
+	<entry key="button.enable">启用</entry>
+	<entry key="button.abolish">废除</entry>
+	<entry key="button.copy">复制</entry>
+	<entry key="button.pigeonhole">归档</entry>
+	<entry key="grid.edit">编辑</entry>
+	<entry key="grid.remove">删除</entry>
+	<entry key="grid.operator">操作</entry>
+	<entry key="button.issue">上报</entry>
+	<entry key="placeholder.time">-</entry>
+	<entry key="button.preview">预览</entry>
+	<entry key="button.createKpi">创建指标</entry>
+    <entry key="button.drafts">保存草稿</entry>
+    <entry key="button.change">切换到树形结构</entry>
+    <entry key="button.custom">内容自定义</entry>
+    <entry key="button.report">填报</entry>
+    <entry key="button.stop">停用</entry>
+    <entry key="button.start">启用</entry>
+    <entry key="button.excel">导出EXCEL</entry>
+    <entry key="button.impexcel">导入EXCEL</entry>
+    <entry key="button.import">导入</entry>
+    <entry key="button.start1">启动</entry>
+    <entry key="button.forbidden">禁止</entry>
+    <entry key="button.createSonModule">创建子模块</entry>
+    <entry key="button.view">查看</entry>
+    <entry key="button.fill">填写</entry>
+    <entry key="button.confirm">确认</entry>
+    <entry key="button.clean">清除</entry>
+    <entry key="button.statistics">数据统计</entry>
+    <entry key="button.set">配置</entry>
+    <entry key="button.examtb">测评项维护</entry>
+    <entry key="button.addAttr">添加属性</entry>
+    <entry key="button.addField">立刻创建</entry>
+    <entry key="button.listOrgans">按单位查询</entry>
+    <entry key="button.create">新建</entry>
+    <entry key="button.cancleAddToCheckTask">取消作为任务相关表</entry>
+    <entry key="button.addToCheckTask">作为任务的相关表</entry>
+    <entry key="button.auditAccess">审核通过</entry>
+    <entry key="button.auditNotAccess">审核不通过</entry>
+    <entry key="button.backTomain">返回主页</entry>
+    <entry key="button.check">查看</entry>
+    <entry key="button.top">置顶</entry>
+    <entry key="button.planAdd">新建计划</entry>
+     <entry key="button.addDutyGroup">定义岗责</entry>
+    <entry key="button.enable">启用</entry>
+    <entry key="button.send">直接发布</entry>
+    <entry key="button.activate">激活账户</entry>
+    <entry key="button.cancleLogin">取消登陆</entry>
+
+    
+    <entry key="title.recent">最近</entry>
+    <entry key="title.asset">天的告警统计列表</entry>
+    <entry key="title.warn">警告</entry>
+    <!-- 信息中心 -->
+    <entry key="button.setRead">标记已读</entry>
+    <entry key="button.setRemind">标记已提醒</entry>
+    <entry key="button.subscribe">订阅</entry>
+   	<!-- 标签信息 -->
+   	<entry key="label.history">历史</entry>
+   	<entry key="button.aotudo">自动执行</entry>
+	<entry key="button.saveAreport">保存并提交</entry>
+    <!-- 标签信息 -->
+    <entry key="label.today">今日</entry>
+    <entry key="button.issued">下发</entry>
+    <entry key="button.submit">提交</entry>
+    <entry key="button.pz">批准</entry>
+    <entry key="button.bpz">不批准</entry>
+    <entry key="button.perform">执行计划</entry>
+    <entry key="button.cusPortal">自定义</entry>
+	<entry key="button.leftAlign">左对齐</entry>
+	<entry key="button.sub">查看子任务</entry>
+	<entry key="button.know">知道了</entry>
+	
+	<!-- las -->
+	<entry key="button.configCond">条件配置</entry>
+	<entry key="button.counts">计数配置</entry>
+    
+    <!-- 核心服务提示信息 -->
+    <entry key="logger.start.fail">系统操作日志审计服务启动失败</entry>
+	
+	<!-- 通用提示区 -->
+	<entry key="hint.order">数字越小,则排序越靠前</entry>
+	<entry key="hint.code">编号由6位0-9之间数据组成</entry>
+	<entry key="hint.end">已完成</entry>
+	<entry key="hint.max">最大值</entry>
+	<entry key="hint.min">最小值</entry>
+	<entry key="hint.averge">平均值</entry>
+	<entry key="hint.fieldName">请输入英文</entry>
+	<entry key="hint.remove">请确认是否删除?</entry>
+	<entry key="hint.remove.withName"><![CDATA[请确认是否删除<STRONG>{0}</STRONG>]]></entry>
+	<entry key="hint.failure">操作失败</entry>
+	<entry key="hint.success">操作成功</entry>
+	<entry key="hint.required"><![CDATA[<span class="form-required">*</span>]]></entry>
+	<entry key="hint.selNoRow">请选择需要操作的数据！</entry>
+	<entry key="hint.selManyRow">您选择了过多的数据，请选择一条数据进行操作！</entry>
+	<entry key="hint.issued">确认是否下发！</entry>
+	<entry key="hint.title">
+		<![CDATA[
+		{0}<small class="title-secondary">{1}</small>
+		]]>
+	</entry>
+
+	
+	<!-- 删除提示信息 -->
+	<entry key="create.page">新建页面</entry>
+	<entry key="tree.root.notDelete">根节点不能删除</entry>
+	<entry key="tree.choose.oneNode">请选择一个节点</entry>
+	<entry key="tree.remove.hint">您将删除该节点及其子节点，请确认是否继续</entry>
+	<entry key="remove.confirm.hint">您将删除该条信息，请确认是否继续</entry>
+	
+	<entry key="operation.success">操作成功</entry>
+	<entry key="operation.failed">操作失败</entry>
+	<entry key="operation.input.error">很抱歉,您有一些输入项需要校正!</entry>
+	<entry key="location.current">您在这里：</entry>
+	
+	<!-- 版权 -->
+	<entry key="melon.copyright.toTop">返回顶部</entry>
+	<entry key="melon.copyright.guoshui">
+       	<!-- <![CDATA[
+       		国家税务总局办公厅主办 电子税务管理中心提供技术支持<br/>
+			 版权所有：国家税务总局 京ICP备05036792号<br/>
+			 地址：北京市海淀区羊坊店西路5号 邮编：100038
+       	]]> -->
+	</entry>
+	<entry key="melon.full-text.search">搜索</entry>
+	<entry key="melon.full-text.search.option">
+       	<![CDATA[
+       		<option>全站</option>
+			<option>主页</option>
+			<option>后台</option> 
+       	]]>
+	</entry>
+	
+	
+</properties>

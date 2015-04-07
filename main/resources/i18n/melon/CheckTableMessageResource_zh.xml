@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>安全检查表格注册的国际化文件</comment>
+	<entry key="checkTable.nodata">没有数据</entry>
+	
+	<entry key="checkTable.title">标题</entry>
+	<entry key="checkTable.issueOrgan">颁发单位</entry>
+	<entry key="checkTable.issueTime">颁发时间</entry>
+	<entry key="checkTable.businessId">引用附件</entry>
+	<entry key="checkTable.baseUrl">访问地址</entry>
+	<entry key="checkTable.deviceId">设备ID</entry>
+	<entry key="checkTable.remarks">备注信息</entry>
+	
+</properties>

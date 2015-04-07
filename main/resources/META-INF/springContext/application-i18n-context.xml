@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	
+	<!-- 国际化配置文件注册 -->
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="fallbackToSystemLocale" value="false" />
+        <property name="defaultEncoding" value="UTF-8" />
+        <!--仅限测试环境使用0(每次请求时都会载入配置文件),推荐-1(缓存不更新) -->
+        <property name="cacheSeconds" value="-1" />
+        <property name="basenames">
+            <list>
+                <!-- 全局配置 -->
+                <value>classpath:/i18n/application/GlobalMessageResource</value>
+                <value>classpath:/i18n/application/EnumMessageResource</value>
+                <value>classpath:/i18n/application/ErrorMessageResource</value>
+                <value>classpath:/i18n/application/ValidatorMessageResource</value>
+                <value>classpath:/i18n/application/ValidateMessageResource1</value>
+                <!-- 各模块配置信息 -->
+                <value>classpath:/i18n/melon/TutorialMessageResource</value>
+                <value>classpath:/i18n/melon/SecurityMessageResource</value>
+                <value>classpath:/i18n/melon/OrganMessageResource</value>
+                <value>classpath:/i18n/melon/CommonsMessageResource</value>
+                <value>classpath:/i18n/melon/AssetMessageResource</value>
+                <value>classpath:/i18n/melon/PortletMessageResource</value>
+                <value>classpath:/i18n/melon/SystemMessageResource</value>
+                <value>classpath:/i18n/melon/WorkflowMessageResource</value>
+                <value>classpath:/i18n/melon/BaseMessageResource</value>
+                <value>classpath:/i18n/melon/AlarmMessageResource</value>
+                <value>classpath:/i18n/melon/CheckTableMessageResource</value>
+                <value>classpath:/i18n/melon/IndicatorMessageResource</value>
+                <value>classpath:/i18n/melon/DbMessageResource</value>
+                <value>classpath:/i18n/melon/SysMailMessageResource</value>
+                <value>classpath:/i18n/melon/KnowledgeMessageResource</value>
+                <value>classpath:/i18n/melon/FilterMessageResource</value>
+                <value>classpath:/i18n/melon/HomeMessageResource</value>
+                <value>classpath:/i18n/melon/RegulationMessageResource</value>
+                <value>classpath:/i18n/melon/RuleMessageResource</value>
+                <value>classpath:/i18n/melon/WorkMessageResource</value>
+                <value>classpath:/i18n/melon/LasMessageResource</value>
+                <value>classpath:/i18n/melon/ReportMessageResource</value>
+            </list>
+        </property>
+    </bean>
+
+</beans>

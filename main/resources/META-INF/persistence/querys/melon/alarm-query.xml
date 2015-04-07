@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<querys>
+	
+	<!-- 原生SQL查询使用sql标签,ID必须保证唯一性,可通过QueryTemplateManager.find(id)获取到查询模板 -->
+	<sql id="alarm.groupByDeviceId">
+		<description>告警最多的设备查询</description>
+		<query>
+			select alarm.device_name,count(alarm.pk) as rnum
+			from t_alarm alarm
+			group by alarm.device_name
+			order by count(alarm.pk) desc
+		</query>
+	</sql>
+	
+	<!-- groupRelation -->
+	<sql id="alarm.groupByType">
+		<description>告警最多的类型查询</description>
+		<query>
+			select 
+			case when  alarm.alarm_type=0 then '操作记录类' 
+	        when  alarm.alarm_type=1 then '安全预警类' 
+	        when  alarm.alarm_type=2 then '系统状态类'   
+	        when  alarm.alarm_type=3 then '信息刺探类'  
+	        when  alarm.alarm_type=4 then '恶意代码类' 
+			end as type,
+			count(alarm.pk) as rnum
+			from t_alarm alarm
+			group by alarm.alarm_type
+			order by count(alarm.pk) desc
+		</query>
+	</sql>
+	
+	<!-- groupRelation -->
+	<sql id="alarm.groupByDay">
+		<description>拖延时间最长的告警</description>
+		<query>
+			select alarm.alarm_title,max(round(to_number(sysdate - alarm.alarm_occurtime)))
+			from t_alarm alarm
+			group by alarm.alarm_title
+			order by max(round(to_number(sysdate - alarm.alarm_occurtime))) desc
+		</query>
+	</sql>
+	<sql id="knowledge.count">
+		<description>按照点击率排</description>
+		<query>
+			select 
+			    t.KN_TITLE, t.KNG_COUNT,t.pk
+			from
+			    (select 
+			        *
+			    from
+			        t_know_ledge
+			    order by KNG_COUNT desc) t
+		</query>
+	</sql>
+	
+	<sql id="knowledge.update">
+		<description>按照时间排</description>
+		<query>
+			select 
+			    t.KN_TITLE, t.ISS_DATE,t.pk
+			from
+			    (SELECT 
+			        *
+			    FROM
+			        t_know_ledge
+			    order by iss_date desc) t
+		</query>
+	</sql>
+	
+	<!-- groupRelation -->
+	<sql id="alarm.sumByToday">
+		<description>统计今日告警数</description>
+		<query>
+			select floor(sysdate - alarm.alarm_occurtime) AS days ,count(alarm.pk)
+			From T_Alarm Alarm
+			Where Floor(Sysdate - Alarm.Alarm_Occurtime)=0
+			Group By Floor(Sysdate - Alarm.Alarm_Occurtime)
+		</query>
+	</sql>
+	
+	<!-- groupRelation -->
+	<sql id="alarm.sumByHandle">
+		<description>统计已处理告警数</description>
+		<query>
+			select alarm.alarm_state,count(alarm.pk)
+			from t_alarm alarm
+            group by alarm.alarm_state
+			having  alarm.alarm_state = 4  
+		</query>
+	</sql>
+	
+	<!-- groupRelation -->
+	<sql id="alarm.sumByWeek">
+		<description>统计近七日告警走势</description>
+		<query>
+			SELECT to_char(sysdate-(to_date(sysdate)-to_date(alarm.alarm_occurtime)),'mm-dd') as days,COUNT(alarm.pk)
+			FROM t_alarm alarm
+			Where  To_Date(Sysdate)-To_Date(Alarm.Alarm_Occurtime) Between 0 And 6
+			group by to_char(sysdate-(to_date(sysdate)-to_date(alarm.alarm_occurtime)),'mm-dd')
+		</query>
+	</sql>
+</querys>

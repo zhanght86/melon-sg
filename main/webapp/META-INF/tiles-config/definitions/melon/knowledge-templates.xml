@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<!-- 知识库配置 -->
+	<definition name="knowledge.home" extends="desktop.default">
+		<put-attribute name="body" value="/WEB-INF/views/melon/knowledge/home.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="knowledge.query" extends="desktop.default">
+		<put-attribute name="body" value="/WEB-INF/views/melon/knowledge/base/query.jsp" cascade="true"/>
+    </definition>
+	
+	<definition name="knowledge.*.create" extends="desktop.default">
+		<put-attribute name="body" value="/WEB-INF/views/melon/knowledge/{1}/edit.jsp" cascade="true"/>
+    </definition>
+   
+    <definition name="knowledge.*.list" extends="desktop.list">
+       <put-attribute name="body" value="/WEB-INF/views/melon/knowledge/{1}/list.jsp" cascade="true"/>
+    </definition>
+
+    <definition name="knowledge.*.show" extends="desktop.show">
+		<put-attribute name="body" value="/WEB-INF/views/melon/knowledge/{1}/show.jsp" cascade="true"/>
+    </definition>
+    
+    <!-- 知识库类型树 -->
+	<definition name="knowledge.*.tree" extends="desktop.edit">
+       <put-attribute name="body" value="/WEB-INF/views/melon/knowledge/{1}/tree.jsp" cascade="true"/>
+    </definition>
+    
+</tiles-definitions>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	
+	<bean class="org.springframework.web.servlet.handler.HandlerExceptionResolverComposite">
+		<property name="exceptionResolvers">
+			<list>
+				<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+					<property name="order" value="100"/>
+					<property name="defaultErrorView" value="errors.default"/>
+					<property name="exceptionMappings">
+						<props>
+							<prop key="java.io.FileNotFoundException">errors.uncaught</prop>
+						</props>
+					</property>
+					<!-- 更改错误的视图的状态吗, 例如将exception的状态码由500改为200 -->
+					<property name="statusCodes">
+						<props>
+							<prop key="errors.uncaught">200</prop>
+						</props>
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+
+</beans>

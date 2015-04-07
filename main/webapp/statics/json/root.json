@@ -1,0 +1,27 @@
+[{
+	"id" : 0,
+	"text" : "组织机构",
+	"type" : 1,
+	"state"  : {
+		"opened"    : true
+	},
+	"parent" : "#"
+}, {
+	"id" : 5,
+	"text" : "国税总局",
+	"parent" : 0,
+	"children" : true,
+	"type" : 2,
+	"state"  : {
+		"opened"    : false
+	}
+},{
+	"id" : 3,
+	"text" : "山东国税",
+	"parent" : 0,
+	"children" : false,
+	"type" : 2,
+	"state"  : {
+		"opened"    : false
+	}
+}]

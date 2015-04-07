@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>告警相关的国际化文件</comment>
+	
+	<entry key="alerm.contrast.start">请选择与{0}对比的告警</entry>
+    <!-- 告警基本信息 -->
+	<entry key="alarm.nodata">没有数据</entry>
+	<entry key="alarm.title">告警名称</entry>
+	<entry key="alarm.level">告警级别</entry>
+	<entry key="alarm.occurTime">发生时间</entry>
+	<entry key="alarm.deviceIp">设备IP</entry>
+	<entry key="alarm.deviceName">设备名称</entry>
+	<entry key="alarm.type">告警分类</entry>
+	<entry key="alarm.from">告警来源</entry>
+	<entry key="alarm.state">处理状态</entry>
+	<entry key="alarm.charger">责任人</entry>
+	<entry key="alarm.organName">所属单位</entry>
+	<entry key="alarm.remarks">备注</entry>
+	<entry key="alarm.processInstanceId">流程ID</entry>
+	
+	<!-- section -->
+	<entry key="alarm.nav.basic">基本信息</entry>
+	<entry key="alarm.nav.device">设备信息</entry>
+	<entry key="alarm.nav.handle">处理信息</entry>
+	
+	<!-- 统计区 -->
+	<entry key="alarm.home.detail">告警明细</entry>
+	<entry key="alarm.home.unhandle">未处理告警</entry>
+	<entry key="alarm.home.handle">处理中告警</entry>
+	<entry key="alarm.home.all">所有告警</entry>
+	<entry key="alarm.home.immediate.handle">立即处理</entry>
+	<entry key="alarm.home.today.handle"><![CDATA[今日处理<br/>{0}个]]></entry>
+	<entry key="alarm.home.handled"><![CDATA[已处理<br/>{0}个]]></entry>
+	<entry key="alarm.home.area.handle">告警区域视图</entry>
+	<entry key="alarm.home.source.view">告警来源视图</entry>
+	<entry key="alarm.home.handle.view">告警处理视图</entry>
+	<entry key="alarm.home.recent.tendency">近期告警趋势</entry>
+	<entry key="alarm.home.device.most">告警最多的{0}个设备</entry>
+	<entry key="alarm.home.type.most">告警最多的{0}个类型</entry>
+	<entry key="alarm.home.time.longest">拖延时间最长的{0}个告警</entry>
+	<entry key="alarm.home.source.distribution">告警来源分布</entry>
+	
+	<!-- HOME -->
+	<entry key="alarm.home.title">告警</entry>
+	<entry key="alarm.home.desc">
+	告警是综合安全管理平台的核心,几乎所有的功能都围绕其展开,在这里,告警是指对设备进行监控、根据告警状态和来源以及告警类型产生告警工单,包括告警区域视图、告警来源视图、告警处理效率等等。
+	</entry>
+	
+	<!-- 告警树信息-->
+	<entry key="alarm.type.remove.hint">删除成功！</entry>
+	<entry key="alarm.type.notRemove.hint">删除失败,请检查数据！</entry>
+	<entry key="alarm.type.name">名称</entry>
+	<entry key="alarm.type.code">编码</entry>
+	<entry key="alarm.type.order">顺序</entry>
+	<entry key="alarm.type.remarks">备注</entry>
+	<entry key="alarm.type.rootTree">告警树</entry>
+	<entry key="alarm.type.create.hint"><![CDATA[您已经成功添加了名称为<STRONG>{0}</STRONG>的告警]]></entry>
+	<entry key="alarm.type.update.hint"><![CDATA[您已经成功更新了名称为<STRONG>{0}</STRONG>的告警]]></entry>
+	<entry key="alarm.type.create">新建告警</entry>
+	<entry key="alarm.type.root">告警</entry>
+	<entry key="alarm.type.root.title">
+		
+	
+	<![CDATA[
+			<strong class='description-left'>说明：</strong>
+			<div class='description-right'>
+			告警用于衡量组织的安全工作情况、安全运行状态
+			</div>	
+		]]>	
+	</entry>
+	<entry key="alarm.type.root.description">
+		<![CDATA[
+		<h5><strong>动态扩展</strong></h5>
+		<p>支持用户自定义告警的动态添加、维护与扩展，是综合安全管理平台内容定制的核心部分。</p>
+		
+		<h5><strong>决策参数</strong></h5>
+		<p>告警完全贯彻了信息安全管理体系“安全管理，人人有责”原则，将指标制定者、业务专家、数据分析人员无缝地结合起来，为组织提供更科学、更符合业务范围的决策参数。</p>
+		
+		<h5><strong>周期执行</strong></h5>
+		<p>从安全方针到告警到脚本是一个从宏观到微观的过程，这些脚本必须以周期性自动化的方式在系统内部运行。</p>
+
+		]]>
+	</entry>
+</properties>

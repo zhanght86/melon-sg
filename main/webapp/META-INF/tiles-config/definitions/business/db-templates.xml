@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<!-- 等级保护配置 -->
+    <definition name="db.basicInfo.home" extends="desktop.default">
+    	<put-attribute name="body" value="/WEB-INF/views/business/db/home.jsp"></put-attribute>
+    </definition>
+    
+	<definition name="db.basicInfo.edit" extends="desktop.edit">
+		<put-attribute name="body" value="/WEB-INF/views/business/db/basicInfo/edit.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="db.systemInfo.edit" extends="desktop.edit">
+		<put-attribute name="body" value="/WEB-INF/views/business/db/sysInfo/edit.jsp" cascade="true"/>
+    </definition>
+    
+    <definition name="db.levelInfo.edit" extends="desktop.edit">
+		<put-attribute name="body" value="/WEB-INF/views/business/db/levelInfo/edit.jsp" cascade="true"/>
+    </definition>
+    
+</tiles-definitions>

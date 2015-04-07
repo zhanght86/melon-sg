@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+	
+	<!-- 使用Common Pool数据库   -->
+	<!-- 数据源 -->
+    <!-- <bean id="jpaDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"  lazy-init="false">
+        <property name="driverClassName" value="${hibernate.driver}" />
+        <property name="url" value="${hibernate.url}" />
+        <property name="username" value="${hibernate.user}" />
+        <property name="password" value="${hibernate.password}" />
+    </bean>  -->
+    
+   
+ 	<!-- 使用JNDI数据源-->
+    <!-- 针对Weblogic resource-ref必须为false 
+    	 注意t3://127.0.0.1:7001中的端口号，必须要Weblogic的发布端口保持一致-->
+     
+	<bean id="jpaDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+			<value>melon/datasource</value>
+		</property>
+		<property name="lookupOnStartup" value="true"/>
+		<property name="expectedType" value="javax.sql.DataSource"/>
+		<property name="cache" value="true"/>
+		<property name="resourceRef" value="false"/>
+		<property name="jndiEnvironment">
+			<props>
+				<prop key="java.naming.provider.url">t3://127.0.0.1:7001</prop>
+				<prop key="java.naming.factory.initial">weblogic.jndi.WLInitialContextFactory</prop>
+			</props>
+		</property>
+	</bean>
+	
+	 
+	<bean id="persistenceUnitManager"	class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
+		<property name="persistenceXmlLocation" value="classpath:/META-INF/persistence/application-persistence.xml"/>
+		<property name="defaultDataSource" ref="jpaDataSource" />
+	</bean>
+	
+	<bean id="entityManagerFactory"	class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceUnitManager" ref="persistenceUnitManager" />
+		<property name="persistenceUnitName" value="#{T(secfox.soc.melon.persistence.QueryConstants).PERSIST_UNIT_NAME}" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+		</property>
+	</bean>
+	
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<constructor-arg>
+			<ref bean="entityManagerFactory"/>
+		</constructor-arg>
+	</bean>
+	
+	<!-- order表示数字越大,越先执行 -->
+	<tx:annotation-driven transaction-manager="transactionManager" mode="proxy" proxy-target-class="false" order="999"/>
+	
+	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+	
+	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
+
+</beans>

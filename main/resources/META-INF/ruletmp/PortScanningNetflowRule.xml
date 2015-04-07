@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rule name="疑似扫描行为检测" depends="netflow" enable="true">
+	<!-- 针对netflow的控制字段，控制器会根据此字段对数据进行分组后传递到不同的规则Bolt中，以提高数据分析性能,目前仅支持sAddr,sPort,dAddr,dPort-->
+	<controllerField>sAddr</controllerField>
+	<!-- name为epl中的表名，要和epl语句中的表名对应，但注意各规则的此name一定要不相同-->
+	<eventType name="portScanningNetflowEvent">
+		<!-- 控制内存，设置向esper发送的数据类型不是simeventobject,而是其中的几个字段,name的值要和simeventobject中的变量名一致 -->
+		<!-- ID字段必须保存，因为要保存关联事件的ID -->
+		<field name="ID"/>
+		<field name="sAddr"/>
+		<field name="dAddr"/>
+		<field name="dPort"/>
+	</eventType>
+	
+	<output>
+		<!-- 作为输出告警的固定内容，属性和OutputAlert中的变量名对应，并且OutputAlert中这些字段要定义为String类型-->
+		<content>源主机【{0}】在规定时间内访问目的主机和目的端口的分组数超过阈值，疑似进行端口扫描行为。#sAddr</content>
+		<level>严重</level>
+		<status>未确认</status>
+	</output>
+	<epls>
+		<!-- key从1到N顺序加载，最后一个作为statement。表名和上面的eventType中的name一致，为一个map变量，里面包含上面eventType属性中的字段 -->
+		<!-- ID字段必须保存，因为要保存关联事件的ID -->
+		<epl key="1"
+			value="create window PortScanningNetflowWin_taskIndex.win:time(#time#) as select ID,sAddr,dAddr,dPort from portScanningNetflowEvent"/>
+		<epl key="2" value="insert into PortScanningNetflowWin_taskIndex select ID,sAddr,dAddr,dPort from portScanningNetflowEvent"/>
+		<epl key="3"
+			value="on PortScanningNetflowWin_taskIndex as onStream delete from PortScanningNetflowWin_taskIndex as delStream where onStream.sAddr=delStream.sAddr and onStream.dAddr=delStream.dAddr and onStream.dPort=delStream.dPort and onStream.ID&lt;&gt;delStream.ID"/>
+		<!-- 字段必须重命名，否则map中拿到的key如同outStream.ID -->
+		<epl key="4"
+			value="on PortScanningNetflowWin_taskIndex as onStream select and delete outStream.ID as ID,outStream.sAddr as sAddr from PortScanningNetflowWin_taskIndex as outStream where onStream.sAddr=outStream.sAddr and (select count(0) from PortScanningNetflowWin_taskIndex as selStream where selStream.sAddr=onStream.sAddr)>=#number#"/>
+	</epls>
+	<eplvars desc="同一设备在{time}秒内访问目的主机和目的端口分组数达到{number}个">
+		<eplvar name="time" value="10"/>
+		<eplvar name="number" value="100"/>
+	</eplvars>
+</rule>

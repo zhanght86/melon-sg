@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	
+	<!-- 消息通道管理器 -->
+	<bean id="messageTemplate" class="secfox.soc.melon.framework.integration.MessageTemplateFactoryBean"/>
+	
+	<!-- 邮件管理 -->
+	<bean id="mailManager" class="secfox.soc.melon.mail.MailManager">
+		<constructor-arg name="resource" value="classpath:mailTemplate/image"></constructor-arg>
+		<constructor-arg name="sender" ref="javaMailSender"></constructor-arg>
+		<constructor-arg name="freeMarkerConfigurer" ref="markerConfigurer"></constructor-arg>
+	</bean>
+	
+	<bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+	</bean>
+	
+	<!-- 模板处理 -->
+	<bean id="markerConfigurer" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<property name="templateLoaderPaths"  
+            value="classpath:mailTemplate" />  
+        <property name="freemarkerSettings">  
+            <props>  
+                <prop key="template_update_delay">1800</prop><!-- 模板更新延时 -->  
+                <prop key="default_encoding">UTF-8</prop>  
+                <prop key="locale">zh_CN</prop>  
+            </props>  
+        </property>  
+	</bean>
+	
+	<bean id="restClient" class="secfox.soc.melon.client.RestClient">
+		<constructor-arg name="rest" ref="restTemplate"/>
+	</bean>
+	
+	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+		<constructor-arg name="messageConverters">
+			<list>
+				<ref bean="xmlConverter" />
+				<ref bean="jsonConverter" />
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		<property name="objectMapper" ref="objectMapper"/>
+	</bean>
+	
+	<bean id="xmlConverter" class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter">
+		<property name="marshaller" ref="xmlMarshaller"/>
+	</bean>
+	
+</beans>

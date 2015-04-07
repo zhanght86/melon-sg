@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-4.0.xsd">
+	
+	<!-- 日志配置文件注册 -->
+	<bean id="auditConfigService" class="secfox.soc.melon.system.service.impl.AuditConfigServiceImpl">
+		<constructor-arg name="resources">
+			<list>
+				<value>/WEB-INF/classes/audit-config/melon-audit.xml</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg name="marshaller" ref="xmlMarshaller"/>
+	</bean>
+	
+	<bean id="auditorProxy" class="secfox.soc.melon.system.AuditorProxy">
+		<constructor-arg name="auditConfigService">
+			<ref bean="auditConfigService"/>
+		</constructor-arg>
+	</bean>
+	
+	<!--  -->
+	<aop:config>
+		<aop:aspect ref="auditorProxy" order="9999">
+
+			<aop:pointcut expression="@target(org.springframework.stereotype.Service) and target(secfox.soc.melon.persistence.GenericService) and execution(public * *(..))" id="servicePointCut" />
+	
+			<aop:after-returning method="audit" pointcut-ref="servicePointCut"/>
+			
+		</aop:aspect>
+	</aop:config>
+	
+	<!-- 日志缓冲区,最多可存放10000条日志 -->
+	<int:channel id="loggerBufferChannel">
+		<int:queue capacity="10000"/>
+	</int:channel>
+	
+	<!-- 日志桥接通道 -->
+	<int:bridge input-channel="loggerBufferChannel" output-channel="loggerChannel">
+		<!-- 每1秒抓取10条 -->
+		<int:poller max-messages-per-poll="100" fixed-rate="#{1000*60}"/>
+	</int:bridge>
+	
+	<!-- 将日志转存到日志处理通道 -->
+	<int:channel id="loggerChannel" />
+	
+	<!-- 对日志加强处理 -->
+	<bean id="loggerFilter" class="org.springframework.integration.filter.MessageFilter">
+		<constructor-arg name="selector" ref="loggerEnhancer"/>
+	</bean>
+	
+	<!-- 处理系统日志 -->
+	<int:chain id="loggerChain" input-channel="loggerChannel">
+		<int:service-activator ref="loggerPersistActivator" method="persist"/>
+	</int:chain>
+		
+</beans>

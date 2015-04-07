@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>melon.base相关的国际化文件</comment>
+	<entry key="base.dictionary.root">数据字典</entry>
+	<entry key="base.dictionary.label">字典标签</entry>
+	<entry key="base.dictionary.label.hint">用于描述字典值得含义</entry>
+	<entry key="base.dictionary.value">字典编码</entry>
+	<entry key="base.dictionary.value.hint">用于统一字典规范，一般用整数、字母表示</entry>
+	<entry key="base.dictionary.addition">附加值</entry>
+	<entry key="base.dictionary.order">顺序</entry>
+	<entry key="base.dictionary.remarks">备注</entry>
+	<entry key="base.dictionary.create.hint"><![CDATA[您已经成功添加了名称为<STRONG>{0}</STRONG>的数据字典菜单]]></entry>
+	
+	<!-- 流程图 -->
+	<entry key="base.flowLayout.name">标题</entry>
+	<entry key="base.flowLayout.type">图标类型</entry>
+	<entry key="base.flowLayout.width">宽度</entry>
+	<entry key="base.flowLayout.height">高度</entry>
+	<entry key="base.flowLayout.createTime">创建时间</entry>
+	<entry key="base.flowLayout.remarks">备注</entry>
+	
+</properties>

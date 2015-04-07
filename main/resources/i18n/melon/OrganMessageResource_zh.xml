@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>melon.organ相关的国际化文件</comment>
+	<entry key="organ.organization.create">新建组织机构</entry>
+	<entry key="organ.organization.create.hint"><![CDATA[您已经成功添加了名称为<STRONG>{0}</STRONG>的组织机构]]></entry>
+	<entry key="organ.organization.update.hint"><![CDATA[您已经成功更新了名称为<STRONG>{0}</STRONG>的组织机构]]></entry>
+	<entry key="organ.organization.create.error">添加失败！</entry>
+	<entry key="organ.organization.update.error">更新失败！</entry>
+	<entry key="organ.organization.remove.hint">您已经成功删除了该组织机构！</entry>
+	<entry key="organ.organization.organTree">组织机构树</entry>
+	<entry key="organ.organization.root">组织机构</entry>
+	<entry key="organ.organization.name">机构名称</entry>
+	<entry key="organ.organization.code">机构编码</entry>
+	<entry key="organ.organization.level">隶属关系</entry>
+	<entry key="organ.organization.type">机构类型</entry>
+	<entry key="organ.organization.address">联系地址</entry>
+	<entry key="organ.organization.order">机构顺序</entry>
+	<entry key="organ.organization.remark">备注</entry>
+	<entry key="organ.organization.contacter">联系人</entry>
+	<entry key="organ.organization.principal">负责人</entry>
+	<entry key="organ.organization.organPrin">单位负责人：</entry>
+	<entry key="organ.organization.conTel">联系人电话</entry>
+	<entry key="organ.organization.prinTel">负责人电话</entry>
+	<entry key="organ.organization.organPrinTel">负责人电话：</entry>
+	<entry key="organ.organization.account">[{0}人]</entry>
+	<entry key="organ.organization.province">行政区域</entry>
+	<entry key="organ.organization.company">单位</entry>
+	<entry key="organ.organization.department">部门</entry>
+	<entry key="organ.organization.back">返回</entry>
+	<entry key="organ.organization.remove.confirm">您将删除该组织机构及其所有子机构,请确认是否继续？</entry>
+	<entry key="organ.listOrgans.unitList">单位列表</entry>
+	<entry key="organ.listOrgans.userList">所有用户</entry>
+	<entry key="organ.listOrgans.onlineUser">在线用户</entry>
+	<entry key="organ.listOrgans.activeUser">活跃用户</entry>
+	<entry key="organ.listOrgans.createUser">新建用户</entry>
+	<entry key="organ.listOrgans.chart.yAxisName">人数</entry>
+	<entry key="organ.listOrgans.description">用于系统的认证与授权，认证是指确认用户的合法身份（支持证书登陆），授权是指赋予用户访问安管平台资源的合法性(利用角色控制)。</entry>
+	
+	<entry key="organ.organization.root.title">
+		<![CDATA[
+			<strong class='description-left'>说明：</strong>
+			<div class='description-right'>
+			提供对组织机构的管理功能，能够建立行政区域、单位与部门的上下级关系，从而确定部门的具体职责，管理人员结构，明确权责关系。
+			</div>	
+		]]>	
+	</entry>
+	<entry key="organ.organization.root.description">
+		<![CDATA[
+		<h5><strong>数据权限</strong></h5>
+		<p>系统内的所有数据访问都依赖于组织机构，默认情况下，用户拥有访问本单位及所有下级的数据权限。</p>
+		
+		<h5><strong>层次关系</strong></h5>
+		<p>行政区域下可以添加行政区域与单位，单位下只可以添加部门，部门下可继续添加二级、三级部门。</p>
+		
+		<h5><strong>树形机构</strong></h5>
+		<p>通过树形结构，可以更加明确、直观地展现了组织层次、部门情况以及人员配置等信息。</p>
+		
+		]]>
+	</entry>
+	
+	
+</properties>

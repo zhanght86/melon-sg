@@ -1,0 +1,992 @@
+/*设置全局字体*/
+body {
+	background-color: #edeef0;
+	font-family :"Arial","微软雅黑","宋体","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size : 14px;
+	color : #3c3c3c;
+}
+
+/*格式化jquery-ui构件*/
+.ui-widget {
+	font-size : 14px;
+}
+a{
+	color:#1970b2;
+}
+a:hover{
+	color:#2e9bd1;
+}
+.melon-heading {
+	margin-bottom : 0px;
+	border-bottom-style : none;
+	box-shadow : none;
+}
+/*通用模板样式*/
+.melon-menu-group .melon-menu-item .container {
+	padding : 0px;
+}
+
+/***************************常用的文字颜色************************************************/
+.melon-txt-deafult {
+	color :#3c3c3c;
+}
+.melon-txt-primary {
+	color:#2e9bd1;
+}
+.melon-txt-info {
+	color:  #1970b2;
+}
+.melon-txt-info-highLight {
+	color:  #2e9bd1;
+}
+.melon-txt-success {
+	color : #139e54;
+}
+.melon-txt-success-highLight {
+	color : #19b266;
+}
+.melon-txt-error {
+	color: #e03636;
+}
+.melon-txt-error-highLight {
+	color: #f55549;
+}
+.melon-txt-warning {
+	color : #f5651d;
+}
+.melon-txt-warning-highLight {
+	color : #ff7733;
+}
+.melon-txt-forbid{
+	color:#d3d8db;
+}
+
+
+
+/**
+  * Logo	
+  */
+.melon-menu-group .melon-menu-primary .melon-logo,.melon-menu-group .melon-menu-primary .melon-logo:hover{
+	background-image : url('images/melon-logo.png');
+	width:48px;
+	height:48px;
+	background-repeat:no-repeat;
+}  
+  
+.melon-menu-group .melon-menu-primary .melon-logo {
+	background-position: -2px -2px;
+	display : block;
+	float : left;
+	margin-right:18px;
+ }
+ .melon-menu-group .melon-menu-primary .melon-logo:hover{
+ 	background-position : -52px -2px;
+ }
+ 
+ /**
+  * 用户图标	 
+  */
+  .user-icon, .user-icon:hover, .user-info-open-light,.user-info-open-light:hover{
+	 background-image: url('images/melon-commons-icon.png');
+	 width:32px;
+	 height:32px;
+  }	
+ .user-icon{
+ 	background-position: -10px -56px;
+ 	display: inline-block;
+ 	margin-bottom:-12px;
+ }	
+ .user-icon:hover{
+ 	background-position: -52px -56px;
+ }	
+ .user-info-open-light{
+ 	height:16px;
+ 	width:16px;
+ 	display:inline-block;
+ 	background-position: -10px -98px;
+ 	margin-bottom:-5px;
+ }	
+ .user-info-open-light:hover{
+ 	height:16px;
+ 	width:16px;
+ 	display:inline-block;
+ 	background-position: -36px -98px;
+ }
+ /**
+  * 一级菜单
+  */
+.melon-menu-group .melon-menu-primary{
+	height : 48px;
+	background-color : #2d3442;
+	color : #c7c7c7;
+}
+
+/**
+  * 主菜单宽度
+  */
+.melon-menu-group .melon-menu-primary .primary-menu-group {
+	width : 748px;
+	height : 100%;
+}
+
+/*一级菜单默认颜色*/ 
+.primary-menu-group a.primary-menu-item {
+	padding : 0 14px;
+	line-height : 48px;
+	float : left;
+	color : #c7c7c7;
+	text-align : center;
+	text-decoration: none; 
+}
+
+/*聚焦状态*/
+.primary-menu-group a.primary-menu-item.menu-item-focus  span{
+	display: inline-block;
+	background: url('images/menu-primary-focus.png') repeat-x;
+	color : #fff;
+} 
+
+/*一级菜单滑过颜色*/
+.primary-menu-group a.primary-menu-item:hover {
+	background-color : #3d495c;
+	color : #fff;
+}    	
+
+/**
+ * 用户登录信息 	
+ */
+.melon-menu-group .melon-menu-primary .melon-user-info {
+ 	width : 148px;
+ 	height : 100%;
+ 	line-height : 48px;
+ 	float : right;
+ 	text-align : right;
+ 	color : #c7c7c7;
+ }
+.melon-menu-group .melon-menu-primary .melon-user-info a {
+	text-decoration: none;
+}
+
+.melon-menu-group .melon-menu-primary .melon-user-info a:hover{
+	color:#ffffff;
+}
+/* 下拉框划过背景及文字颜色  */
+.dropdown-menu li a:hover{
+	background-color:#2e9bd1;
+	color:#ffffff;
+}
+ /**
+   * 二级菜单
+   */
+.melon-menu-group .melon-menu-secondary {
+	height : 49px;
+	clear : both;
+	background: #ffffff url('images/menu-secondary-back.png') repeat-x;
+}
+/*二级菜单项*/
+.melon-menu-group .melon-menu-secondary .secondary-menu-item {
+ 	float : left;
+ 	height : 48px;
+ 	line-height : 48px;
+ 	text-align : center;
+ 	padding : 0px 15px;
+ 	font-size : 16px;
+}
+/*二级菜单项链接*/    	
+.melon-menu-group .melon-menu-secondary .secondary-menu-item>a {
+	text-decoration : none;
+	color : #2D3442;
+}
+/*二级菜单项聚焦颜色*/     	
+.melon-menu-group .melon-menu-secondary .secondary-menu-item>a.secondary-menu-focus {
+	color : #2e9bd1;
+}
+
+/*访问路径样式*/
+.melon-path-item {
+  	line-height : 16px;
+  	height : 16px;
+}
+
+.breadcrumb > li + li:before {
+    color: #ccc;
+    content: "> ";
+    padding: 0 5px;
+}
+
+.melon-path-info {
+	font-size : 12px;
+	text-align: right;
+	color : #808080;
+}
+.melon-path-info>.breadcrumb {
+	background : none;
+}
+.breadcrumb>li>a {
+	font-size : 12px;
+	color : #808080;
+}
+.breadcrumb>li>a:hover {
+	color :  #2e9bd1;
+}
+
+
+/*内容区样式*/
+.melon-body {
+  	background-color : #fff;
+  	border:1px solid #e1e4e5;
+  	padding : 20px;
+  	min-height:400px;
+}
+
+
+/*Logger*/
+.noty-group .alert {
+	margin-bottom : 5px;
+}
+
+/*Dialog*/
+.melon-dialog {
+}
+
+/*图标所占位置*/
+.melon-dialog .dialog-icon-container {
+	width : 25%;
+}
+/**
+ * 	提示文字
+ */
+.melon-dialog .dialog-text {
+	width : 75%;
+	font-size : 14px;
+	padding : 0px 15px;
+}
+
+/*消除按钮的外阴影*/
+.ui-dialog-buttonset .ui-state-focus {
+	background : transparent;
+	outline : none;
+}
+
+.dialog-icon {
+	background-image:url('images/melon-commons-icon.png');
+	width:36px;
+	height:36px;
+	margin : 0px auto;	
+}
+
+.dialog-default .dialog-icon {
+	background-position: -148px -10px;
+}
+
+.dialog-warning .dialog-icon {
+	background-position: -56px -10px;
+}
+
+.dialog-success .dialog-icon {
+	background-position: -102px -10px;
+}
+
+.dialog-danger .dialog-icon {
+	background-position: -10px -10px;
+}
+
+/*默认状态*/
+.ui-dialog .ui-dialog-titlebar {
+  background-image: -webkit-linear-gradient(top, #f5f5f5 0%, #e8e8e8 100%);
+  background-image: -o-linear-gradient(top, #f5f5f5 0%, #e8e8e8 100%);
+  background-image: linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);
+  color : #333;
+  border-color : #ddd;
+  border-top : none;
+  border-left : none;
+  border-right : none;
+}
+/*危险状态*/
+.dialog-danger.ui-widget-content, .dialog-danger .ui-dialog-titlebar, .dialog-danger .ui-widget-content{
+	border-color: #ebccd1;
+	color: #a94442;
+}
+.dialog-danger .ui-dialog-titlebar {
+  background-image: -webkit-linear-gradient(top, #f2dede 0%, #ebcccc 100%);
+  background-image: -o-linear-gradient(top, #f2dede 0%, #ebcccc 100%);
+  background-image: linear-gradient(to bottom, #f2dede 0%, #ebcccc 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2dede', endColorstr='#ffebcccc', GradientType=0);
+}
+
+/*成功状态*/
+.dialog-success.ui-widget-content, .dialog-success .ui-dialog-titlebar, .dialog-success .ui-widget-content{
+	border-color: #d6e9c6;
+	color: #3c763d;
+}
+.dialog-success .ui-dialog-titlebar {
+  background-image: -webkit-linear-gradient(top, #dff0d8 0%, #d0e9c6 100%);
+  background-image: -o-linear-gradient(top, #dff0d8 0%, #d0e9c6 100%);
+  background-image: linear-gradient(to bottom, #dff0d8 0%, #d0e9c6 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdff0d8', endColorstr='#ffd0e9c6', GradientType=0);
+ }
+/*警告状态*/
+.dialog-warning.ui-widget-content, .dialog-warning .ui-dialog-titlebar, .dialog-warning .ui-widget-content{
+	border-color: #faebcc;
+    color: #8a6d3b;
+}
+.dialog-warning .ui-dialog-titlebar {
+  background-image: -webkit-linear-gradient(top, #fcf8e3 0%, #faf2cc 100%);
+  background-image: -o-linear-gradient(top, #fcf8e3 0%, #faf2cc 100%);
+  background-image: linear-gradient(to bottom, #fcf8e3 0%, #faf2cc 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffcf8e3', endColorstr='#fffaf2cc', GradientType=0);
+ }
+
+/*通用提示框样式结束**/
+
+
+
+/*Form表单开始*/
+/*一个页面只放一个表单时的布局*/
+.form-singlon {
+	
+}
+/*标签信息控制*/
+.form-group .control-label {
+	font-weight : normal;
+	text-align : left;
+	font-size : 16px;
+}
+
+/*必填项提示信息*/
+.form-group .form-required {
+	float : left;
+	color : red;
+	font-size : 20px;
+	margin-left : -16px;
+}
+
+/*输入框样式控制*/
+.form-group .form-field {
+}
+
+/*按钮样式,与输入框对齐*/
+.form-group  .form-buttons {
+	padding-left : 15px;
+}
+
+/*提示信息*/
+.form-group .form-hint,  .form-group .control-error{
+	font-weight : normal;
+	font-size : 12px;
+	display : block;
+	margin : 5px 0px;
+	clear : both;
+}
+
+/*辅助信息*/
+.form-group .form-hint {
+	color : #aaa;
+}
+/*辅助信息 带链接*/
+.form-group a.form-hint {
+	color: #428bca;
+}
+
+/*错误信息*/ 
+.form-group .control-error {
+	color : #f55549;
+}
+/* 错误提示框颜色 */
+.has-error .form-control{
+	border-color : #f55549;
+}
+.has-error .form-control:focus{
+	border-color : #f55549;
+}
+
+/*复选框样式控制*/
+.form-group .form-field .checkbox-inline,  .form-group .form-field .radio-inline{
+	display : block;
+	margin-left : 0px;
+	width : 33%;
+	float : left;
+}
+
+/*动态添加属性小按钮*/
+.form-group .form-field .btn-property{
+	background-color: #dbdbdb;
+	color:#525252;
+	margin:5px 0px;
+}
+.form-group .form-field .btn-property:hover{
+	background-color: #2e9bd1;
+	color:#ffffff;
+}
+
+
+/*Grid页面查询表单,默认隐藏*/
+.form-query  .form-group{
+	display : none;
+}
+
+/*快速查询区,默认显示*/
+.form-query .form-query-actions {
+	display : block;
+}
+
+/*高级查询按钮*/
+.form-query .form-query-actions .advance-search{
+	color:#1970b2;
+}
+.form-query .form-query-actions .advance-search .advance-open, .advance-open-up {
+	height:16px;
+	width:16px;
+	display: inline-block;
+	background-image: url('images/melon-commons-icon.png');
+	margin:0 0 -4px -4px;
+}
+.form-query .form-query-actions .advance-search .advance-open{
+	background-position: -114px -98px;
+}
+.form-query .form-query-actions .advance-search .advance-open:hover{
+	background-position: -140px -98px;
+}
+.advance-open-up{
+	background-position: -166px -98px;
+}
+.advance-open-up:hover{
+	background-position: -192px -98px;
+}
+
+/**
+ * 	查询表单的查询项分组样式
+ */
+.form-query  .form-group .form-field-group {
+	padding-left : 0px;
+}
+
+/*查询表单的查询按钮样式*/
+.form-query  .form-group .query-buttons {
+	margin-left : -10px;
+}
+
+/*  readonly输入框状态  */
+.form-control[readonly]{
+	background-color:#ffffff;
+	cursor:pointer;
+}
+
+/**
+ * 	查询表单的Label样式
+ */
+.form-query .form-group .form-field-group .control-label {
+	font-size : 14px;
+	text-align : right;
+}
+
+/* 查询表单的 输入项 样式 */
+.form-query .form-group .form-field-group .form-field {
+	padding-right : 5px;
+}
+
+/*时间查询样式*/
+.form-query .form-group .form-field-group .form-field .form-field-time {
+	display : inline;
+	width : 109px;
+	padding : 6px 3px;
+}
+
+.form-query .radio-inline, .form-query .checkbox-inline {
+	float : left;
+	width : 25%;
+}
+/*按钮区域*/
+.form-button-panel {
+	padding-top : 20px;
+}
+
+/*明细页面*/
+.form-show .form-group .control-label {
+	font-size : 14px;
+	padding-top : 5px;
+	color : #666666;
+}
+
+.form-show .form-group {
+	border-bottom : 1px solid #ebeced;
+	margin-left : 10px;
+	margin-bottom : 3px;
+}
+
+.form-show .form-group.form-button-panel {
+	border-bottom-style : none;
+}
+
+.form-show .form-group .form-control-items {
+	padding-top : 5px;
+	padding-left : 20px;	
+}
+
+.form-show .form-group .form-control-item {
+	padding-top : 5px 0px;
+}
+
+.form-show .form-group .form-field .form-control-static {
+	font-size : 16px;
+	padding : 5px 0px;
+}
+
+.form-show .form-group .form-field .form-control-block {
+	padding : 5px 0px;
+}
+
+.form-show .section-heading {
+	font-size : 14px;
+	color : #2e9bd1;
+	border-bottom : 2px solid #edeef0;
+	margin : 0px -15px 0px 0px;
+	padding : 20px 0px 10px 0px;
+}
+
+.form-show .section-body .form-group .form-field  {
+	min-height:40px;
+}
+/**
+ * 版权    搜索框
+ */
+ 
+.melon-footer-search {
+	padding:10px 0px;
+	background-color: #f7f7f7;
+	border-top: 1px solid #e0e0e0;
+}
+.search-query {
+	width:250px;
+	height:34px;
+	display: inline-block;
+	margin-left:-5px;
+	border-radius:0px;
+}
+.search-select{
+	display: inline-block;
+	width:100px;
+	border-radius:2px 0 0 2px;
+	padding-top:4px;
+}
+.melon-footer .melon-footer-search .btn-primary{
+	border-radius:0 2px 2px 0;
+}
+.melon-footer{
+	background-color: #2c4b7c;
+}
+.melon-footer .melon-copyright{
+	text-align: center;
+	color:#58afdb;
+	font-family:"宋体";
+	margin-top:20px;
+	margin-bottom:20px;
+	font-size:12px;
+}
+
+/**
+ * 返回顶部
+ */
+.toTop{
+	height:36px;
+	width:36px;
+	border-radius:2px;
+	background-image: url('images/melon-commons-icon.png');
+	background-position:-93px -55px;
+	background-color:black;
+	filter:alpha(opacity=30); 
+	opacity:0.3;
+	position:fixed;
+		right:50px;
+		bottom:100px;
+}
+.toTop:hover{
+	filter:alpha(opacity=80); 
+	opacity:0.8;
+}
+ 
+/**
+ * 删除图标
+ */
+.file-remove-icon, .file-remove-icon:hover , .file-remove-icon2, .file-remove-icon2:hover{
+	height:20px;
+	width:20px;
+	background-image:url('../melon/images/melon-commons-icon.png');
+}
+/*垃圾桶图标*/
+.file-remove-icon {
+	background-position:-112px -122px;
+	margin-bottom: -5px; 
+	margin-left: 6px;
+	display: inline-block;
+}
+.file-remove-icon:hover{
+	background-position:-138px -122px;
+}
+/* X 图标  */
+.file-remove-icon2{
+	background-position:-190px -122px;
+	display: inline-block;
+	margin-left: 6px;
+	position: relative;
+		top:4px;
+}
+.file-remove-icon2:hover{
+	cursor:pointer;
+	background-position:-216px -122px;
+}
+
+/*树形左右布局*/
+/*左边布局*/
+.col-left {
+	padding-left:0px;
+	padding-right:20px;
+}
+.tree-left{
+	padding:0px 20px 0px 0px;
+}
+.col-left .tree-title{
+	margin-bottom: 20px;
+	font-size: 16px;
+}
+.col-left .navbar-collapse .navbar-left{
+	margin:0px;
+	padding-left:10px;
+	padding-right:0px;
+}
+
+/*右边布局*/
+.col-right{
+	border-left:1px solid #e5e5e5;
+	margin: -20px 0px; 
+	padding-top: 20px; 
+	padding-bottom: 20px;
+	min-height:400px;
+}
+
+/*右边布局的表单样式*/
+.col-right .form-horizontal {
+	margin-left : 66px;
+	margin-right:50px;
+	margin-top : 20px;
+}
+
+/*右布局标题*/
+.col-right .col-page-title {
+	font-size:16px;
+	padding-bottom: 15px;
+	border-bottom:1px solid #edeef0;
+}
+
+/* 分布式明细样式       */
+.melon-section .section-heading{
+ 	margin-bottom: 0px;
+ 	padding-top: 20px; 
+ 	padding-bottom: 10px;
+}
+
+/*树根节点说明*/
+.col-right .section-body p{
+	font-size : 14px;
+	margin-bottom : 15px;
+	text-indent: 2em; 
+}
+.col-right .section-body h5{
+	margin-bottom:2px;
+}
+.col-right .section-heading {
+	border-bottom:1px solid #edeef0;
+	padding-bottom : 15px;
+	margin-top : 0px;
+}
+.col-right .section-description{
+	font-size: 12px;
+	font-family: "Arial","微软雅黑","宋体";
+	background-color: #ffffe0;
+	color:#806e66;
+	line-height:15px;
+}
+
+
+/* list标题距表格的距离 */
+.page-list-body .section-body{
+	padding-top:10px;	
+}
+/*标题*/
+.form-show .section-heading .form-control-static{
+	padding : 0px;
+}
+.form-show .form-group{
+	margin-bottom: 0px;
+}
+.form-show .form-group .form-field .form-control-static{
+	padding:9px 0px;
+}
+.form-show .form-group .control-label{
+	padding-top:9px;
+}
+
+/* 分布式明细页面左侧导航 */
+.melon-nav-panel{
+	position: fixed;
+	width:100px;
+}
+
+
+/*每个模块主页样式配置  */
+.portal-main .page-header {
+	//margin-bottom : 10px;
+}
+
+.portal-main .page-header>h4 {
+	font-size : 16px;
+}
+
+.portal-main .page-header>p {
+	line-height : 20px;
+	font-size : 12px;
+	color:#808080;
+	margin-bottom : 0px;
+}
+.portal-main .melon-protal-dataArea{
+	width:280px;
+	height:180px;
+	background-image: url("images/melon-protal-dataBg.png");
+	padding:14px 30px 14px 20px;
+}
+
+.portal-main .melon-protal-dataArea .userRate{
+	color:#2e9bd1;
+	font-size:36px;
+	margin-left:56px;
+}
+.portal-main .melon-protal-dataArea span{
+	color:#808080;
+	font-size:12px;
+}
+.portal-main .portal-chart-a{
+	width:270px;
+	margin:28px 0px 20px 0px;
+}
+.melon-portal {
+	border:1px solid #dbdbdb;
+	border-left:0px;
+	padding:0px 20px;
+}
+
+.melon-portal-heading {
+	display:inline-block;
+	padding:14px 0px;
+}
+
+.melon-portal-body {
+	height:200px;
+}
+
+.melon-portal-body h1 {
+	margin: 0px;
+	padding-top: 50px;
+   	text-align: center;
+	font-size : 48px;
+	color: #ffffff;
+}
+.melon-portal-body h1>small{
+	font-size : 18px;
+	color: #ffffff;
+}
+
+.melon-portal-body li.list-group-item {
+	border-left-style : none;
+	border-right-style : none;
+}
+
+.melon-portal-footer{
+	padding:14px 0px;
+	font-size:12px;
+	color:#808080;
+}
+
+/*  标题  */
+.page-header{
+	margin-top:-4px;
+	padding-bottom: 6px;
+}
+.page-header h4{
+	color:#3c3c3c;
+	font-size:16px;
+}
+.form-control-static{
+	padding-top:0px;
+	padding-bottom:0px;	
+	display: inline-block;
+}
+
+/*下面的样式将全部废除,请勿再进行引用,已引用的将样式写入到页面中,请速速迁移*/
+/**  
+ *********登录页面*****************
+*/
+.login-border .login-logo{
+	height:32px;
+	background-image : url('images/melon-logo.png');
+	background-position: -2px -102px;
+}
+
+
+/*组织机构每个区域人数明细*/
+.organ .thumbnail{
+	padding:0px;
+}
+.organ .thumbnail .caption{
+	padding:8px 20px 20px 20px;
+}
+.row .organ{
+	padding-right:20px;
+	padding-left:0px;
+}
+
+/*下面的样式即将废除*/
+/*  图标页面左侧标题  */
+
+.page-header h3{
+	font-size:16px;
+	margin-top:5px;
+}
+.portal-main .left-charts-a{
+	display: inline-block;
+	margin-top:26px;
+	width:30%;
+	text-align: center;
+	font-weight: bold;
+}
+.left-charts .left-charts-a.chart-btn{
+	width:100%;
+	display: block;
+}
+
+.chart h4{
+	font-size:16px;
+	
+}
+.chart section p{
+	font-size:12px;
+	color:#808080;
+	text-indent: 2em;
+}
+.chart section ol li strong{
+	color:#c72a28;
+	font-size:16px;
+	font-style:italic;
+}
+
+.home-area-title{
+	font-size:16px;
+	padding-bottom:10px;
+}
+
+
+/**/
+.chart-form-show .form-button-panel{
+	padding-top:0px;
+	float:right;
+}
+.chart-form-show .form-button-panel .form-buttons{
+	padding-right:0px;
+	margin-bottom:10px;
+}
+.chart-form-show .form-button-panel .form-buttons .btn-default{
+	background-color: #edeef0;
+	border-color:#e5e5e5;
+	color:#808080;
+	border-radius:2px;
+	margin-left:4px;
+}
+.chart-form-show .form-button-panel .form-buttons .btn-default:hover{
+	background-color: #2e9bd1;
+	border:1px solid #2e9bd1;
+	color:#fff;
+	padding:5px 10px
+}
+.chart-form-show .form-button-panel .form-buttons .btn-default:active{
+	background-color: #1970b2;
+	color:#fff;
+}
+
+.chart-form-show .form-group{
+	min-height:36px;
+	line-height:36px;
+	border-bottom:1px solid #edeef0;
+	color:#808080;
+	margin-bottom:0px;
+}
+.chart-form-show .form-group .control-label{
+	font-size:14px;
+	padding-top:0px;
+}
+.chart-form-show .form-group .form-field{
+	color:#404040;
+}
+.chart-form-show .form-group .form-field a{
+	font-weight: bold;
+}
+.chart-form-show .form-group .form-field .search{
+	font-weight:bold;
+	font-size:12px;
+	text-decoration: underline;
+	float:right;
+}
+/**/
+.chart-form-show .nav > li > a{
+	padding:5px 10px;
+}
+
+/*  资产明细 tab  */
+.chart-form-show .row-tab {
+	margin:40px -20px 0px -20px;
+}
+.chart-form-show .row-tab ul{
+	padding:0px 20px;
+}
+.chart-form-show .row-tab .tab-content {
+	margin-left:80px;
+	margin-top:30px
+}
+.chart-form-show .row-tab .tab-content .form-group{
+	border-bottom:0px;
+}
+.chart-form-show .row-tab .tab-content h4{
+	font-size:14px;
+	font-weight: bold;
+}
+.chart-form-show .row-tab .tab-content .device-image{
+	height:256px;
+	width:256px;
+	float:right;
+	margin-right:100px;
+}
+.page-header .attention{
+	font-size:12px;
+	color:#808080;
+	margin-left:20px;
+	display: inline-block;
+} 
+/*  关注按钮     */
+.chart-form-show .page-header .attention .btn-attention{
+	height:20px;
+	width:62px;
+	display:inline-block;
+	background-image: url('images/attention-btn.png');
+	position:relative;
+		top:6px;
+}
+.chart-form-show .page-header .attention .btn-attention:hover{
+	background-image: url('images/attention-btn-hover.png');
+}
+.chart-form-show .page-header .attention .btn-attention:active{
+	background-image: url('images/attention-btn-active.png');
+}
+

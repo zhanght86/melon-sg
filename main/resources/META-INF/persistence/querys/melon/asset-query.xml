@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<querys>
+	
+	<!-- 原生SQL查询使用sql标签,ID必须保证唯一性,可通过QueryTemplateManager.find(id)获取到查询模板 -->
+	<sql id="account.findUsername">
+		<description>角色查询</description>
+		<query>
+			select assetGroup.PK, assetGroup.T_NAME, assetGroup.NET_TYPE, 
+				   assetGroup.DEPTH,case when parent.T_NAME is null then '安全域' else parent.T_NAME end " +
+					"from t_asset_group assetGroup  left  join t_asset_group parent " +
+					"on assetGroup.TYPE_PARENTID = parent.pk "
+		</query>
+	</sql>
+	
+	<!-- groupRelation -->
+	<sql id="group.relationConn">
+		<description>安全域与设备安全域关系链接查询</description>
+		<query>
+			SELECT t_asset_group.T_name,t_asset_conn_gdi.GROUP_ID 
+			FROM t_asset_group,t_asset_conn_gdi 
+			where t_asset_group.PK = t_asset_conn_gdi.GROUP_ID 
+			and t_asset_conn_gdi.RELATION_TYPE =:type 
+			and t_asset_conn_gdi.ASSET_ID =:assetId
+		</query>
+	</sql>
+	
+	<sql id="device.exclusionRepeat">
+		<description>根据名称和型号分组查询</description>
+		<query>
+			SELECT A_NAME,MODEL,count(A_NAME) FROM t_asset_device
+			group by A_NAME,MODEL
+		</query>
+	</sql>
+	
+</querys>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rule name="非授权时间登录事件检测" depends="syslog" enable="true">
+	<filter id="1" name="非授权时间登录事件过滤器">
+		<condition type="and">
+			<condition type="base" opr="eq">
+				<var type="event" attrname="type"/>
+				<var type="constant">
+					<value><![CDATA[1008]]></value>
+				</var>
+			</condition>
+			<condition type="base" opr="isnull">
+				<var type="event" attrname="saddr" />
+				<var type="constant">
+					<value><![CDATA[no]]></value>
+				</var>
+			 </condition>
+			 <condition type="base" opr="isnull">
+				<var type="event" attrname="susername" />
+				<var type="constant">
+					<value><![CDATA[no]]></value>
+				</var>
+			 </condition>
+			 <condition type="base" opr="matches_time_resource">
+				<var type="event" attrname="occurtime" />
+				<var type="resource" ref="1" />
+			  </condition>
+		</condition>
+	</filter>
+	<!-- name为epl中的表名，要和epl语句中的表名对应，但注意各规则的此name一定要不相同-->
+	<eventType name="nonWorkTimeLoginEvent">
+		<!-- 控制内存，设置向esper发送的数据类型不是simeventobject,而是其中的几个字段,name的值要和simeventobject中的变量名一致 -->
+		<!-- ID字段必须保存，因为要保存关联事件的ID -->
+		<field name="ID"/>
+		<field name="sAddr"/>
+		<field name="sUserName"/>
+	</eventType>
+	
+	<output>
+		<!-- 作为输出告警的固定内容，属性和OutputAlert中的变量名对应，并且OutputAlert中这些字段要定义为String类型-->
+		<content>发现源地址【{0}】在非授权时间登录，登录账号:{1}。#saddr#susername</content>
+		<level>严重</level>
+		<status>未确认</status>
+	</output>
+	<epls>
+		<!-- key从1到N顺序加载，最后一个作为statement。表名和上面的eventType中的name一致，为一个map变量，里面包含上面eventType属性中的字段 -->
+		<!-- ID字段必须保存，因为要保存关联事件的ID -->
+		<epl key="1" value="select ID,sAddr,sUserName from nonWorkTimeLoginEvent.win:length(1)"/>
+	</epls>
+	<eplvars desc="非工作时间登录事件,非工作时间在资源定义中配置">
+	</eplvars>
+</rule>

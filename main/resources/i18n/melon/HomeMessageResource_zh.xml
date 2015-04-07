@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>melon.home相关的国际化文件</comment>
+	<entry key="commons.portlet.update.hint">更新成功</entry>
+	<entry key="commons.portlet.create.hint">添加成功</entry>
+	<entry key="commons.portlet.remove.hint">删除成功！</entry>
+	
+	<entry key="button.createLayout">创建视图</entry>
+	<entry key="button.copyView">复制视图</entry>
+	<entry key="button.createView">添加仪表盘</entry>
+	
+	<entry key="home.portal.create">新增视图</entry>
+	<entry key="home.portal.removeLayout.hint"><![CDATA[请确认是否删除名称为{0}的视图]]></entry>
+	<entry key="home.portal.removeView.hint"><![CDATA[请确认是否删除名称为{0}的仪表盘]]></entry>
+	<entry key="home.portal.update">编辑视图</entry>
+	<entry key="home.portal.typeName">视图名称</entry>
+	<entry key="home.portal.leftToRight">排列方式</entry>
+	<entry key="home.portal.leftToRight.hint">改变排列方式可以获得更好的视觉效果</entry>
+	<entry key="home.portal.left">向左排</entry>
+	<entry key="home.portal.right">向右排</entry>
+	<entry key="home.portal.allUser">所有人可看</entry>
+	<entry key="home.portal.defaultHome">默认主页</entry>
+	<entry key="home.portal.portalSelect">选择视图</entry>
+	<entry key="home.portal.remarks">视图说明</entry>
+	<entry key="home.portal.defaultHome.hint">默认主页只能有一个</entry>
+	<entry key="home.portal.init.hint">请在“系统->配置->视图配置”添加个性化视图</entry>
+	
+	<entry key="home.portal.menuId">仪表盘</entry>
+	<entry key="home.portal.width">宽度</entry>
+	<entry key="home.portal.height">高度</entry>
+	
+	<entry key="commons.portlet.minHeight">最小高度</entry>
+	<entry key="commons.portlet.minWidth">最小宽度</entry>
+	<entry key="commons.portlet.layout.hint">提示：通过拖拽就可以改变视图项的排列顺序</entry>
+	
+	<entry key="gate.article.create.hint"><![CDATA[您已经成功创建名称为<STRING>{0}<STRING>的发文]]></entry>
+	<entry key="gate.article.update.hint"><![CDATA[您已经成功修改名称为<STRING>{0}<STRING>的发文]]></entry>
+	<entry key="gate.article.upload.hint"><![CDATA[您已经成功上传名称为<STRING>{0}<STRING>的发文]]></entry>
+	<entry key="gate.article.title">标题</entry>
+	<entry key="gate.article.type">类型</entry>
+	<entry key="gate.article.createTime">创建日期</entry>
+	<entry key="gate.article.creator">创建人</entry>
+	<entry key="gate.article.creator.company">创建单位</entry>
+	<entry key="gate.article.attachId">附件</entry>
+	<entry key="gate.article.content">内容</entry>
+	<entry key="gate.article.pub">发布</entry>
+	<entry key="gate.article.top">置顶</entry>
+	<entry key="gate.article.imp">重要性</entry>
+	<entry key="gate.article.receiver">接收单位</entry>
+	
+</properties>

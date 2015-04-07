@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN" "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+<urlrewrite>
+	
+	<!--  --> 
+	<rule>
+		<name>index</name>
+		<from>^/(index|index.jsp)?$</from>
+		<to last="true">/index.jsp</to>
+	</rule>
+	
+	<rule>
+		<name>login</name>
+		<from>^/app/j_security_login$</from>
+		<to last="true">/app/j_security_login</to>
+	</rule>
+	 
+	<!--   -->
+	<rule>
+        <from>^.*\.(js|css|gif)$</from>
+        <set type="expires">15 days</set>
+    </rule>
+   
+	<rule>
+		<name>static resources</name>
+		<from>/statics/(.*)</from>
+		<!--  
+		<set type="expires">15 days</set>
+		-->
+		<set name="Cache-Control" type="response-header">no-cache, no-store, max-age=0</set>
+		<set name="Pragma" type="response-header">no-cache</set>
+		<set name="Expires" type="response-header">0</set>
+		<to last="true">/statics/$1</to>
+	</rule>
+	
+	<rule>
+		<from>/app/(.*)</from>
+		<set name="Cache-Control" type="response-header">no-cache, no-store, max-age=0</set>
+		<set name="Pragma" type="response-header">no-cache</set>
+		<set name="Expires" type="response-header">0</set>
+		<to last="true">/app/$1</to>
+	</rule>
+
+	<rule>
+		<from>/(.*)</from>
+		<set name="Cache-Control" type="response-header">no-cache, no-store, max-age=0</set>
+		<set name="Pragma" type="response-header">no-cache</set>
+		<set name="Expires" type="response-header">0</set>
+		<to last="true">/app/$1</to>
+	</rule>
+	
+	<outbound-rule>
+		<from>/app/(.*)</from>
+		<to>/$1</to>
+	</outbound-rule>
+	
+	<outbound-rule encodefirst="true" match-type="regex">
+        <name>Strip URL Session ID's</name>
+        <from>^(.*?)(?:\;jsessionid=[^\?#]*)?(\?[^#]*)?(#.*)?$</from>
+        <to>$1$2$3</to>
+    </outbound-rule>
+	
+</urlrewrite>

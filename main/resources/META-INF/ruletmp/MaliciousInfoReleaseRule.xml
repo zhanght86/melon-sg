@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rule name="恶意信息发布行为检测" depends="syslog" enable="true">
+	<filter id="1" name="信息危害类事件过滤器">
+		<condition type="and">
+			<condition type="base" opr="eq">
+				<var type="event" attrname="category"/>
+				<var type="constant">
+					<value><![CDATA[7]]></value>
+				</var>
+			</condition>
+			<condition type="base" opr="isnull">
+				<var type="event" attrname="saddr" />
+				<var type="constant">
+					<value><![CDATA[no]]></value>
+				</var>
+			 </condition>
+			<condition type="base" opr="isnull">
+				<var type="event" attrname="susername" />
+				<var type="constant">
+					<value><![CDATA[no]]></value>
+				</var>
+			 </condition>
+			<condition type="base" opr="isnull">
+				<var type="event" attrname="name" />
+				<var type="constant">
+					<value><![CDATA[no]]></value>
+				</var>
+			</condition>
+		</condition>
+	</filter>
+	<!-- name为epl中的表名，要和epl语句中的表名对应，但注意各规则的此name一定要不相同-->
+	<eventType name="maliciousInfoEvent">
+		<!-- 控制内存，设置向esper发送的数据类型不是simeventobject,而是其中的几个字段,name的值要和simeventobject中的变量名一致 -->
+		<!-- ID字段必须保存，因为要保存关联事件的ID -->
+		<field name="ID"/>
+		<field name="sAddr"/>
+		<field name="sUserName"/>
+		<field name="name"/>
+	</eventType>
+	<!-- 作为输出告警的内容，属性和OutputAlert中的变量名对应，并且OutputAlert中这些字段要定义为String类型-->
+	<output>
+		<!-- 告警内容，可带参数，参数值为ESPER中最终查询的字段-->
+		<content>检测到发布传播恶意信息事件，发布的内容为：{0}，发布源为：{1}|{2}。#name#sAddr#sUserName</content>
+		<level>严重</level>
+		<status>未确认</status>
+	</output>
+	<epls>
+		<!-- key从1到N顺序加载，最后一个作为statement。表名和上面的eventType中的name一致，为一个map变量，里面包含上面eventType属性中的字段 -->
+		<!-- ID字段必须保存，因为要保存关联事件的ID -->
+		<epl key="1" value="select ID,name,sAddr,sUserName from maliciousInfoEvent.win:length(1)"/>
+	</epls>
+	<eplvars desc="源地址、源用户名、事件名称不为空的信息危害类事件">
+	</eplvars>
+</rule>

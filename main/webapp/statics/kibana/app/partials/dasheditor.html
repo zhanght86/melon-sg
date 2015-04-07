@@ -1,0 +1,180 @@
+<div class="modal-body">
+  <div class="pull-right editor-title">面板设置</div>
+
+  <div ng-model="editor.index" bs-tabs style="text-transform:capitalize;">
+    <div ng-repeat="tab in ['常规','索引','行','控制']" data-title="{{tab}}">
+    </div>
+    <div ng-repeat="tab in dashboard.current.nav|editable" data-title="{{tab.title || tab.type}}">
+    </div>
+  </div>
+
+  <div ng-if="editor.index == 0">
+    <div class="editor-row">
+      <div class="section">
+        <div class="editor-option">
+          <label class="small">标题</label><input type="text" class="input-large" ng-model='dashboard.current.title'></input>
+        </div>
+        <div class="editor-option">
+          <label class="small">风格</label><select class="input-small" ng-model="dashboard.current.style" ng-options="f for f in ['dark','light']"></select>
+        </div>
+        <div class="editor-option">
+          <label class="small"> 可编辑 </label><input type="checkbox" ng-model="dashboard.current.editable" ng-checked="dashboard.current.editable" />
+        </div>
+        <div class="editor-option">
+          <label class="small"> 提示 <tip>显示“添加面板”提示信息</tip></label><input type="checkbox" ng-model="dashboard.current.panel_hints" ng-checked="dashboard.current.panel_hints" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div ng-if="editor.index == 1">
+    <div class="editor-row">
+      <div class="section">
+        <h5>索引设置</h5>
+        <div ng-show="dashboard.current.index.interval != 'none'" class="row-fluid">
+           <div class="editor-option">
+            <p class="small">
+              系统会按您选择的时间范围自动创建一个匹配指定时间类型的时间戳目录。这对于一下数据集（比如，日志）是非常有用的。
+              如果您想要匹配默认的logstash索引类型，可以使用<code>[logstash-]YYYY.MM.DD</code>。
+              “[logstash-]”中的“[]”的作用指明括号内的内容不会当做类型被kibana识别。您也可以指定复合目录，各目录之间用“，”隔开。例如，<code>[web-]YYYY.MM.DD,[mail-]YYYY.MM.DD</code>。
+              <!-- Please also note that indices should rollover at midnight <strong>UTC</strong>. -->
+            </p>
+            <p class="small">
+              可通过 <a href="http://momentjs.com/docs/#/displaying/format/">http://momentjs.com/docs/#/displaying/format/</a>
+              获取更多信息.
+            </p>
+           </div>
+         </div>
+      </div>
+    </div>
+    <div class="editor-row">
+      <div class="section">
+        <div class="editor-option">
+          <h6>时间戳</h6><select class="input-small" ng-model="dashboard.current.index.interval" ng-options="f for f in ['none','hour','day','week','month','year']"></select>
+        </div>
+        <div class="editor-option" ng-show="dashboard.current.index.interval != 'none'">
+          <h6>索引类型 <small>必须包含在 “[]”内</small></h6>
+          <input type="text" class="input-large" ng-model="dashboard.current.index.pattern">
+        </div>
+        <div class="editor-option" ng-show="dashboard.current.index.interval != 'none'">
+          <h6>失效转移  <i class="icon-question-sign" bs-tooltip="'如果未找到匹配类型，会设置为默认索引*NOT RECOMMENDED*'"></i></h6>
+          <input type="checkbox" ng-model="dashboard.current.failover" ng-checked="dashboard.current.failover" />
+        </div>
+        <div class="editor-option" ng-show="dashboard.current.failover || dashboard.current.index.interval == 'none'">
+          <h6>默认索引 <small ng-show="dashboard.current.index.interval != 'none'">如果索引未找到</small></h6>
+          <input type="text" class="input-medium" ng-model="dashboard.current.index.default">
+        </div>
+        <div class="editor-option">
+          <h6>预加载项 <i class="icon-question-sign" bs-tooltip="'可以自动完成配置，如果配置项太多，请关闭此选项'"></i></h6>
+          <input type="checkbox" ng-model="dashboard.current.index.warm_fields" ng-checked="dashboard.current.index.warm_fields" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div ng-if="editor.index == 2">
+    <div class="row-fluid">
+      <div class="span8">
+        <h4>行设置</h4>
+        <table class="table table-striped">
+          <thead>
+            <th width="1%"></th>
+            <th width="1%"></th>
+            <th width="1%"></th>
+            <th width="97%">标题</th>
+          </thead>
+          <tr ng-repeat="row in dashboard.current.rows">
+            <td><i ng-click="_.move(dashboard.current.rows,$index,$index-1)" ng-hide="$first" class="pointer icon-arrow-up"></i></td>
+            <td><i ng-click="_.move(dashboard.current.rows,$index,$index+1)" ng-hide="$last" class="pointer icon-arrow-down"></i></td>
+            <td><i ng-click="dashboard.current.rows = _.without(dashboard.current.rows,row)" class="pointer icon-remove"></i></td>
+            <td>{{row.title||'Untitled'}}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="span4">
+        <h4>添加</h4>
+        <label class="small">标题</label>
+        <input type="text" class="input-medium" ng-model='row.title' placeholder="New row"></input>
+        <label class="small">高度</label>
+        <input type="text" class="input-mini" ng-model='row.height'></input>
+      </div>
+    </div>
+    <div class="row-fluid">
+
+    </div>
+  </div>
+
+  <div ng-if="editor.index == 3" ng-controller="dashLoader">
+    <div class="editor-row">
+      <div class="section">
+        <h5>另存为</h5>
+        <div class="editor-option">
+          <label class="small">导出</label><input type="checkbox" ng-model="dashboard.current.loader.save_local" ng-checked="dashboard.current.loader.save_local">
+        </div>
+        <div class="editor-option">
+          <label class="small">浏览器</label><input type="checkbox" ng-model="dashboard.current.loader.save_default" ng-checked="dashboard.current.loader.save_default">
+        </div>
+        <div class="editor-option">
+          <label class="small">Gist <tip>要求您的域在 Github已注册<tip></label><input type="checkbox" ng-model="dashboard.current.loader.save_gist" ng-checked="dashboard.current.loader.save_gist">
+        </div>
+        <div class="editor-option">
+          <label class="small">Elasticsearch</label><input type="checkbox" ng-model="dashboard.current.loader.save_elasticsearch" ng-checked="dashboard.current.loader.save_elasticsearch">
+        </div>
+      </div>
+      <div class="section">
+        <h5>加载选项</h5>
+        <div class="editor-option">
+          <label class="small">本地文件</label><input type="checkbox" ng-model="dashboard.current.loader.load_local" ng-checked="dashboard.current.loader.load_local">
+        </div>
+        <div class="editor-option">
+          <label class="small">Gist</label><input type="checkbox" ng-model="dashboard.current.loader.load_gist" ng-checked="dashboard.current.loader.load_gist">
+        </div>
+        <div class="editor-option">
+          <label class="small">Elasticsearch</label><input type="checkbox" ng-model="dashboard.current.loader.load_elasticsearch" ng-checked="dashboard.current.loader.load_elasticsearch">
+        </div>
+        <div class="editor-option" ng-show="dashboard.current.loader.load.elasticsearch">
+          <label class="small">ES list size</label><input class="input-mini" type="number" ng-model="dashboard.current.loader.load_elasticsearch_size">
+        </div>
+      </div>
+      <div class="section">
+      <h5>共享</h5>
+        <div class="editor-option" >
+          <label class="small">允许共享 <tip>允许生成特定的仪表板的链接</tip></label><input type="checkbox" ng-model="dashboard.current.loader.save_temp" ng-checked="dashboard.current.loader.save_temp">
+        </div>
+        <div class="editor-option" ng-show="dashboard.current.loader.save_temp">
+          <label class="small">TTL <tip>Expire temp urls</tip></label><input type="checkbox" ng-model="dashboard.current.loader.save_temp_ttl_enable">
+        </div>
+        <div class="editor-option" ng-show="dashboard.current.loader.save_temp &amp;&amp; dashboard.current.loader.save_temp_ttl_enable">
+          <label class="small">TTL Duration <tip>Elasticsearch date math, eg: 1m,1d,1w,30d  </tip></label><input class="input-small" type="text" ng-model="dashboard.current.loader.save_temp_ttl">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div ng-if="editor.index == 3">
+    <div class="editor-row">
+      <div class="section">
+        <h5>下拉选项</h5>
+        <div class="editor-option" ng-repeat="pulldown in dashboard.current.pulldowns">
+          <label class="small" style="text-transform:capitalize;">{{pulldown.type}}</label><input type="checkbox" ng-model="pulldown.enable" ng-checked="pulldown.enable">
+        </div>
+        <div class="editor-option" ng-repeat="pulldown in dashboard.current.nav|editable">
+          <label class="small" style="text-transform:capitalize;">{{pulldown.type}}</label><input type="checkbox" ng-model="pulldown.enable" ng-checked="pulldown.enable">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div ng-repeat="pulldown in dashboard.current.nav|editable" ng-controller="PulldownCtrl" ng-show="editor.index == 4+$index">
+    <!-- 按类型加载娿页面 -->
+    <ng-include ng-show="pulldown.enable" src="edit_path(pulldown.type)"></ng-include>
+    <button ng-hide="pulldown.enable" class="btn" ng-click="pulldown.enable = true">Enable the {{pulldown.type}}</button>
+  </div>
+
+
+</div>
+
+<div class="modal-footer">
+  <button type="button" ng-click="add_row(dashboard.current,row); reset_row();" class="btn btn-info" ng-show="editor.index == 2">新建</button>
+  <button type="button" class="btn btn-success" ng-click="editor.index=0;editSave(dashboard);dismiss();reset_panel();dashboard.refresh()">保存</button>
+  <button type="button" class="btn btn-danger" ng-click="editor.index=0;dismiss();reset_panel();dashboard.refresh()">取消</button>
+</div>

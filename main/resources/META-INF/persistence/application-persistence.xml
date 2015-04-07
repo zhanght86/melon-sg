@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="MELON_PERSIST_UNIT"	 transaction-type="RESOURCE_LOCAL">
+		<!-- 配置文件映射 -->
+		<mapping-file>META-INF/persistence/application-orm.xml</mapping-file>
+		<mapping-file>META-INF/persistence/melon-orm.xml</mapping-file>
+		<mapping-file>META-INF/persistence/melon-asset-orm.xml</mapping-file>
+		
+		<!-- 系统管理部分 -->
+		<class>secfox.soc.melon.organ.domain.Organization</class>
+		<class>secfox.soc.melon.security.domain.Role</class>
+		<class>secfox.soc.melon.security.domain.Account</class>
+		<class>secfox.soc.melon.security.domain.MenuResource</class>
+		<class>secfox.soc.melon.security.domain.HistoryPass</class>
+		<class>secfox.soc.melon.security.domain.LoginRecord</class>
+		
+		<!-- 系统基础构件 -->
+		<class>secfox.soc.melon.system.domain.Logger</class>
+		<class>secfox.soc.melon.system.domain.GlobalConfig</class>
+		<class>secfox.soc.melon.system.domain.WorkCalendar</class>
+		<class>secfox.soc.melon.system.domain.AjaxFile</class>
+		<class>secfox.soc.melon.system.domain.MRule</class>
+		<class>secfox.soc.melon.system.domain.MRuleFilter</class>
+		<class>secfox.soc.melon.base.domain.Dictionary</class>
+		
+		<!-- 漏洞库类型 -->
+		
+		<class>secfox.soc.melon.knowledge.domain.KnowledgeType</class>
+		<class>secfox.soc.melon.knowledge.domain.Knowledge</class>
+		
+		<class>secfox.soc.las.asset.bean.T_vulnBean</class>
+		<class>secfox.soc.las.asset.bean.T_VulnImport</class>
+		<class>secfox.soc.las.asset.bean.T_VulnImportRelationBean</class>
+		<class>secfox.soc.las.asset.bean.T_DevicePort</class>
+		<class>secfox.soc.las.asset.bean.T_VulnFoundStat</class>
+		<class>secfox.soc.las.asset.bean.T_VulnFoundValue</class>
+		<class>secfox.soc.las.domain.AlertRule</class>
+		<class>secfox.soc.las.domain.RuleCondition</class>
+		
+		<!-- 安全对象核心类 -->
+		<class>secfox.soc.melon.asset.domain.GroupRelation</class>
+		<class>secfox.soc.melon.asset.domain.AssetGroup</class>
+		<class>secfox.soc.melon.asset.domain.AssetType</class>
+		<class>secfox.soc.melon.asset.domain.InfoSystem</class>
+		<class>secfox.soc.melon.asset.domain.Device</class>
+		<class>secfox.soc.melon.asset.domain.DeviceRoles</class>
+		<class>secfox.soc.melon.asset.domain.IpAddress</class>
+		<class>secfox.soc.melon.asset.field.domain.AssetField</class>
+		<class>secfox.soc.melon.asset.field.domain.AssetFieldValue</class>
+		<class>secfox.soc.melon.asset.domain.PhyEnvironment</class>
+		<class>secfox.soc.melon.asset.domain.DeviceAction</class>
+		<class>secfox.soc.melon.asset.domain.DeviceFilter</class>
+		<class>secfox.soc.melon.asset.secpass.domain.SecPass</class>
+		
+		<!-- 安全人员 -->
+		<!-- <class>secfox.soc.melon.asset.staff.domain.InterStaff</class> -->
+		<class>secfox.soc.melon.asset.staff.domain.Certificate</class>
+		<!-- <class>secfox.soc.melon.asset.staff.domain.OuterStaff</class> -->
+		
+		<!-- 告警   -->
+		<class>secfox.soc.melon.alarm.domain.Alarm</class>
+		<class>secfox.soc.melon.alarm.domain.AlarmType</class>
+		<class>secfox.soc.las.domain.Alert</class>
+		<class>secfox.soc.las.domain.LasRule</class>
+		<class>secfox.soc.las.domain.LasRuleCounts</class>
+		
+		<!-- 主页模块 -->
+		<class>secfox.soc.melon.home.domain.Attention</class>
+		<class>secfox.soc.melon.home.domain.PortalLayout</class>
+		<class>secfox.soc.melon.home.domain.PortalView</class>
+		<class>secfox.soc.melon.home.domain.QuickNote</class>
+		
+		<!-- 指标体系 -->
+		<class>secfox.soc.melon.indicator.domain.IndicatorDefine</class>
+         
+        <!-- 邮件  -->
+		<class>secfox.soc.business.message.domain.SysMail</class>
+		<class>secfox.soc.business.message.domain.SysMailState</class>
+		<class>secfox.soc.business.message.domain.SysMailReply</class>
+		
+		<!-- 等级保护 -->
+		<!-- <class>secfox.soc.business.db.domain.BasicInfo</class>
+		<class>secfox.soc.business.db.domain.SystemInfo</class>
+		<class>secfox.soc.business.db.domain.DbLevelInfo</class>
+		<class>secfox.soc.business.db.domain.DbAttach</class>
+		<class>secfox.soc.business.db.domain.DbRectifyInfo</class>
+		<class>secfox.soc.business.db.domain.DbTestInfo</class>
+		<class>secfox.soc.business.db.domain.DbExamineInfo</class> -->
+		
+		<!-- 流程图 -->
+		<class>secfox.soc.melon.base.domain.FlowLayout</class>
+		<class>secfox.soc.melon.base.domain.Connector</class>
+		<class>secfox.soc.melon.base.domain.Node</class>
+		
+		<!-- 计划 -->
+		<class>secfox.soc.melon.work.plan.domain.Plan</class>
+		
+		<!-- 我的任务 -->
+		<class>secfox.soc.melon.work.task.domain.Task</class>
+		<class>secfox.soc.melon.work.task.domain.DutyTaskItem</class>
+		<class>secfox.soc.melon.work.task.domain.DutyTaskGroup</class>
+		<!-- 我的工作 -->
+		<class>secfox.soc.melon.work.myWork.domain.MyWork</class>
+		
+		<class>secfox.soc.melon.rule.domain.EplValue</class>
+		
+		<!-- 报表 -->
+		<class>secfox.soc.melon.report.domain.Report</class>
+		<class>secfox.soc.melon.report.domain.ReportFile</class>
+		
+		<!-- 安全检查 
+		<class>secfox.soc.business.check.domain.ReportTask</class>
+		
+		<class>secfox.soc.business.check.domain.ReportTableManager</class>
+		<class>secfox.soc.business.check.domain.BudTecDetOutSourIns</class>
+		<class>secfox.soc.business.check.domain.InfoNetSecManage</class>
+		<class>secfox.soc.business.check.domain.NetSecEmergEduTrainWork</class>
+		<class>secfox.soc.business.check.domain.WaterProConSys</class>
+		<class>secfox.soc.business.check.domain.DepartmentBase</class>
+		<class>secfox.soc.business.check.domain.DefendState</class>
+		<class>secfox.soc.business.check.domain.ProductUserState</class>
+		<class>secfox.soc.business.check.domain.CheckResult</class>
+		<class>secfox.soc.business.check.domain.CheckSelfAssess</class>
+		<class>secfox.soc.business.check.domain.ServeInstitution</class>
+		-->
+		
+		<!-- 数据共享日志 -->
+		<!-- <class>secfox.soc.melon.datas.domain.DataShareLogger</class> -->
+		
+		<!-- Melon系统平台自身结束-->
+		<exclude-unlisted-classes/>
+		<validation-mode>NONE</validation-mode>
+		<shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode><!-- 只有显式标注@Cacheable的对象才缓存 -->
+		<properties>
+			<property name="javax.persistence.validation.mode" value="NONE" />
+			<property name="javax.persistence.provider" value="org.hibernate.ejb.HibernatePersistence" />
+			<!-- Basic Hibernate -->
+			<!-- ID Generator -->
+            <property name="hibernate.id.new_generator_mappings" value="true" />
+            <property name="hibernate.dialect" value="${hibernate.dialect}" />
+            <property name="hibernate.hbm2ddl.auto" value="${hibernate.hbm2ddl.auto}" />
+			<property name="hibernate.connection.useUnicode" value="true" />
+			<property name="hibernate.connection.charSet" value="UTF-8" />
+			<property name="hibernate.connection.release_mode" value="after_transaction" />
+			<!-- Fetch Config -->
+			<property name="hibernate.bytecode.use_reflection_optimizer" value="true" />
+			<property name="hibernate.jdbc.use_scrollable_resultset" value="false" />
+			<property name="hibernate.jdbc.use_streams_for_binary" value="true" />
+			<property name="hibernate.jdbc.fetch_size" value="300" />
+			<property name="hibernate.jdbc.batch_size" value="20" /><!-- 与分页数保持一致 -->
+			<property name="hibernate.max_fetch_depth" value="3" />
+			
+			<!-- Cache -->
+			<!-- 
+			<property name="hibernate.cache.region.factory_class" value="org.hibernate.testing.cache.CachingRegionFactory"/>
+			 -->
+			<property name="hibernate.cache.use_query_cache" value="true"/>
+			<property name="hibernate.cache.default_cache_concurrency_strategy" value="read-write"/>
+			<property name="hibernate.cache.use_second_level_cache" value="true"/>
+			<property name="hibernate.generate_statistics" value="${hibernate.debug}"/>
+			<property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.EhCacheRegionFactory"/>
+			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.EhCacheProvider"/>
+			<property name="hibernate.cache.provider_configuration_file_resource_path" value="ehcache.xml"/>
+			<property name="hibernate.cache.use_structured_entries" value="${hibernate.debug}"/>
+			<!-- Audit Config -->
+			<property name="org.hibernate.envers.revision_type_field_name" value="AUD_TYPE" />
+			<property name="org.hibernate.envers.revision_field_name" value="AUD_VERSION" />
+			<!--  
+			<property name="org.hibernate.envers.audit_strategy" value="org.hibernate.envers.strategy.ValidityAuditStrategy" />
+			-->
+			<property name="org.hibernate.envers.audit_strategy" value="org.hibernate.envers.strategy.DefaultAuditStrategy" />
+			<property name="org.hibernate.envers.audit_strategy_validity_end_rev_field_name" value="AUD_VERSION_END" />
+			<property name="org.hibernate.envers.audit_strategy_validity_store_revend_timestamp" value="true" />
+			<property name="org.hibernate.envers.audit_strategy_validity_revend_timestamp_field_name" value="AUD_TIME" />
+			
+			<!-- Hibernate Search 
+			<property name="hibernate.search.lucene_version" value="LUCENE_36" />
+			<property name="hibernate.search.autoregister_listeners" value="true" />
+			<property name="hibernate.search.default.indexmanager" value="directory-based" />
+			<property name="hibernate.search.default.directory_provider" value="filesystem" />
+			<property name="hibernate.search.default.indexBase" value="lucene/search" />
+			<property name="hibernate.search.worker.execution" value="async" />
+			<property name="hibernate.search.worker.thread_pool.size" value="3" />
+			-->
+			
+			<!-- DEBUG Hibernate -->
+			<property name="hibernate.show_sql" value="${hibernate.debug}" />
+			<property name="hibernate.format_sql" value="${hibernate.debug}" />
+			<property name="hibernate.generate_statistics" value="${hibernate.debug}" />
+			<property name="hibernate.use_sql_comments" value="${hibernate.debug}" />
+		</properties>
+	</persistence-unit>
+</persistence>

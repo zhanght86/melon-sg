@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>melon.security相关的国际化文件</comment>
+	<!-- 岗位管理 -->
+	<entry key="security.role.create.hint"><![CDATA[您已经成功添加了名称为<STRONG>{0}</STRONG>的岗位]]></entry>
+	<entry key="security.role.update.hint"><![CDATA[您已经成功更新了名称为<STRONG>{0}</STRONG>的岗位]]></entry>
+	<entry key="security.role.title">岗位概览</entry>
+	<entry key="security.role.name">岗位名称</entry>
+	<entry key="security.role.code">岗位编码</entry>
+	<entry key="security.role.mutex">特殊岗位</entry>
+	<entry key="security.role.order">岗位顺序</entry>
+	<entry key="security.role.level">适用范围</entry>
+	<entry key="security.role.resource">拥有的权限</entry>
+	<entry key="security.role.resource.hint">因为缓存的原因,修改权限后请务必重起系统</entry>
+	<entry key="security.role.mutex.hint">特殊岗位具有互斥性,在三权分立中,不能将安全管理员与系统管理员分配给同一个人</entry>
+	<entry key="security.role.remarks">岗位描述</entry>
+	
+	<!-- 帐户管理 -->
+	<entry key="security.account.create.hint"><![CDATA[您已经成功添加了姓名为<STRONG>{0}</STRONG>的用户]]></entry>
+	<entry key="security.account.update.hint"><![CDATA[您已经成功更新了姓名为<STRONG>{0}</STRONG>的用户]]></entry>
+	<entry key="security.account.register.hint"><![CDATA[恭喜你注册成功]]></entry>
+	<entry key="security.account.resetPassword.hint">您已经成功修改了密码</entry>
+	<entry key="security.account.getPassword.hint"><![CDATA[<STRONG>请输入您的邮箱(我们会把密码信息通过邮件发送给您，注意查收)</STRONG>]]></entry>
+	<entry key="security.account.enterEmail.hint"><![CDATA[<STRONG>请您进入邮箱查看您的密码</STRONG>]]></entry>
+	<entry key="security.account.getPasswordAnswer">问题</entry>
+	<entry key="security.account.getPasswordResult">答案</entry>
+	<entry key="security.account.basic">基本信息</entry>
+	<entry key="security.account.profile">权限信息</entry>
+	<entry key="security.account.other">其他信息</entry>
+	<entry key="security.account.online"><![CDATA[<STRONG>在线用户：{0}人</STRONG>]]></entry>
+	<entry key="security.account.organInfo">{0}：{1}人</entry>
+    <entry key="security.account.num">序号</entry>	
+	<entry key="security.account.name">姓名</entry>
+	<entry key="security.account.code">编号</entry>
+	<entry key="security.account.username">帐号</entry>
+	<entry key="security.account.order">顺序</entry>
+	<entry key="security.account.duty">职务</entry>
+	<entry key="security.account.sex">性别</entry>
+	<entry key="security.account.birthday">出生日期</entry>
+	<entry key="security.account.email">邮箱</entry>
+	<entry key="security.account.tel">办公电话</entry>
+	<entry key="security.account.mobile">手机</entry>
+	<entry key="security.account.remarks">备注</entry>
+	<entry key="security.account.companyName">所属单位</entry>
+	<entry key="security.account.departName">所属部门</entry>
+	<entry key="security.account.password">密码</entry>
+	<entry key="security.account.secPassWord">验证密码</entry>
+	<entry key="security.account.temporary">临时帐户</entry>
+	<entry key="security.account.expiredTime">失效时间</entry>
+	<entry key="security.account.expiredTime.hint">到了失效时间,此帐号将不能登录系统</entry>
+	<entry key="security.account.newPassword">新密码</entry>
+	<entry key="security.account.oriPassword">原密码</entry>
+	<entry key="security.account.confirmPassword">确认密码</entry>
+	<entry key="security.account.pwdStrength">密码强度</entry>
+	<entry key="security.account.strengthLow">低</entry>
+	<entry key="security.account.strengthMiddle">中</entry>
+	<entry key="security.account.strengthHigh">高</entry>
+	<entry key="security.account.createTime">创建日期</entry>
+	<entry key="security.account.enabled">帐号已激活</entry>
+	<entry key="security.account.enabledNow">立即激活</entry>
+	<entry key="security.account.accountExpired">帐号已过期</entry>
+	<entry key="security.account.accountLocked">帐号已锁定</entry>
+	<entry key="security.account.credentialsExpired">密码已过期</entry>
+	<entry key="security.account.credentialsReset">必须重置密码</entry>
+	<entry key="security.account.credentialsReset.hint">如果设置为是,在用户首次登录时,就会提示用户更改密码</entry>
+	<entry key="security.account.roles">所属岗位</entry>
+	<entry key="security.account.listOrgan.label">用户</entry>
+	<entry key="security.account.listOrgan.chart">系统用户单位分布图</entry>
+	<entry key="security.account.listOrgan.title">用户概览</entry>
+	<entry key="security.account.listOrgan.organCount"><![CDATA[系统共有注册单位<br/> {0} <span>家</span>]]></entry>
+	<entry key="security.account.listOrgan.accountSums"><![CDATA[注册用户 <br/>{0} <span>个</span>]]></entry>
+	<entry key="security.account.export">{0}人员列表</entry>
+	<entry key="security.account.exportAllUser">各单位人员列表</entry>
+	<entry key="security.account.notData">无数据,请检查后重新操作！</entry>
+	<entry key="security.account.secPass.title">口令验证</entry> 
+	<entry key="security.account.secPass.hint">输入口令有误</entry>
+	<entry key="security.account.passActivate.hint">重置密码不能与最近三次密码相同</entry>
+	
+	<!-- 明细页面提示 -->
+	<entry key="security.account.permissionMessage">权限信息</entry>
+	<entry key="security.account.manageAssetsMessage">负责资产</entry>
+	<entry key="security.account.attentionMessage">我的关注</entry>
+	<entry key="security.account.quicknoteMessage">我的批注</entry>
+	<entry key="security.account.trackMessage">我的轨迹</entry>
+	
+	<!-- 登录 -->
+	<entry key="security.login.title">信息安全综合管理平台</entry>
+	<entry key="security.login.rememberMe">两周内自动登录</entry>
+	<entry key="security.login.username">用户名</entry>
+	<entry key="security.login.certificate-login">证书登录</entry>
+	<entry key="security.login.certificate-login-tip">证书登录正在开发中，敬请期待...</entry>
+	<entry key="security.login.forgetPwd">忘记密码？</entry>
+	<entry key="security.login.register">注册</entry>
+    <entry key="security.login.protocol">已同意用户协议</entry>
+	<entry key="security.login.description">
+		<![CDATA[
+			<p>
+				IE 浏览器：支持 <a href="http://www.microsoft.com/zh-cn/download/internet-explorer.aspx"> IE8 及更高版本</a><span style="font-size:12px;color:#b2b2b2;">（版本越高效果越佳）</span><br/>
+				其它浏览器：<a href='http://www.firefox.com.cn/'>火狐浏览器  </a>、
+						<a href='https://www.google.com/intl/zh-CN/chrome/browser/'>谷歌浏览器 </a>
+			</p>
+		]]>	
+	</entry>
+	
+	<!-- 菜单资源 -->
+	<entry key="security.resource.root">系统资源</entry>
+	<entry key="security.resource.create">新建系统资源</entry>
+	<entry key="security.resource.create.hint"><![CDATA[您已经成功添加了名称为<STRONG>{0}</STRONG>的资源]]></entry>
+	<entry key="security.resource.update.hint"><![CDATA[您已经成功更新了名称为<STRONG>{0}</STRONG>的资源]]></entry>
+	<entry key="security.resource.success.hint">删除资源成功</entry>
+	<entry key="security.resource.failed.hint">删除资源失败</entry>
+	<entry key="security.resource.shortName">资源简称</entry>
+	<entry key="security.resource.shortName.hint"><![CDATA[简称最多只支持<STRONG>4</STRONG>个汉字]]></entry>
+	<entry key="security.resource.title">资源标题</entry>
+	<entry key="security.resource.title.hint">在鼠标浮动到菜单上时,就会显示标题</entry>
+	<entry key="security.resource.url">请求地址</entry>
+	<entry key="security.resource.order">资源顺序</entry>
+	<entry key="security.resource.enabled">已启用</entry>
+	<entry key="security.resource.type">资源类型</entry>
+	<entry key="security.resource.type.hint">只有菜单,才会显示在菜单列表中,其他将作为引用被页面调用</entry>
+	<entry key="security.resource.openStyle">打开方式</entry>
+	<entry key="security.resource.iconCss">图标样式</entry>
+	<entry key="security.resource.importUrls">引用的资源</entry>
+	
+	<entry key="security.activate.title1">新用户首次登陆需重置密码</entry>
+	<entry key="security.activate.title2">密码有效期已过请重置密码</entry>
+	<entry key="security.resource.root.title">
+		<![CDATA[
+			<strong class='description-left'>说明：</strong>
+			<div class='description-right'>对系统的所有功能创建前台页面访问链接，系统资源是管理员对整个平台菜单的操作控制。该菜单不能删除修改，只能为它添加子菜单。</div>	
+		]]>	
+	</entry>
+	<entry key="security.resource.root.description">
+		<![CDATA[
+		<h5><strong>三层菜单</strong></h5>
+		<p>系统能支持多达<strong>9</strong>项一级菜单，能支持<strong>3</strong>层级联菜单。第<strong>4</strong>层菜单资源将不会显示在菜单列表中，强烈建议以页面链接的方式引用多余的资源。</p>
+		
+		<h5><strong>统一注册</strong></h5>
+		<p>系统能够支持菜单、按钮与仪表盘，为了能正确显示资源的标题与访问路径，此三类资源都必须在系统中注册。</p>
+		
+		<h5><strong>一次授权</strong></h5>
+		<p>只需要一次授权，用户就能订阅所有他感兴趣的菜单、按钮与仪表盘等资源。</p>
+		
+		<h5><strong>导航追溯</strong></h5>
+		<p>凡是在系统资源里注册过的地址，无论以何种方式访问，都会自动生成系统资源的完整路径信息(父子结构)。</p>
+		]]>
+	</entry>
+	
+</properties>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	
+	<!-- 
+		作为系统注册的唯一Spring Context文件,其他的文件都通过import的方式引入
+		注意文件引入的先后顺序,基础性服务放在前面,对其他服务有依赖的放置在后面
+		访问路径使用相对地址
+	 -->
+	<import resource="application-i18n-context.xml"/>
+	<import resource="application/application-base-context.xml"/>
+	<import resource="application/application-oxm-context.xml"/>
+	<import resource="application/application-template-context.xml"/>
+	<import resource="application/application-formatter-context.xml"/>
+	<import resource="application/application-repository-context.xml"/>
+	<!-- <import resource="application/application-repository-context-weblogic.xml"/> -->
+	<import resource="application/application-cache-context.xml"/>
+	<import resource="application/application-security-context.xml"/>
+	<import resource="application/application-integration-context.xml"/>
+	<import resource="application/application-logger-context.xml"/>
+	<!--  -->
+	<import resource="application-service-scan.xml"/>
+</beans>

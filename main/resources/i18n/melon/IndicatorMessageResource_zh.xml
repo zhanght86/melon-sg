@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>melon.indicator相关的国际化文件</comment>
+	
+	
+	<!-- 指标信息 -->
+	<entry key="indicator.defined.remove.hint">删除成功！</entry>
+	<entry key="indicator.defined.notRemove.hint">删除失败,请检查数据！</entry>
+	<entry key="indicator.defined.name">名称</entry>
+	<entry key="indicator.defined.code">编码</entry>
+	<entry key="indicator.defined.code.hint">编码决定了指标的存储方式与存储位置</entry>
+	<entry key="indicator.defined.enabled">已启用</entry>
+	<entry key="indicator.defined.type">类型</entry>
+	<entry key="indicator.defined.order">优先级</entry>
+	<entry key="indicator.defined.order.hint">数字越小,优先级越高,任务就越先执行</entry>
+	<entry key="indicator.defined.way">抓取方式</entry>
+	<entry key="indicator.defined.way.hint">指标的抓取方式</entry>
+	<entry key="indicator.defined.serviceAddress">服务地址</entry>
+	<entry key="indicator.defined.formatter">格式器</entry>
+	<entry key="indicator.defined.formatter.hint">支持JAVA的格式化器,传入的参数为0:业务主键,1:业务名称,2:指标值,3:指标编码,4:刷新时间</entry>
+	<entry key="indicator.defined.timeType">轮询周期</entry>
+	<entry key="indicator.defined.remarks">备注</entry>
+	<!-- 指标树 -->
+	<entry key="indicator.defined.rootTree">指标体系</entry>
+	<entry key="indicator.defined.create.hint"><![CDATA[您已经成功添加了名称为<STRONG>{0}</STRONG>的指标]]></entry>
+	<entry key="indicator.defined.update.hint"><![CDATA[您已经成功更新了名称为<STRONG>{0}</STRONG>的指标]]></entry>
+	<entry key="indicator.defined.create">新建指标</entry>
+	<entry key="indicator.defined.root">指标体系</entry>
+	<entry key="indicator.defined.root.title">
+		<![CDATA[
+			<strong class='description-left'>说明：</strong>
+			<div class='description-right'>
+			指标体系用于衡量组织的安全工作情况、安全运行状态
+			</div>	
+		]]>	
+	</entry>
+	<entry key="indicator.defined.root.description">
+		<![CDATA[
+		<h5><strong>动态扩展</strong></h5>
+		<p>支持用户自定义指标的动态添加、维护与扩展，是综合安全管理平台内容定制的核心部分。</p>
+		
+		<h5><strong>决策参数</strong></h5>
+		<p>指标体系完全贯彻了信息安全管理体系“安全管理，人人有责”原则，将指标制定者、业务专家、数据分析人员无缝地结合起来，为组织提供更科学、更符合业务范围的决策参数。</p>
+		
+		<h5><strong>周期执行</strong></h5>
+		<p>从安全方针到指标体系到脚本是一个从宏观到微观的过程，这些脚本必须以周期性自动化的方式在系统内部运行。</p>
+		]]>
+	</entry>
+	
+</properties>

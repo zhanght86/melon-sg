@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<!-- String 模板管理类 -->
+	<bean class="secfox.soc.melon.base.template.StrTemplateManager">
+		<property name="locations">
+			<list>
+				<value>classpath:/META-INF/templates/html-tags.xml</value>
+			</list>
+		</property>
+		<property name="marshaller" ref="xmlMarshaller" />
+	</bean>
+	
+	<!-- QueryTemplate 模板管理类 -->
+	<bean class="secfox.soc.melon.persistence.templates.QueryTemplateManager">
+		<property name="locations">
+			<list>
+				<value>classpath:/META-INF/persistence/querys/melon/security-query.xml</value>
+				<value>classpath:/META-INF/persistence/querys/melon/asset-query.xml</value>
+				<value>classpath:/META-INF/persistence/querys/melon/alarm-query.xml</value>
+			</list>
+		</property>
+		<property name="marshaller" ref="xmlMarshaller" />
+	</bean>
+	
+	<!-- las-rule 模板管理类 -->
+	<bean class="secfox.soc.melon.rule.domain.RuleTemplateManager">
+		<property name="locations">
+			<list>
+				<value>classpath:/META-INF/ruletmp/AccountTraversalRule.xml</value>
+				<value>classpath:/META-INF/ruletmp/DDOSAttackRule.xml</value>
+				<value>classpath:/META-INF/ruletmp/MaliciousInfoReleaseRule.xml</value>
+				<value>classpath:/META-INF/ruletmp/NonWorkingTimeLoginRule.xml</value>
+				<value>classpath:/META-INF/ruletmp/PasswordDetectionRule.xml</value>
+				<value>classpath:/META-INF/ruletmp/PortScanningNetflowRule.xml</value>
+				<value>classpath:/META-INF/ruletmp/PortScanningSyslogRule.xml</value>
+				<value>classpath:/META-INF/ruletmp/SameHostVirusAlertRule.xml</value>
+				<value>classpath:/META-INF/ruletmp/StealSensitiveInfoRule.xml</value>
+				<value>classpath:/META-INF/ruletmp/VirusOutbreakRule.xml</value>
+				<value>classpath:/META-INF/ruletmp/VisitMaliciousWebsiteRule.xml</value>
+				<value>classpath:/META-INF/ruletmp/WebAttackRule.xml</value>
+				<value>classpath:/META-INF/ruletmp/WormRule.xml</value>
+			</list>
+		</property>
+		<property name="marshaller" ref="xmlMarshaller" />
+		<property name="eplService" ref="eplValueService"></property>
+	</bean>
+	
+</beans>

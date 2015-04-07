@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>安全制度相关的国际化文件</comment>
+	
+	<entry key="melon.regulation.home.title">安全制度概览</entry>
+	<entry key="melon.regulation.home.content"><![CDATA[<p><STRONG>{0}</STRONG>共有{1}项制度</p><p style="text-align:center">今年新增<STRONG>{2}</STRONG>项</p><p style="text-align:center">发布{3}项</p>]]></entry>
+	<entry key="melon.regulation.home.pieTitle">制度状态占比图</entry>
+	<entry key="melon.regulation.home.pieSerial">制度状态统计数量</entry>
+	<entry key="melon.regulation.home.reviseTitle">制度修订完成情况统计</entry>
+	<entry key="melon.regulation.home.reviseSerial">制度修订进度</entry>
+	<entry key="melon.regulation.home.adviceTitle">征求意见完成情况统计</entry>
+	<entry key="melon.regulation.home.adviceSerial">征求意见进度</entry>
+	
+	<entry key="melon.regType.create.hint"><![CDATA[您已经成功添加了名称为<STRONG>{0}</STRONG>的安全制度类型]]></entry>
+	<entry key="melon.regType.update.hint"><![CDATA[您已经成功更新了名称为<STRONG>{0}</STRONG>的安全制度类型]]></entry>
+	<entry key="melon.regType.remove.hint"><![CDATA[您已经成功删除了该安全制度类型]]></entry>
+	<entry key="melon.regType.remove.confirm">您将删除该类型 及其所有子类型,请确认是否继续？</entry>
+	<entry key="melon.regulation.create.hint"><![CDATA[您已经成功添加了名称为<STRONG>{0}</STRONG>的安全制度]]></entry>
+	<entry key="melon.regulation.update.hint"><![CDATA[您已经成功更新了名称为<STRONG>{0}</STRONG>的安全制度]]></entry>
+	<entry key="melon.regulation.count.hint"><![CDATA[系统共有内部安全人员<br/>{0} <span>人</span><br/>外部人员<br/>{1} <span>人</span>]]></entry>
+	<entry key="melon.regulation.type.title">安全制度</entry>
+	<entry key="melon.regulation.create">新建安全制度</entry>
+	<entry key="melon.regulation.title">安全人员概览</entry>
+	<entry key="melon.regulation.type.root">制度类型</entry>
+	<entry key="melon.regulation.type.name">名称</entry>
+	<entry key="melon.regulation.type.code">编码</entry>
+	<entry key="melon.regulation.type.level">分级</entry>
+	<entry key="melon.regulation.type.order">顺序</entry>
+	<entry key="melon.regulation.type.remark">备注</entry>
+	<entry key="melon.regulation.name">名称</entry>
+	<entry key="melon.regulation.code">制度编号</entry>
+	<entry key="melon.regulation.issueOrgan">发文单位</entry>
+	<entry key="melon.regulation.writeOrgan">编制单位</entry>
+	<entry key="melon.regulation.number">文号</entry>
+	<entry key="melon.regulation.content">内容</entry>
+	<entry key="melon.regulation.range">发文范围</entry>
+	<entry key="melon.regulation.date">日期</entry>
+	<entry key="melon.regulation.type">制度类型</entry>
+	<entry key="melon.regulation.leveL">分级</entry>
+	<entry key="melon.regulation.state">状态</entry>
+	<entry key="melon.regulation.attach">制度附件</entry>
+	<entry key="melon.regulation.modelAttach">模板附件</entry>
+	<entry key="melon.regulation.preRegulation">前制度</entry>
+	<entry key="melon.regulation.upRegulation">上级制度</entry>
+	<entry key="melon.regulation.downRegulation">下级制度</entry>
+	
+	<!-- 制度编制 -->
+	<entry key="regulation.establish.title">标题</entry>
+	<entry key="regulation.establish.content">内容</entry>
+	<entry key="regulation.establish.executor">执行人</entry>
+	<entry key="regulation.establish.taskType">任务类型</entry>
+	<entry key="regulation.establish.regulationId">关联制度</entry>
+	<entry key="regulation.establish.completeStatus">完成情况</entry>
+	<entry key="regulation.establish.state">状态</entry>
+	<entry key="regulation.establish.publishDate">下发时间</entry>
+	<entry key="regulation.establish.deadline">截止时间</entry>
+	<entry key="regulation.establish.completeDate">完成时间</entry>
+	<entry key="regulation.establish.remarks">备注</entry>
+	<entry key="regulation.establish.accessoryId">附件</entry>
+	<entry key="regulation.establish.modifyName">修改人</entry>
+	<entry key="regulation.establish.modifyTime">修改时间</entry>
+	<entry key="regulation.establish.regulation">制度名称</entry>
+	<entry key="regulation.establish.create.hint"><![CDATA[您已经成功添加了标题为<STRONG>{0}</STRONG>的编制任务]]></entry>
+	<entry key="regulation.establish.update.hint"><![CDATA[您已经成功更新了标题为<STRONG>{0}</STRONG>的编制任务]]></entry>
+	
+	<entry key="regulation.opinion.create.hint"><![CDATA[您已经成功添加了标题为<STRONG>{0}</STRONG>的征求意见任务]]></entry>
+	<entry key="regulation.opinion.update.hint"><![CDATA[您已经成功更新了标题为<STRONG>{0}</STRONG>的征求意见任务]]></entry>
+	<entry key="regulation.opinion.opinion">意见建议</entry>
+	<entry key="regulation.opinion.commitTime">提交时间</entry>
+	
+	<entry key="regulation.opinion.opinion.create.hint">您已经成功添加了征求意见</entry>
+	<entry key="regulation.opinion.opinion.update.hint">您已经成功更新了征求意见</entry>
+	
+</properties>

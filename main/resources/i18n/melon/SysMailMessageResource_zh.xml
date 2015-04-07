@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>消息相关的国际化文件</comment>
+	
+	<entry key="message.mail.create.hint"><![CDATA[您已经成功发送了名为<STRONG>{0}</STRONG>的邮件]]></entry>
+	<entry key="mail.title">邮件主题</entry>
+	<entry key="mail.content">邮件内容</entry>
+	<entry key="mail.sendTime">发送时间</entry>
+	<entry key="mail.readed">是否已读</entry>
+	<entry key="mail.receiver">收件人</entry>
+	<entry key="mail.user">接收人</entry>
+	<entry key="mail.sender">发送人</entry>
+	<entry key="mail.attach">附件</entry>
+	<entry key="mail.basic">基本信息</entry>
+	<entry key="mail.detail">查看邮件</entry>
+	<entry key="mail.startTime">开始时间</entry>
+	<entry key="mail.endTime">结束时间</entry>
+	<entry key="mail.receTime">收件日期</entry>
+	<entry key="mail.state">紧急性</entry>
+	<entry key="mailState.state">已读</entry>
+	<entry key="mailState.replyState">已回复</entry>
+	<entry key="mailState.urgency">紧急</entry>
+	<entry key="mailState.receipt">已读回执</entry>
+	<entry key="mailState.comment">参与评论</entry>
+	<entry key="mailState.commit">发表</entry>
+	<entry key="mailState.select.hint">只能选择一条</entry>
+	<entry key="mail.otherOption">其他选项</entry>
+	<entry key="mail.receipt.content">您发送的邮件已经被打开</entry>
+	<entry key="mail.reply.pre">回复：</entry>
+	<entry key="mail.forward.pre">转发：</entry>
+	<entry key="mail.receipt.pre">Re：</entry>
+	<entry key="mail.back">返回</entry>
+	<entry key="mail.titleMass">主题邮件</entry>
+</properties>

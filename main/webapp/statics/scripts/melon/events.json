@@ -1,0 +1,12 @@
+ [{"title": "All Day Event",
+	"work" : true,
+	"start": "2014-10-01",
+	"className" : "work-date",
+	"backgroundColor" : "blue"
+},
+{
+	"title": "SEC Day Event",
+	"work" : true,
+	"start": "2014-10-02",
+	"className" : "work-date"
+}]

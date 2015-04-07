@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+	<!-- JSON Mappers -->
+	<bean id="objectMapper" class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean">
+		<property name="annotationIntrospector">
+			<bean class="secfox.soc.melon.base.json.DictionaryAnnotationIntrospector"/>
+		</property>
+		<property name="deserializersByType">
+		  <map>
+		  	  <!--  -->
+		      <entry key="java.util.Date">
+		          <bean class="secfox.soc.melon.base.json.deserializer.LongDateDeserializer"/>
+		      </entry>
+		  </map>
+		</property>
+		<property name="serializersByType">
+		  <map>
+		      <entry key="java.util.Date">
+		          <bean class="secfox.soc.melon.base.json.serializer.LongDateSerializer"/>
+		      </entry>
+		  </map>
+		</property>
+		<property name="featuresToDisable">
+           <array>
+             <util:constant static-field="com.fasterxml.jackson.databind.SerializationFeature.WRITE_NULL_MAP_VALUES"/>
+             <util:constant static-field="com.fasterxml.jackson.databind.SerializationFeature.FAIL_ON_EMPTY_BEANS"/>
+           </array>
+		</property>
+	</bean>
+	
+	<!-- 默认的Java对象与JSOn转换器 -->
+	<bean id="jsonRequestBodyMessageConverter" class="secfox.soc.melon.base.json.JsonMessageConverter">
+		<property name="objectMapper" ref="objectMapper"/>
+		<property name="configs">
+			<map>
+				<entry key="currPage" value="1"  />
+				<entry key="pageSize" value="#{T(secfox.soc.melon.base.Pagination).PAGE_SIZE}" />
+				<entry key="sortColumn" value="" />
+				<entry key="order" value="ASC" />
+				<entry key="searchForm" value="{}" />
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 默认的XML信息转换器 -->
+	<bean id="xmlMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller">
+		<property name="streamDriver" ref="driverCDATA" />
+		<property name="annotatedClasses">
+			<array>
+				<!-- 模板对象 -->
+				<value>secfox.soc.melon.base.template.StrTemplates</value>
+				<value>secfox.soc.melon.base.template.StrTemplates.Template</value>
+				<!-- 日志审计对象 -->
+				<value>secfox.soc.melon.base.AuditConfig</value>
+				<value>secfox.soc.melon.base.AuditConfig.AuditModule</value>
+				<value>secfox.soc.melon.base.AuditConfig.AuditClass</value>
+				<value>secfox.soc.melon.base.AuditConfig.AuditItem</value>
+				<!-- SQL查询对象 -->
+				<value>secfox.soc.melon.persistence.templates.QueryTemplates</value>
+				<value>secfox.soc.melon.persistence.templates.QueryTemplates.SqlQuery</value>
+				<value>secfox.soc.melon.persistence.templates.QueryTemplates.JqlQuery</value>
+				<!-- 规则模板 -->
+				<value>secfox.soc.melon.rule.domain.Rule</value>
+				<value>secfox.soc.melon.rule.domain.Field</value>
+				<value>secfox.soc.melon.rule.domain.EventType</value>
+				<value>secfox.soc.melon.rule.domain.OutPut</value>
+				<value>secfox.soc.melon.rule.domain.Epl</value>
+				<value>secfox.soc.melon.rule.domain.Condition</value>
+				<value>secfox.soc.melon.rule.domain.Condition.Var</value>
+				<value>secfox.soc.melon.rule.domain.EplVar</value>
+				<value>secfox.soc.melon.rule.domain.Filter</value>
+				<value>secfox.soc.melon.rule.domain.Variable</value>
+			</array>
+		</property>
+	</bean>
+	
+</beans>

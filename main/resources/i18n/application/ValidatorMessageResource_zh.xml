@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>服务器国际化文件</comment>
+	<entry key="org.hibernate.validator.constraints.NotBlank.message">必须填写</entry>
+	<entry key="org.hibernate.validator.constraints.CreditCardNumber.message">请输入正确信用卡号</entry>
+	<entry key="org.hibernate.validator.constraints.Email.message">请输入正确Email地址</entry>
+	<entry key="org.hibernate.validator.constraints.Length.message">请输入{min}-{max}长度的内容</entry>
+	<entry key="org.hibernate.validator.constraints.NotEmpty.message">请填写非空内容</entry>
+	<entry key="org.hibernate.validator.constraints.Range.message">填写范围{min}-{max}</entry>
+	<entry key="org.hibernate.validator.constraints.SafeHtml.message">填写安全HTML内容</entry>
+	<entry key="org.hibernate.validator.constraints.ScriptAssert.message">执行脚本表达式返回不是true</entry>
+	<entry key="org.hibernate.validator.constraints.URL.message">请输入正确URL地址</entry>
+	
+	<entry key="javax.validation.constraints.AssertFalse.message">只能为假</entry>
+	<entry key="javax.validation.constraints.AssertTrue.message">只能为真</entry>
+	<entry key="javax.validation.constraints.DecimalMax.message">请输入最大值为{value}的小数</entry>
+	<entry key="javax.validation.constraints.DecimalMin.message">请输入最小值为{value}的小数</entry>
+	<entry key="javax.validation.constraints.Digits.message">需填写一个{integer}位整数,{fraction}位小数的值</entry>
+	<entry key="javax.validation.constraints.Max.message">最大值为{value}</entry>
+	<entry key="javax.validation.constraints.Min.message">最小值为{value}</entry>
+	<entry key="javax.validation.constraints.NotNull.message">必填选项</entry>
+	<entry key="javax.validation.constraints.Null.message">必须不填</entry>
+	<entry key="javax.validation.constraints.Pattern.message ">不匹配正则表达式{regexp}</entry>
+	<entry key="javax.validation.constraints.Past.message">时间得小于当前时间</entry>
+	<entry key="javax.validation.constraints.Size.message ">请输入一个在{min}和{max}之间的数</entry>
+	
+</properties>

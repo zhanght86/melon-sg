@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<appender name="Console" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%c:%L] - %d{ISO8601} - %X{login} - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="File" class="org.apache.log4j.RollingFileAppender">
+		<!-- <param name="File" value="/var/log/melon-flow.log" /> -->
+		<param name="File" value="D:/melon-flow.log" />
+		<param name="MaxFileSize" value="3000KB" />
+		<param name="MaxBackupIndex" value="20" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<!-- 
+			<param name="ConversionPattern" value="[%c:%L] - %d{ISO8601} - %X{login} - %m%n" />
+			-->
+			<param name="ConversionPattern" value="[melon-flow] - %d{ISO8601} - %X{login} - %m%n" />
+		</layout>
+	</appender>
+
+	<logger name="secfox.soc">
+		<level value="${melon.log4j.level}" />  
+	</logger>
+	
+	<logger name="org.apache.commons">
+		<level value="WARN" />
+	</logger>
+	
+	<logger name="org.apache.commons.fileupload">
+		<level value="WARN" />
+	</logger>
+	
+	<logger name="javax.persistence">
+		<level value="WARN"></level>
+	</logger>
+	<!-- 事务 -->
+	<logger name="org.springframework.transaction">
+		<level value="WARN" />
+	</logger>
+	<logger name="org.springframework.security">
+		<level value="WARN" />
+	</logger>
+	<logger name="org.springframework.integration">
+		<level value="WARN" />
+	</logger>
+	<logger name="org.springframework.integration.handler">
+		<level value="WARN" />
+	</logger>
+	<!-- 监听Spring的日志信息 -->
+	<logger name="org.springframework">
+		<level value="WARN" />
+	</logger>
+	<logger name="org.springframework.web.servlet">
+		<level value="DEBUG" />
+	</logger>
+	<logger name="org.springframework.beans.factory.support">
+		<level value="WARN" />  
+	</logger>
+	<!-- HIBERNATE 的缓存配置 -->
+	<logger name="org.hibernate.cache">
+		<level value="WARN" />
+	</logger>
+	<logger name="org.hibernate">
+		<level value="WARN" />
+	</logger>
+	<!-- 调试Hibernate语句 -->
+	<!-- 在日志中记录Hibernate的查询语句 必须是DEBUG模式及以上 -->
+	<logger name="org.hibernate.SQL" additivity="false">
+		<level value="WARN" />
+		<appender-ref ref="File" />
+	</logger>
+	<!-- 显示在PreparedStatement中参数值的类型以及查询语句的结果 必须是TRACE模式及以上 -->
+	<logger name="org.hibernate.type">
+		<level value="WARN" />
+		<appender-ref ref="File" />
+	</logger>
+
+	<root>
+		<priority value="warn" />
+		<appender-ref ref="Console" />
+		<appender-ref ref="File" />
+	</root>
+</log4j:configuration>

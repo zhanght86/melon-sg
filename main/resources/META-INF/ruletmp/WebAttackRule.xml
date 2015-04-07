@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rule name="WEB攻击行为检测" depends="syslog" enable="true">
+	<filter id="1" name="日志宝设备事件过滤器">
+		<condition type="base" opr="eq_str">
+			<var type="event" attrname="devproduct"/>
+			<var type="constant">
+				<value><![CDATA[RIZHIBAO]]></value>
+			</var>
+		</condition>
+	</filter>
+	<!-- name为epl中的表名，要和epl语句中的表名对应，但注意各规则的此name一定要不相同-->
+	<eventType name="webAttackEvent">
+		<!-- 控制内存，设置向esper发送的数据类型不是simeventobject,而是其中的几个字段,name的值要和simeventobject中的变量名一致 -->
+		<!-- ID字段必须保存，因为要保存关联事件的ID -->
+		<field name="ID"/>
+		<field name="name"/>
+	</eventType>
+	
+	<output>
+		<!-- 作为输出告警的固定内容，属性和OutputAlert中的变量名对应，并且OutputAlert中这些字段要定义为String类型-->
+		<content>发现WEB攻击行为:{0}。#name</content>
+		<level>严重</level>
+		<status>未确认</status>
+	</output>
+	<epls>
+		<!-- key从1到N顺序加载，最后一个作为statement。表名和上面的eventType中的name一致，为一个map变量，里面包含上面eventType属性中的字段 -->
+		<!-- ID字段必须保存，因为要保存关联事件的ID -->
+		<epl key="1" value="select ID,name from webAttackEvent.win:length(1)"/>
+	</epls>
+	<eplvars desc="日志宝设备事件">
+	</eplvars>
+</rule>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	
+	<!-- 注册tiles配置 -->
+	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+        <property name="definitions">
+            <list>
+            	<!-- 基本配置 -->
+                <value>/META-INF/tiles-config/definitions/default-templates.xml</value>
+                <!-- melon平台注册使用 -->
+                <value>/META-INF/tiles-config/definitions/melon/system-templates.xml</value>
+                <value>/META-INF/tiles-config/definitions/melon/asset-templates.xml</value>
+                <value>/META-INF/tiles-config/definitions/melon/alarm-templates.xml</value>
+                <value>/META-INF/tiles-config/definitions/melon/check-templates.xml</value>
+                <value>/META-INF/tiles-config/definitions/melon/indicator-templates.xml</value>
+                <value>/META-INF/tiles-config/definitions/melon/mail-templates.xml</value>
+                <value>/META-INF/tiles-config/definitions/melon/home-templates.xml</value>
+                <value>/META-INF/tiles-config/definitions/melon/work-templates.xml</value>
+                <value>/META-INF/tiles-config/definitions/melon/report-templates.xml</value>
+                <!-- 门户注册使用 -->
+                <value>/META-INF/tiles-config/definitions/gate/gate-templates.xml</value>
+                <!-- 业务模块注册使用 -->
+                <value>/META-INF/tiles-config/definitions/business/db-templates.xml</value>
+                <value>/META-INF/tiles-config/definitions/melon/knowledge-templates.xml</value>
+                <!-- 日志审计模块 -->
+                <value>/META-INF/tiles-config/definitions/las/las-templates.xml</value>
+            </list>
+        </property>
+        <property name="preparerFactoryClass" value="org.springframework.web.servlet.view.tiles3.SpringBeanPreparerFactory"/>
+    </bean>
+
+</beans>

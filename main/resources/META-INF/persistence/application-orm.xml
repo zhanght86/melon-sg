@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd">
+	<!-- 将注解优先使用在属性上 -->
+	<persistence-unit-metadata>
+		<persistence-unit-defaults>
+			<access>FIELD</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	
+	<!-- 为了提高系统性能
+		  尽可能地为每个模块都声明一个或多个ID生成器
+		 起始ID必须从10开始,前10个ID系统留用 -->
+	<!-- 默认的系统序列生成器, 此序列生成器为平台专用, 其他模块禁止使用此序列生成器-->
+	<table-generator name="GEN_SEQ_APP" table="GEN_SEQ_APP"
+				 allocation-size="200"
+				 initial-value="10"
+				 pk-column-name="GEN_ID"
+				 pk-column-value="MELON_ID"
+				 value-column-name="GEN_VAL">
+	</table-generator>
+	
+	<!-- 系统日历 -->
+	<table-generator name="GEN_SEQ_CALENDAR" table="GEN_SEQ_CALENDAR"
+				 allocation-size="200"
+				 initial-value="10"
+				 pk-column-name="GEN_ID"
+				 pk-column-value="MELON_ID"
+				 value-column-name="GEN_VAL">
+	</table-generator>
+	
+	<!-- 系统日志 -->
+	<table-generator name="GEN_SEQ_LOGGER" table="GEN_SEQ_LOGGER"
+				 allocation-size="200"
+				 initial-value="10"
+				 pk-column-name="GEN_ID"
+				 pk-column-value="MELON_ID"
+				 value-column-name="GEN_VAL">
+	</table-generator>
+	
+	
+	<!-- 安全对象管理模块的系统序列生成器, 此序列生成器为资产管理模块专用, 其他模块禁止使用此序列生成器-->
+	<table-generator name="GEN_SEQ_ASSET" table="GEN_SEQ_ASSET"
+				 allocation-size="200"
+				 initial-value="10"
+				 pk-column-name="GEN_ID"
+				 pk-column-value="MELON_ID"
+				 value-column-name="GEN_VAL">
+	</table-generator>
+	
+	<!-- 告警管理模块的系统序列生成器, 此序列生成器为告警管理模块专用, 其他模块禁止使用此序列生成器-->
+	<table-generator name="GEN_SEQ_ALARM" table="GEN_SEQ_ALARM"
+				 allocation-size="200"
+				 initial-value="10"
+				 pk-column-name="GEN_ID"
+				 pk-column-value="MELON_ID"
+				 value-column-name="GEN_VAL">
+	</table-generator>
+	
+	<!-- 安全检查管理模块的系统序列生成器, 此序列生成器为告警管理模块专用, 其他模块禁止使用此序列生成器-->
+	<table-generator name="GEN_SEQ_CHECK" table="GEN_SEQ_CHECK"
+				 allocation-size="200"
+				 initial-value="10"
+				 pk-column-name="GEN_ID"
+				 pk-column-value="MELON_ID"
+				 value-column-name="GEN_VAL">
+	</table-generator>
+	
+	<!-- 等级保护管理模块的系统序列生成器, 此序列生成器为告警管理模块专用, 其他模块禁止使用此序列生成器-->
+	<table-generator name="GEN_SEQ_DB" table="GEN_SEQ_DB"
+				 allocation-size="200"
+				 initial-value="10"
+				 pk-column-name="GEN_ID"
+				 pk-column-value="MELON_ID"
+				 value-column-name="GEN_VAL">
+	</table-generator>
+	
+	<!-- 指标管理模块的系统序列生成器, 此序列生成器为告警管理模块专用, 其他模块禁止使用此序列生成器-->
+	<table-generator name="GEN_SEQ_IND" table="GEN_SEQ_IND"
+				 allocation-size="200"
+				 initial-value="10"
+				 pk-column-name="GEN_ID"
+				 pk-column-value="MELON_ID"
+				 value-column-name="GEN_VAL">
+	</table-generator>
+	
+	<!-- 知识库管理模块的系统序列生成器, 此序列生成器为告警管理模块专用, 其他模块禁止使用此序列生成器-->
+	<table-generator name="GEN_SEQ_KN" table="GEN_SEQ_KN"
+				 allocation-size="200"
+				 initial-value="10"
+				 pk-column-name="GEN_ID"
+				 pk-column-value="MELON_ID"
+				 value-column-name="GEN_VAL">
+	</table-generator>
+	
+	<!-- 制度类型序列生成器其他模块禁止使用此序列生成器-->
+	<table-generator name="GEN_SEQ_RE" table="GEN_SEQ_RE"
+				 allocation-size="200"
+				 initial-value="10"
+				 pk-column-name="GEN_ID"
+				 pk-column-value="MELON_ID"
+				 value-column-name="GEN_VAL">
+	</table-generator>
+	
+	<!--页面邮箱管理模块的系统序列生成器, 此序列生成器为告警管理模块专用, 其他模块禁止使用此序列生成器-->
+	<table-generator name="GEN_SEQ_MAIL" table="GEN_SEQ_MAIL"
+				 allocation-size="200"
+				 initial-value="10"
+				 pk-column-name="GEN_ID"
+				 pk-column-value="MELON_ID"
+				 value-column-name="GEN_VAL">
+	</table-generator>
+	
+	<!--数据共享日志管理模块的系统序列生成器, 此序列生成器为数据共享日志管理模块专用, 其他模块禁止使用此序列生成器-->
+	<table-generator name="GEN_SEQ_DATAS" table="GEN_SEQ_DATAS"
+				 allocation-size="200"
+				 initial-value="10"
+				 pk-column-name="GEN_ID"
+				 pk-column-value="MELON_ID"
+				 value-column-name="GEN_VAL">
+	</table-generator>
+	
+	<!--MELONBUG的系统序列生成器, 此序列生成器为MELONBUG专用, 其他模块禁止使用此序列生成器-->
+	<table-generator name="GEN_SEQ_BUG" table="GEN_SEQ_BUG"
+				 allocation-size="200"
+				 initial-value="10"
+				 pk-column-name="GEN_ID"
+				 pk-column-value="MELON_ID"
+				 value-column-name="GEN_VAL">
+	</table-generator>
+	
+	<!-- 默认的MELON表序列生成器 ,用于示例-->
+	<table-generator name="GEN_TAB_MELON" table="GEN_TAB_MELON"
+				 allocation-size="200"
+				 initial-value="10"
+				 pk-column-name="GEN_ID"
+				 pk-column-value="MELON_ID"
+				 value-column-name="GEN_VAL">
+	</table-generator>
+
+</entity-mappings>
